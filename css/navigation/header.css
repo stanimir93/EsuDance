@@ -1,0 +1,157 @@
+
+/* HEADER */
+
+/* Position header elements */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: var(--color-3);
+}
+
+/* Logo */
+
+header .logo {
+    /* width: 33vw; - removed it because cannot set vw with JS */
+    max-width: 140px;
+    padding: 1rem 1rem 0.5rem;
+    transition: 0.5s;
+    
+}
+
+/* Position menu container */
+
+header .menu-container{
+    position: relative;
+    height: 50px;
+    width: 50px;
+}
+
+
+
+/* Navigation menu in the header */
+
+header nav .menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    padding-top: 90px;
+    width: 100vw;
+    height: calc(100vh + 30px);
+    top: -30px;
+    right: -100vw;
+    transition: 0.4s ease;
+}
+
+header ul li {
+    line-height: 4; 
+    list-style-type: none;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--color-2);
+}
+
+/* Show navigation menu on clicking the hamburger */
+
+header .toggler:checked ~ nav > ul {
+    right: 0px;
+}
+
+/* Hamburger */
+
+header .toggler {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    z-index: 2;
+    width: calc(40px + 0.8vw);
+    height: calc(40px + 0.8vw);
+    cursor: pointer;
+    opacity: 0;
+    
+}
+
+.hamburger {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    width: calc(40px + 0.8vw);
+    height: calc(40px + 0.8vw);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.hamburger div {
+    position: relative;
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--color-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2.5px;
+
+}
+
+/* Top and bottom lines */
+
+.hamburger div::before,
+.hamburger div::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2.5px;
+    background-color: inherit;    
+    top: calc(-6px - 0.3vw);
+    transition:all 0.2s;
+    border-radius: 2.5px;
+
+}
+/* Moves line down */
+
+.hamburger div::after {
+    top: calc(6px + 0.3vw);
+}
+
+/* Hide middle line on click */
+
+header .toggler:checked + .hamburger div {
+    height: 0px;
+}
+
+/* Rotate top and bottom hamburger lines */
+
+header .toggler:checked + .hamburger div::before {
+    top: 0px;
+    transform: rotate(45deg);
+}
+
+header .toggler:checked + .hamburger div::after {
+    top: 0px;
+    transform: rotate(-45deg);
+}
+
+/* Header navigation submenu */
+
+/* header .sub-menu {
+    display: none;
+
+}
+
+header .sub-menu.show {
+    display:flex;
+    flex-direction: column;
+    align-items: center;    
+} */
+
+

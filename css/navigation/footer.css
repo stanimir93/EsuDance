@@ -1,0 +1,94 @@
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: var(--container-padding-2) var(--container-padding-1) 0;
+    justify-content: space-between;
+    color: var(--color-1);
+    background-color: var(--color-2);
+    height: auto;
+}
+
+/* Footer navigation menu */
+
+footer .menu-container ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;    
+    line-height: 2;
+}
+
+/* Footer navigation menu links */
+
+footer .menu-container li {
+    list-style-type: none;
+    padding-right: var(--container-padding-1);
+}
+footer .menu-container li:hover {
+    text-decoration-color: var(--color-1);
+    text-decoration: underline;
+    color: var(--color-1);
+}
+
+footer .menu-container a {
+    text-decoration: none;
+}
+
+/* Horizontal line */
+
+footer hr {
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2.5px;
+    border-width: 1px;
+    margin-top: 1rem;
+}
+
+/* Footer middle area with address and about us*/
+
+footer .middle-container {
+    padding-bottom: var(--container-padding-1);
+}
+
+footer h3 {
+    margin: var(--container-padding-1) 0 1rem;
+    color: var(--color-1);
+}
+
+footer a {
+  color: var(--color-1);  
+}
+footer a:hover {
+  color: var(--color-3); 
+  background-color: unset; 
+}
+
+/* Social Media Buttons */
+
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-1);
+    width: 100vw;
+    margin-left: calc(-2vw*3);
+    height: 65px;
+    border-bottom: 8px solid var(--color-2)
+}
+
+.social-links-container i {
+    font-size: 30px;
+    padding: 16px;
+    color: var(--color-2);
+    transition: all 0.1s;
+}
+
+.social-links-container i:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.social-links-container i:active {
+    opacity: 0.4;
+}

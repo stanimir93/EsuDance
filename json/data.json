@@ -1,0 +1,58 @@
+{
+"contactDetails": {
+    
+    "address_line1": "Mill Hill Mussic Complex",
+
+    "address_line2": "",
+
+    "street": "1 Bunns Lane",
+
+    "postcode": "NW7 2AJ",
+
+    "city": "London",
+
+
+    "email": "Elis.Sperkova@gmail.com ",
+
+    "phone": ""
+
+
+
+},
+
+
+"classes": {
+    
+    
+"BALLET_AND_TAP_DANCE_FOR_MINIS": {
+
+    "status": "recruiting",
+
+    "class_name": "",
+
+    "age": "",
+
+    "description": "",
+
+    "timetable": [
+
+        {
+            "day_time": ["Monday", "17:00"],
+
+            "location": "",
+
+            "exception_note": "No classes during school holiday week 11.11.2011"
+        }
+        
+    ],
+
+    "price": "",
+
+    "dress_code": "",
+
+    "banner_url": ""
+
+}
+
+}}
+

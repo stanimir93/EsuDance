@@ -1,0 +1,154 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+/* HERO CONTAINER */
+
+.homepage-hero-container {
+    background-color: var(color-1);
+    background-image: linear-gradient(hsla(0, 0%, 27%, 0.4), hsla(0, 0%, 27%, 0.4)), url("../../images/banners/ballerina-toes-mobile.jpg");
+    background-position: bottom;
+    background-size: cover;
+    color: white;
+
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.homepage-hero-container hr {
+    width: 70px;
+    margin: 3rem;
+    border-color: var(--color-3);
+    border-width: 1px;
+}
+
+.homepage-hero-container button {
+    margin: 3rem;
+    height: 5.4rem;
+    width: 14rem;
+    border-radius: 2.5px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--color-1);
+    color: var(--color-2);
+    transition: all 0.4s;
+}
+
+.homepage-hero-container button:hover {
+    color: var(--color-1);
+    background-color: var(--color-2);
+    text-decoration: underline;    
+}
+
+.homepage-hero-container button:active {
+    opacity: 0.4;
+}
+
+/* BANNER CONTAINER */
+
+.homepage-banner-container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--container-padding-3) var(--container-padding-1);
+    background-color: var(--color-2);
+    color: var(--color-1);
+}
+
+.homepage-banner-container h2 {
+    color: var(--color-1);
+}
+
+.homepage-banner-container img {
+    width: 100%;
+    max-width: 470px;
+}
+
+.homepage-banner-container > div:nth-child(2) {
+    padding-top: var(--container-padding-1);
+}
+
+/* GALLERY CONTAINER */
+
+.homepage-gallery-container {
+    padding: var(--container-padding-2) var(--container-padding-1);    
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: var(--container-padding-1);
+}
+
+/* Display images as a grid */
+
+.homepage-gallery-container > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Wrap images with a div that prevents overflow,
+so when hovered they zoom in but don't push the other images away */
+
+.wrapper-image-container {
+    height: 40vw;
+    width: 40vw;
+    margin: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* How should each image be displayed */
+
+.image-container {
+    height: 40vw;
+    width: 40vw;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s;
+    cursor: pointer;
+    
+}
+
+/* Zoom on hover  */
+
+.image-container:hover {
+    height: 44vw;
+    width: 44vw;
+}
+
+/* Choose images to be displayed */
+
+.wrapper-image-container:nth-child(1) .image-container {
+    background-image: url("../../images/gallery/studio/stuido-1.webp");
+}
+.wrapper-image-container:nth-child(2) .image-container {
+    background-image: url("../../images/gallery/studio/studio-2.webp");
+}
+.wrapper-image-container:nth-child(3) .image-container {
+    background-image: url("../../images/gallery/studio/stuido-1.webp");
+}
+.wrapper-image-container:nth-child(4) .image-container {
+    background-image: url("../../images/gallery/studio/studio-2.webp");
+}
+.wrapper-image-container:nth-child(5) .image-container {
+    background-image: url("../../images/gallery/studio/stuido-1.webp");
+}
+.wrapper-image-container:nth-child(6) .image-container {
+    background-image: url("../../images/gallery/studio/studio-2.webp");
+}
+
+
+/* VIDEO CONTAINER */
+
+/* ADDRESS CONTAINER */
