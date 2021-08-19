@@ -64,6 +64,13 @@ footer a:hover {
   background-color: unset; 
 }
 
+.middle-container i {
+    font-size: 30px;
+    padding: 16px;
+    color: white;
+    transition: all 0.1s;
+}
+
 /* Social Media Buttons */
 
 .social-links-container {

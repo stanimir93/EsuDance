@@ -34,7 +34,8 @@ function loadAddress() {
 // Function to populate email fields
 
 function loadEmail() {
-    document.querySelectorAll('.email').forEach( (addressContainer) => {
-        addressContainer.textContent = `${contactDetails.email}`;
+    document.querySelectorAll('.email').forEach( (emailContainer) => {
+        emailContainer.textContent = `${contactDetails.email}`;
+        emailContainer.setAttribute('href', `mailto:${contactDetails.email}`)
     })
 }

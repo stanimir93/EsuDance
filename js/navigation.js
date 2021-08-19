@@ -1,12 +1,20 @@
-// Fetch header
+// MutationObserver on the footer - once footer has been updated - it will populate the addresses
+
+const observer = new MutationObserver( function() {
+    loadAddress();
+    loadEmail();
+    this.disconnect();
+})
+
+observer.observe(document.querySelector('footer'),{childList: true})
+
+// Fetch header and footer
+
 fetch(`navigation/header.html`)
 .then( (resposnse) => {return resposnse.text()})
 .then( (header) => {
     document.querySelector('header').innerHTML = header
 })
-
-// Fetch footer
-
 fetch(`navigation/footer.html`)
 .then( (resposnse) => {return resposnse.text()})
 .then( (footer) => {
@@ -14,11 +22,27 @@ fetch(`navigation/footer.html`)
 })
 
 
+// Populate addess and email fields
+
+function loadAddress() {
+    document.querySelectorAll('.address').forEach( (addressContainer) => {
+        addressContainer.innerHTML = 
+        `${contactDetails.address_line1}<br>${contactDetails.street}<br>${contactDetails.postcode}<br>${contactDetails.city}`;
+    })
+}
+function loadEmail() {
+    document.querySelectorAll('.email').forEach( (emailContainer) => {
+        emailContainer.textContent = `${contactDetails.email}`;
+        emailContainer.setAttribute('href', `mailto:${contactDetails.email}`)
+    })
+}
+
+
+
+
 // Shrink navigation menu on scroll
 
 window.addEventListener('scroll', debounce(shrinkNav));
-
-// Shrinks navigation menu 
 
 function shrinkNav() {
     if (window.scrollY > 80) {
@@ -30,7 +54,7 @@ function shrinkNav() {
     }
 }
 
-/* Reduce firering rate of shringNav on scrolling */
+/* Reduce firing rate of shringNav on scrolling */
 
 function debounce(func){
     let timer;
