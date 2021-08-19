@@ -78,7 +78,7 @@ footer a:hover {
     justify-content: center;
     align-items: center;
     background-color: var(--color-1);
-    width: 100vw;
+    width: 102vw;
     margin-left: calc(-2vw*3);
     height: 65px;
     border-bottom: 8px solid var(--color-2)

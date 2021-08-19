@@ -34,8 +34,8 @@ html, body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.6;
     color: var(--color-2);
-    overflow-x: hidden !important;
     background-color: var(--color-3);
+    overflow-x: hidden !important;
     width: auto !important;
 }
 

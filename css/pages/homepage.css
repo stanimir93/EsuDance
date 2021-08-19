@@ -152,15 +152,16 @@ so when hovered they zoom in but don't push the other images away */
 .homepage-video-container div{
     padding: var(--container-padding-1);   
     background-color: var(--color-4);
-    width: 100vw;
-    display: flex;
-    justify-content: center;
     
 }
-.homepage-video-container {
-    padding-top: 56.25%;
-    width: 100%;
+.homepage-video-container div {
 
+    height: auto;
+}
+
+.homepage-video-container iframe {  
+    width: calc(100vw * 0.8);
+    height: calc(56.25vw * 0.8);
 }
 
 
