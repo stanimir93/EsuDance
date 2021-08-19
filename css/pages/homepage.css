@@ -117,7 +117,6 @@ so when hovered they zoom in but don't push the other images away */
     background-position: center;
     transition: all 0.4s;
     cursor: pointer;
-    %
 }
 
 /* Zoom on hover  */
@@ -150,7 +149,7 @@ so when hovered they zoom in but don't push the other images away */
 
 
 /* VIDEO CONTAINER */
-.homepage-video-container {
+.homepage-video-container div{
     padding: var(--container-padding-1);   
     background-color: var(--color-4);
     width: 100vw;
@@ -158,8 +157,10 @@ so when hovered they zoom in but don't push the other images away */
     justify-content: center;
     
 }
-.homepage-video-container iframe{
-    
+.homepage-video-container {
+    padding-top: 56.25%;
+    width: 100%;
+
 }
 
 
