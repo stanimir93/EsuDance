@@ -3,6 +3,7 @@
 const observer = new MutationObserver( function() {
     loadAddress();
     loadEmail();
+    console.log(document.querySelector('footer'))
     this.disconnect();
 })
 
