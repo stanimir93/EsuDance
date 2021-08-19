@@ -1,7 +1,9 @@
-// Fetch data - address and classes
+// Variables to store addresses and dance classes
 
 let contactDetails
 let classes
+
+// Fetch JSON - address and dance classes
 
 fetch('json/data.json')
 .then((response) => response.json())
