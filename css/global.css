@@ -10,7 +10,7 @@
     --color-2: hsl(0, 0%, 9%);
     --color-3: hsl(0, 0%, 100%);
     --color-3a: hsla(0, 0%, 0%, 0.8);
-    --color-4: hsl(0 , 0% , 98%);
+    --color-4: hsl(0 , 0% , 97%);
     
     
     --container-padding-1: calc(1.7vw*3);
@@ -37,6 +37,10 @@ body {
     color: var(--color-2);
     overflow-x: hidden;
     background-color: var(--color-3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
     
 }
