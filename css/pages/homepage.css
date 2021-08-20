@@ -79,8 +79,7 @@ main {
 /* GALLERY CONTAINER */
 
 .homepage-gallery-container {
-    padding: var(--container-padding-2) var(--container-padding-2);    
-    
+    padding: var(--container-padding-2) var(--container-padding-1);    
 }
 
 h2 {
@@ -93,7 +92,6 @@ h2 {
 .homepage-gallery-container > div {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: var(--container-padding-2);
 }
 
 /* Wrap images with a div that prevents overflow,
@@ -102,6 +100,7 @@ so when hovered they zoom in but don't push the other images away */
 .wrapper-image-container {
     height: 40vw;
     width: 40vw;
+    margin: 15px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -151,11 +150,11 @@ so when hovered they zoom in but don't push the other images away */
 /* VIDEO CONTAINER */
 .homepage-video-container {
     background-color: var(--color-4);
-    grid-column: 2 / 3;
+    
 }
 .homepage-video-container div {
+
     height: auto;
-    width: 100%;
 }
 
 .homepage-video-container iframe {  
