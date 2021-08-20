@@ -148,8 +148,6 @@ so when hovered they zoom in but don't push the other images away */
     background-image: url("../../images/gallery/studio/studio-2.webp");
 }
 
-
-
 /* VIDEO CONTAINER */
 .homepage-video-container {
     background-color: var(--color-4);
@@ -158,12 +156,13 @@ so when hovered they zoom in but don't push the other images away */
 .homepage-video-container div {
     height: auto;
     width: 100vw;
-    margin: auto;
 }
 
 .homepage-video-container iframe {  
+    margin: auto;
     width: 94vw;
     height: 52.88vw;
 }
+
 
 /* ADDRESS CONTAINER */
