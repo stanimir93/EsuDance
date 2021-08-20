@@ -82,7 +82,7 @@ main {
     margin: auto;
 }
 
-h2 {
+.homepage-banner-container h2 {
     text-align: center;
     padding-bottom: var(--container-padding-1);
 }
