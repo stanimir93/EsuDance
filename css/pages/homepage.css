@@ -100,7 +100,6 @@ so when hovered they zoom in but don't push the other images away */
 .wrapper-image-container {
     height: 40vw;
     width: 40vw;
-    margin: 15px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -148,12 +147,13 @@ so when hovered they zoom in but don't push the other images away */
 
 
 /* VIDEO CONTAINER */
-.homepage-video-container div {
+.homepage-video-container {
     background-color: var(--color-4);
+    width: 100%;
+    gri
     
 }
 .homepage-video-container div {
-
     height: auto;
 }
 
