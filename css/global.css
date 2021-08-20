@@ -13,9 +13,9 @@
     --color-4: hsl(0 , 0% , 97%);
     
     
-    --container-padding-1: 5.1vw;
-    --container-padding-2: calc(1.7vw*3.5);
-    --container-padding-3: calc(50px);
+    --container-padding-1: 5vw;
+    --container-padding-2: 6vw;
+    --container-padding-3: 50px;
     
     font-size: 10px;
     
