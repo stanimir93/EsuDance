@@ -93,6 +93,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--container-padding-2);
+    grid
 }
 
 /* Wrap images with a div that prevents overflow,
@@ -150,7 +151,7 @@ so when hovered they zoom in but don't push the other images away */
 /* VIDEO CONTAINER */
 .homepage-video-container {
     background-color: var(--color-4);
-    grid-column: 1 / 3;
+    grid-column: 2 / 3;
 }
 .homepage-video-container div {
     height: auto;
