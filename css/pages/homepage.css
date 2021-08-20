@@ -93,10 +93,8 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--container-padding-1);
-    align-items: center;
+    align-items: end;
     justify-items: center;
-    
-    
 }
 
 /* Wrap images with a div that prevents overflow,
@@ -149,6 +147,7 @@ so when hovered they zoom in but don't push the other images away */
 .wrapper-image-container:nth-child(6) .image-container {
     background-image: url("../../images/gallery/studio/studio-2.webp");
 }
+
 
 
 /* VIDEO CONTAINER */
