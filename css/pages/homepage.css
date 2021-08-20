@@ -79,7 +79,8 @@ main {
 /* GALLERY CONTAINER */
 
 .homepage-gallery-container {
-    padding: var(--container-padding-2) var(--container-padding-1);    
+    padding: var(--container-padding-2) var(--container-padding-1); 
+    margin: auto;
 }
 
 h2 {
