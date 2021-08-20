@@ -168,10 +168,15 @@ so when hovered they zoom in but don't push the other images away */
 
 /* ADDRESS CONTAINER */
 
+.homepage-address-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .homepage-map-container {
   background-color: var(--color-1);
-  width: 100vw;
-  height: auto;
   padding: var(--color-1);
 }
 
