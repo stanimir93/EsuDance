@@ -180,14 +180,15 @@ so when hovered they zoom in but don't push the other images away */
   padding: var(--color-1);
   width: 100vw;
   height: calc(300px + 12vw)
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Set the size of the div element that contains the map */
 #map {
   width: calc(100vw * 0.857);
   height: 300px;
-  margin: 6vw auto;
   /* The height is 400 pixels */
 
 }
