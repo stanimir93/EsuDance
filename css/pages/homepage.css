@@ -158,7 +158,7 @@ so when hovered they zoom in but don't push the other images away */
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    align-items: center;
     justify-items: center;
 }
 
