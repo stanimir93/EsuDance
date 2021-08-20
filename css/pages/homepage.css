@@ -92,7 +92,6 @@ h2 {
 .homepage-gallery-container > div {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
 }
 
 /* Wrap images with a div that prevents overflow,
