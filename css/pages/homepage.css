@@ -93,7 +93,7 @@ h2 {
 .homepage-gallery-container > div {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 0px;
+    grid-gap: var(--container-padding-2);
     align-items: center;
     justify-content: center;
     width: 100%;
