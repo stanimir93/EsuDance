@@ -178,6 +178,7 @@ so when hovered they zoom in but don't push the other images away */
 .homepage-map-container {
   background-color: var(--color-1);
   padding: var(--color-1);
+  width: 100vw;
 }
 
 /* Set the size of the div element that contains the map */
