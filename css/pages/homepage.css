@@ -79,7 +79,7 @@ main {
 /* GALLERY CONTAINER */
 
 .homepage-gallery-container {
-    padding: var(--container-padding-2) var(--container-padding-1); 
+    padding: var(--container-padding-2); 
     margin: auto;
 }
 
@@ -165,6 +165,5 @@ so when hovered they zoom in but don't push the other images away */
     width: 94vw;
     height: 52.88vw;
 }
-
 
 /* ADDRESS CONTAINER */
