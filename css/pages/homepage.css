@@ -150,7 +150,6 @@ so when hovered they zoom in but don't push the other images away */
 /* VIDEO CONTAINER */
 .homepage-video-container div{
     background-color: var(--color-4);
-    width: 100vw;
     
 }
 .homepage-video-container div {
