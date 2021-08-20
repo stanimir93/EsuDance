@@ -5,6 +5,10 @@ main {
     justify-content: flex-start;
 }
 
+h2 {
+  text-align: center;
+}
+
 /* HERO CONTAINER */
 
 .homepage-hero-container {
