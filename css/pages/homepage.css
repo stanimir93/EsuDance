@@ -79,7 +79,8 @@ main {
 /* GALLERY CONTAINER */
 
 .homepage-gallery-container {
-    padding: var(--container-padding-2) var(--container-padding-1);    
+    padding: var(--container-padding-2) var(--container-padding-2);    
+    
 }
 
 h2 {
@@ -93,7 +94,6 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--container-padding-2);
-    grid
 }
 
 /* Wrap images with a div that prevents overflow,
