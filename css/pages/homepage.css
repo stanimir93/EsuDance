@@ -187,7 +187,7 @@ so when hovered they zoom in but don't push the other images away */
 #map {
   width: calc(100vw * 0.857);
   height: 300px;
-  margin: auto;
+  margin: 6vw auto;
   /* The height is 400 pixels */
 
 }
