@@ -106,7 +106,6 @@ so when hovered they zoom in but don't push the other images away */
     height: 40vw;
     width: 40vw;
     overflow: hidden;
-  
 }
 
 /* How should each image be displayed */
@@ -155,7 +154,7 @@ so when hovered they zoom in but don't push the other images away */
 .homepage-video-container div {
     height: auto;
     width: 100vw;
-    display: flex-direction;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -164,6 +163,5 @@ so when hovered they zoom in but don't push the other images away */
     width: 94vw;
     height: 52.88vw;
 }
-
 
 /* ADDRESS CONTAINER */
