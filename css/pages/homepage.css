@@ -160,6 +160,7 @@ so when hovered they zoom in but don't push the other images away */
     align-items: center;
 }
 
+
 .homepage-video-container iframe {  
     width: calc(100vw * 0.857);
     height: calc(56.25vw * 0.857);
