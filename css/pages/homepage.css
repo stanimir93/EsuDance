@@ -96,6 +96,7 @@ h2 {
     grid-gap: var(--container-padding-1);
     align-items: center;
     justify-items: center;
+    width: 100%;
 }
 
 /* Wrap images with a div that prevents overflow,
