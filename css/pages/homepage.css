@@ -92,7 +92,7 @@ h2 {
 .homepage-gallery-container > div {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 5px;
+    grid-gap: var(--container-padding-2);
 }
 
 /* Wrap images with a div that prevents overflow,
