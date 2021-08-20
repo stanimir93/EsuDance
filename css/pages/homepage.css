@@ -93,8 +93,9 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--container-padding-1);
-    align-items: ;: center;
+    align-items: center;
     justify-items: center;
+    
     
 }
 
