@@ -79,6 +79,8 @@ main {
 /* GALLERY CONTAINER */
 
 .homepage-gallery-container {
+    padding: var(--container-padding-2); 
+    margin: auto;
 }
 
 h2 {
@@ -88,15 +90,13 @@ h2 {
 
 /* Display images as a grid */
 
-.homepage-gallery-container {
-    padding: var(--container-padding-2); 
-    margin: auto;
+.homepage-gallery-container > div {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--container-padding-1);
     align-items: center;
     justify-items: center;
-    width: 100vw;
+    width: 100%;
 }
 
 /* Wrap images with a div that prevents overflow,
