@@ -154,6 +154,8 @@ so when hovered they zoom in but don't push the other images away */
 .homepage-video-container div {
     height: auto;
     width: 100vw;
+    margin-top: var(--container-padding-1);
+    margin-bottom: var(--container-padding-2);
     display: flex;
     justify-content: center;
     align-items: center;
