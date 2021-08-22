@@ -3,6 +3,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    margin-top: 0px;
 }
 
 h2 {
@@ -19,12 +20,13 @@ h2 {
     color: white;
 
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     justify-content: center;    
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+   
 }
 
 .homepage-hero-container hr {
@@ -34,7 +36,7 @@ h2 {
     border-width: 1px;
 }
 
-.homepage-hero-container button {
+.homepage-hero-container a {
     margin: 3rem;
     height: 5.4rem;
     width: 14rem;
@@ -44,15 +46,19 @@ h2 {
     background-color: var(--color-1);
     color: var(--color-2);
     transition: all 0.4s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.homepage-hero-container button:hover {
+.homepage-hero-container a:hover {
     color: var(--color-1);
     background-color: var(--color-2);
     text-decoration: underline;    
 }
 
-.homepage-hero-container button:active {
+.homepage-hero-container a:active {
     opacity: 0.4;
 }
 
