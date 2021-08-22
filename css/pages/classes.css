@@ -1,5 +1,17 @@
 section:nth-child(odd) {
+}
+
+section > div:first-child {
     background-color: var(--color-1);
+
+}
+section > div:first-child h3 {
+    text-align: center;
+    margin-top: -15px;
+}
+
+section h2 {
+    text-align: center
 }
 
 .card {
