@@ -11,14 +11,14 @@
 }
 
 .dance-class-icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card img {
     width: 25vw;
+    height: 25vw;
+    max-height: 140px;
+    /* border-radius: 50%; */
+    background-image: url("../../images/icons/mini-balerinas.jpg");
 }
+    
+
 
 .dance-class-info-container {
 
