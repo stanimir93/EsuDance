@@ -1,10 +1,12 @@
 section:nth-child(odd) {
+    background-color: var(--color-1);
 }
 
 section > div:first-child {
-    background-color: var(--color-1);
-
+    color: var(--color-2) 
 }
+
+
 section > div:first-child h3 {
     text-align: center;
     margin-top: -15px;
@@ -15,10 +17,14 @@ section h2 {
 }
 
 .card {
+    background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--container-padding-1);
+    margin: 10px var(--container-padding-1);
+    padding: 10px;
+    border-radius: 10px;
+    /* box-shadow: 1px 1px 5px; */
 
 }
 
