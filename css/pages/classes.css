@@ -1,0 +1,31 @@
+.card {
+    display: flex;
+    padding: var(--container-padding-1);
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.card > div {
+    margin-right: 10px;
+}
+
+.dance-class-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    width: 25vw;
+}
+
+.dance-class-info-container {
+
+}
+
+.dance-class-button-container {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 0px;
+}
