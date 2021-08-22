@@ -1,3 +1,7 @@
+section:nth-child(odd) {
+    background-color: var(--color-1);
+}
+
 .card {
     display: flex;
     justify-content: space-between;
@@ -11,21 +15,20 @@
 }
 
 .dance-class-icon-container {
-    width: 25vw;
-    height: 25vw;
-    max-height: 140px;
-    /* border-radius: 50%; */
-    background-image: url("../../images/icons/mini-balerinas.jpg");
+    background-position: center;
 }
-    
 
+.card img {
+    object-fit: contain;
+    width: 22vw;
+    max-width: 140px;
+    border-radius: 50%;
+}
 
 .dance-class-info-container {
-
+    
 }
 
 .dance-class-button-container {
-    display: flex;
-    align-items: flex-end;
-    margin-right: 0px;
+    float: right
 }
