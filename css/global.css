@@ -3,15 +3,18 @@
 
 :root {
     --color-1: hsl(28, 12%, 87%);
+    --color-1a: hsla(28, 12%, 87%, 0.85);
     --color-2: hsl(0, 0%, 9%);
     --color-3: hsl(0, 0%, 100%);
     --color-3a: hsla(0, 0%, 0%, 0.8);
     --color-4: hsl(0 , 0% , 97%);
+    --color-5: rgb(235, 235, 235);
+    --color-6: rgb(245, 245, 245);
+
     
-    
-    --container-padding-1: 5vw;
-    --container-padding-2: 6vw;
-    --container-padding-3: 50px;
+    --space-1: 5vw;
+    --space-2: 6vw;
+    --space-3: 50px;
     
     font-size: 10px;
     
@@ -66,8 +69,6 @@ h4 {
 }
 
 
-
-
 main {
     max-width: 1100px;
     margin-top: 100px;
@@ -77,3 +78,7 @@ main {
 address {
     font-style: normal;
 }
+
+/* Use for hiding elements */
+
+

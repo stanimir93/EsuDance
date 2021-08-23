@@ -24,7 +24,40 @@
 "classes": {
     
     
-"BALLET_AND_TAP_DANCE_FOR_MINIS": {
+"Ballet_and_Tap_Dance_for_Minis": {
+
+    "status": "active",
+    
+    "age": "4 - 7 years old",
+    
+    "class_name": "Ballet and Tap Dance for Minis",
+
+    "short_class_name": "Ballet and Tap Dance",
+    
+    "description": "This class focuses on Ballet and Tap dance techniques and performance. We use fun ways for developing children&rsquo;s creativity, musicality, and spatial awareness while spending time with friends. In the class, there are being used props that help children with visual, auditory, and kinaesthetic learning.",
+    
+    "short_description": "Learn the basics of ballet and tap, while having fun with your fellow dancers.",
+
+    "timetable": [
+
+        {
+            "day_and_time": ["", ""],
+
+            "location": "",
+
+            "exception_note": "No classes during school holiday week 11.11.2011"
+        }
+        
+    ],
+
+    "price": "£32 per month (4 weeks)",
+
+    "dress_code": "Ballet leotard, tights, ballet shoes, skirt (optional), tap shoes, water bottle",
+
+    "banner_url": "images/banners/ballet-minis.jpg"
+
+},
+"name": {
 
     "status": "recruiting",
 
@@ -37,7 +70,7 @@
     "timetable": [
 
         {
-            "day_time": ["Monday", "17:00"],
+            "day_and_time": ["Monday", "17:00"],
 
             "location": "",
 

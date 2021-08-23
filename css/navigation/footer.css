@@ -4,7 +4,7 @@
 footer {
     display: flex;
     flex-direction: column;
-    padding: var(--container-padding-2) var(--container-padding-1) 0;
+    padding: var(--space-2) var(--space-1) 0;
     justify-content: space-between;
     color: var(--color-1);
     background-color: var(--color-2);
@@ -24,7 +24,7 @@ footer .menu-container ul {
 
 footer .menu-container li {
     list-style-type: none;
-    padding-right: var(--container-padding-1);
+    padding-right: var(--space-1);
 }
 footer .menu-container li:hover {
     text-decoration-color: var(--color-1);
@@ -48,11 +48,11 @@ footer hr {
 /* Footer middle area with address and about us*/
 
 footer .middle-container {
-    padding-bottom: var(--container-padding-1);
+    padding-bottom: var(--space-1);
 }
 
 footer h3 {
-    margin: var(--container-padding-1) 0 1rem;
+    margin: var(--space-1) 0 1rem;
     color: var(--color-1);
 }
 
