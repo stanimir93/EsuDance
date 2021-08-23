@@ -92,9 +92,9 @@ section > div:first-child h3 {
     background-color: red;
     font-size: 1.3rem;
     padding: 1px 100px 2px 115px;
-    top: 50px;
-    left: -100px;
-    transform: rotate(-41deg);
+    top: 45px;
+    left: -110px;
+    transform: rotate(-45deg);
 }
 
 .dance-class-info-container {
