@@ -83,6 +83,10 @@ section > div:first-child h3 {
     margin-right: 15px;
 }
 
+.card h4 {
+    margin-top: -5px;
+}
+
 /* Ribbon - Opening Soon */
 
 .opening-soon::before {
@@ -94,7 +98,7 @@ section > div:first-child h3 {
     font-weight: bold;
     padding: 1px 100px 2px 115px;
     top: 45px;
-    left: -115px;
+    left: -111px;
     transform: rotate(-45deg);
 }
 
