@@ -91,9 +91,10 @@ section > div:first-child h3 {
     color: var(--color-3);
     background-color: red;
     font-size: 1.3rem;
+    font-weight: bold;
     padding: 1px 100px 2px 115px;
     top: 45px;
-    left: -110px;
+    left: -115px;
     transform: rotate(-45deg);
 }
 
