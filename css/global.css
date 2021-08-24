@@ -7,12 +7,12 @@
     --color-2: hsl(0, 0%, 9%);
     --color-3: hsl(0, 0%, 100%);
     --color-3a: hsla(0, 0%, 0%, 0.8);
-    --color-4: hsl(0 , 0% , 97%);
+    --color-4: hsl(0 , 0% , 96%);
     --color-5: rgb(235, 235, 235);
     --color-6: rgb(245, 245, 245);
 
     
-    --space-1: 5vw;
+    --space-1: 4.5vw;
     --space-2: 6vw;
     --space-3: 50px;
     

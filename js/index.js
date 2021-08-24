@@ -93,8 +93,13 @@ fetch(`navigation/footer.html`)
 
 function loadAddress() {
     document.querySelectorAll('.address').forEach( (addressContainer) => {
-        addressContainer.innerHTML = 
-        `${contactDetails.address_line1}<br>${contactDetails.street}<br>${contactDetails.postcode}<br>${contactDetails.city}`;
+        if (addressContainer.classList.contains('one-line')){
+            addressContainer.innerHTML = 
+            `${contactDetails.address_line1}, ${contactDetails.street}, ${contactDetails.postcode}, ${contactDetails.city}`;
+        } else {
+            addressContainer.innerHTML = 
+            `${contactDetails.address_line1}<br>${contactDetails.street}<br>${contactDetails.postcode}<br>${contactDetails.city}`;
+        }
     })
 }
 function loadEmail() {
