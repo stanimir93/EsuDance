@@ -164,12 +164,15 @@ so when hovered they zoom in but don't push the other images away */
 /* VIDEO CONTAINER */
 .homepage-video-container {
     background-color: var(--color-4);
+    padding: var(--space-2) var(--space-2) var(--space-3);
 }
-.homepage-video-container div {
+
+.homepage-video-container div:nth-child(1) {
+    padding-bottom: var(--space-2);
+}
+.homepage-video-container div:nth-child(2) {
     height: auto;
     width: 100vw;
-    margin-top: var(--space-3);
-    margin-bottom: var(--space-3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,7 +190,7 @@ so when hovered they zoom in but don't push the other images away */
 
 .homepage-address-container {
     padding: var(--space-2) var(--space-2) var(--space-3);
-    background: linear-gradient(to bottom, var(--color-3) 55%, var(--color-1) 55% );
+    background: linear-gradient(to bottom, var(--color-3) 60%, var(--color-1) 60% );
 }
 
 .homepage-address-container > div:first-child{
