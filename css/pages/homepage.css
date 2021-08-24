@@ -191,9 +191,9 @@ so when hovered they zoom in but don't push the other images away */
 
 }
 
-.homepage-address-container >div:first-child{
+.homepage-address-container > div:first-child{
     width: 100vw;
-    height: calc(30vw + 100px);
+    height: calc(29vw + 100px);
     padding: var(--space-2);
     padding-top: var(--space-1);
 }
@@ -212,7 +212,7 @@ so when hovered they zoom in but don't push the other images away */
 /* Width and height of map */
 
 .map {
-    height: calc(37vw);
+    height: 36vw;
 }
 
 .map iframe{
