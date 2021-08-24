@@ -89,6 +89,7 @@ h2 {
 
 .homepage-gallery-container {
     padding: var(--space-2); 
+    padding-bottom: var(--space-3);
     margin: auto;
 }
 
@@ -109,7 +110,7 @@ h2 {
 }
 
 .homepage-gallery-container h2 {
-    padding-bottom: var(--space-1);
+    padding-bottom: var(--space-2);
 }
 
 /* Wrap images with a div that prevents overflow,
@@ -167,8 +168,8 @@ so when hovered they zoom in but don't push the other images away */
 .homepage-video-container div {
     height: auto;
     width: 100vw;
-    margin-top: var(--space-2);
-    margin-bottom: var(--space-2);
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -185,17 +186,14 @@ so when hovered they zoom in but don't push the other images away */
 /* ADDRESS CONTAINER */
 
 .homepage-address-container {
-
-  background-color: var(--color-3);
-  position: relative;
-
+    padding: var(--space-2) var(--space-2) var(--space-3);
+    background: linear-gradient(to bottom, var(--color-3) 55%, var(--color-1) 55% );
 }
 
 .homepage-address-container > div:first-child{
     width: 100vw;
-    height: calc(29vw + 100px);
     padding: var(--space-2);
-    padding-top: var(--space-1);
+    padding-top: 0px;
 }
 
 
@@ -205,23 +203,19 @@ so when hovered they zoom in but don't push the other images away */
 
 .homepage-map-container {
   width: 100vw;
-  background-color: var(--color-1);
 }
 
+.map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* Width and height of map */
 
-.map {
-    height: 36vw;
-}
-
 .map iframe{
-    position: absolute;
-    bottom: var(--space-2);
-    left: 50%;
-    transform: translate(-50%, 0%);
     width: calc(100vw * 0.857);
-    height: calc(56.25vw * 0.857);
+    height: calc(66vw * 0.857);
     box-shadow: 0 7px 5px -5px rgba(0,0,0,.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
 
 }
