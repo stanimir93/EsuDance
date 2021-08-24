@@ -11,8 +11,12 @@
 // })
 
 
+// LOOK FOR HAS ON PAGE LOAD
 
-// LISTEN ON PAGE LOAD
+// Dispatch event upon page load - this will trigger the listeners to window.location to display the right page
+
+
+// LISTEN ON HASHCHANGE
 
 window.addEventListener('hashchange', updateClassesPage)
 

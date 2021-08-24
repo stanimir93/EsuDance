@@ -2,6 +2,7 @@
 1. Functions to load data on header and footer are created
 2. MutationObserver is listenning of loading the header and footer
 3a. Address and Classes data are fetched and parsed. 
+3a1.Hash event is triggered for any listenners (e.g. classes page)
 3b. Header and Footer are fetched, parsed, rendered
 4. Rendering triggers MutationObserver
     a. If data is ready, it is added to page and footer
@@ -71,7 +72,8 @@ fetch('json/data.json')
     contactDetails = data.contactDetails;
     danceClasses = data.classes;
     dataParsed = true;
-    document.dispatchEvent(dataReady)
+    window.dispatchEvent(new HashChangeEvent('hashchange'))
+    document.dispatchEvent(dataReady);
 }));
 
 
