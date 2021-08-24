@@ -1,6 +1,18 @@
+// Function to populate cards on page
+
+// Object.keys(danceClasses).forEach((danceClass) => {
+
+//     let card = document.querySelector('.card-wrapper').cloneNode(true);
+//     card.querySelector('h3').textContent = danceClasses.Ballet_and_Tap_Dance_for_Minis.short_class_name;
+//     card.querySelector('p').innerHTML = danceClasses.Ballet_and_Tap_Dance_for_Minis.short_description;
+//     card.querySelector('.dance-class-button-container a').attributes.href.value = danceClasses.Ballet_and_Tap_Dance_for_Minis.url;
+//     console.log(card)
+
+// })
+
+
 
 // LISTEN ON PAGE LOAD
-// CREATE AUTOMATIC POPULATION OF ALL CLASSES
 
 window.addEventListener('hashchange', updateClassesPage)
 

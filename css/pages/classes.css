@@ -47,10 +47,6 @@ section h2 {
     text-align: center;
 }
 
-section > div:first-child a {
-    text-decoration: none;
-}
-
 /* Age group subheading */
 
 section > div:first-child h3 {
@@ -83,9 +79,6 @@ section > div:first-child h3 {
     margin-right: 15px;
 }
 
-.card h4 {
-    margin-top: -5px;
-}
 
 /* Ribbon - Opening Soon */
 
@@ -96,10 +89,14 @@ section > div:first-child h3 {
     background-color: red;
     font-size: 1.3rem;
     font-weight: bold;
-    padding: 1px 100px 2px 115px;
-    top: 45px;
-    left: -111px;
+    padding: 0px 200px 0px 200px;
+    top: 23px;
+    left: -209px;
     transform: rotate(-45deg);
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .dance-class-info-container {
