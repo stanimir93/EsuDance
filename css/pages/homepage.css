@@ -26,7 +26,10 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-   
+}
+
+.homepage-hero-container p {
+    max-width: 90vw;
 }
 
 .homepage-hero-container hr {
