@@ -51,13 +51,12 @@ function updateClassesPage(ev) {
         document.querySelector('main').appendChild(clone)
         document.querySelector('.classpage-container').classList.add('active');
 
-        
-        
 
+    // Remove class page div from the DOM and make the classes visible again.
 
     } else {
+        document.querySelector('main').removeChild(document.querySelector('.classpage-container'))
         document.querySelector('.all-classes-container').classList.add('active');
 
     }
-    console.log(danceClassName)
 }
