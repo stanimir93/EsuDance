@@ -23,7 +23,7 @@ function buildGallery(photos, videos) {
 
         let container = document.createElement('div');
         container.classList.add('gallery-image-container');
-        container.style.backgroundImage = `url('../../images/gallery/${photoName}')`;
+        container.style.backgroundImage = `url('images/gallery/${photoName}')`;
 
         wrapper.appendChild(container)
 
