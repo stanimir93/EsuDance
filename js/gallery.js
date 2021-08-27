@@ -34,7 +34,7 @@ function buildGallery(photos, videos) {
 
     videos?.forEach( (videoURL) => {
         let wrapper = document.createElement('div');
-        wrapper.classList.add('gallery-media-wrapper', 'visible');
+        wrapper.classList.add('gallery-media-wrapper');
         wrapper.dataset.type = 'video'
 
         let container = document.createElement('div');
@@ -53,37 +53,41 @@ function buildGallery(photos, videos) {
 
 // Filter Gallery
 
-document.querySelectorAll('.tab')
+document.querySelectorAll('.tabs > button ')
     .forEach( button => button.addEventListener('click', filterGallery))
 
 function filterGallery(ev) {
     ev.preventDefault();
-    let mediaTarget = ev.target.dataset.target;
+    let mediaTarget = ev.currentTarget.dataset.target;
+    document.querySelector('.active').classList.remove('active');
+    ev.currentTarget.classList.add('active');
     
     /* If selected all - add class visible and after time out make them hidden
     I use timeout so the animation gets triggered on all photos*/
 
-    if (mediaTarget === 'all') {
-        document.querySelectorAll('[data-type]')
-        .forEach( media => {
-            media.classList.remove('visible'); 
-            setTimeout( () => media.classList.add('visible'), 0) 
-        })
+    // if (mediaTarget === 'all') {
+    //     document.querySelectorAll('[data-type]')
+    //     .forEach( media => {
+    //         media.classList.remove('visible'); 
+    //         setTimeout( () => media.classList.add('visible'), 0) 
+    //     })
 
-    } 
+    // } 
    
     //If selected a sertain media type - hide the other and show the current one 
 
-    else {
-        document.querySelectorAll('[data-type]')
-            .forEach( media => {
-                if (media.dataset.type === mediaTarget) {
-                    media.classList.add('visible');
-                } else {
-                    media.classList.remove('visible');
-                }
-            })
-    }
+    // else {
+    document.querySelectorAll('[data-type]')
+        .forEach( media => {
+            if (media.dataset.type === mediaTarget) {
+                media.classList.add('visible');
+            } else {
+                media.classList.remove('visible');
+            }
+        })
+    // }
+
+    // console.log(ev.currentTarget)
 }
 
 // Create Gallery
