@@ -1,25 +1,25 @@
 // Fetch list of images to be loaded
 
 let videos;
-let photos;
+let images;
 
 fetch('json/gallery.json')
 .then( response => response.json())
 .then ( data => {
     videos = data["video_urls"];
-    photos = data["photo_names"];
-    buildGallery(photos, videos);
+    images = data["photo_names"];
+    buildGallery(images, videos);
 })
 
 
 // Build gallery images
-function buildGallery(photos, videos) {
+function buildGallery(images, videos) {
     let df = new DocumentFragment();
     
-    photos?.forEach( (photoName) => {
+    images?.forEach( (photoName) => {
         let wrapper = document.createElement('div');
         wrapper.classList.add('gallery-image-wrapper', 'visible');
-        wrapper.dataset.type = 'photo'
+        wrapper.dataset.type = 'image'
 
         let container = document.createElement('div');
         container.classList.add('gallery-image-container');
@@ -61,10 +61,10 @@ function filterGallery(ev) {
     let mediaTarget = ev.target.dataset.target;
     
     /* If selected all - add class visible and after time out make them hidden
-    I use timeout so the animation gets triggered on all photos*/
+    I use timeout so the animation gets triggered on all images*/
 
     if (mediaTarget === 'all') {
-        document.querySelectorAll('.gallery-image-wrapper')
+        document.querySelectorAll('[data-type]')
         .forEach( media => {
             media.classList.remove('visible'); 
             setTimeout( () => media.classList.add('visible'), 0) 
@@ -75,13 +75,12 @@ function filterGallery(ev) {
     //If selected a sertain media type - hide the other and show the current one 
 
     else {
-        document.querySelectorAll('.gallery-image-wrapper')
+        document.querySelectorAll('[data-type]')
             .forEach( media => {
                 if (media.dataset.type === mediaTarget) {
                     media.classList.add('visible');
                 } else {
                     media.classList.remove('visible');
-                    console.log(media.dataset.type)
                 }
             })
     }
