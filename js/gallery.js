@@ -35,7 +35,7 @@ function buildGallery(photos, videos) {
     videos?.forEach( (videoURL) => {
         let wrapper = document.createElement('div');
         wrapper.classList.add('gallery-video-wrapper', 'visible');
-        wrapper.dataset.type = 'photo'
+        wrapper.dataset.type = 'video'
 
         let container = document.createElement('div');
         container.classList.add('gallery-video-container');
