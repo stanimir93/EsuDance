@@ -1,0 +1,53 @@
+/* Gallery of images and videos */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    padding: var(--space-2);
+}
+
+/* Div wrapping the image container */
+
+.gallery-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vw;
+    width: 40vw;
+    overflow: hidden;
+    display: none;
+}
+
+/* Div containing the image */
+
+.gallery-image-container {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+/* Zoom on hover */
+
+.gallery-image-container:hover {
+    width: 110%;
+    height: 110%;
+}
+
+/* Hide images */
+
+.visible {
+    display: flex;
+    transition-property: opacity;
+    animation-name: fade-out-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes fade-out-in {
+    0% { opacity: 0 ;}
+    100% { opacity: 1; }
+}

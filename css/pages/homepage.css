@@ -146,22 +146,22 @@ so when hovered they zoom in but don't push the other images away */
 /* Choose images to be displayed */
 
 .wrapper-image-container:nth-child(1) .image-container {
-    background-image: url("../../images/gallery/studio/stuido-1.webp");
+    background-image: url("../../images/gallery/studio-1.webp");
 }
 .wrapper-image-container:nth-child(2) .image-container {
-    background-image: url("../../images/gallery/studio/studio-2.webp");
+    background-image: url("../../images/gallery/studio-2.webp");
 }
 .wrapper-image-container:nth-child(3) .image-container {
-    background-image: url("../../images/gallery/studio/stuido-1.webp");
+    background-image: url("../../images/gallery/studio-1.webp");
 }
 .wrapper-image-container:nth-child(4) .image-container {
-    background-image: url("../../images/gallery/studio/studio-2.webp");
+    background-image: url("../../images/gallery/studio-2.webp");
 }
 .wrapper-image-container:nth-child(5) .image-container {
-    background-image: url("../../images/gallery/studio/stuido-1.webp");
+    background-image: url("../../images/gallery/studio-1.webp");
 }
 .wrapper-image-container:nth-child(6) .image-container {
-    background-image: url("../../images/gallery/studio/studio-2.webp");
+    background-image: url("../../images/gallery/studio-2.webp");
 }
 
 /* VIDEO CONTAINER */
