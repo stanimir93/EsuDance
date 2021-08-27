@@ -3,7 +3,7 @@
 let videos;
 let photos;
 
-fetch('../json/gallery.json')
+fetch('json/gallery.json')
 .then( response => response.json())
 .then ( data => {
     videos = data["video_urls"];
@@ -45,6 +45,7 @@ function buildGallery(photos, videos) {
         wrapper.appendChild(container)
 
         df.appendChild(wrapper)
+        console.log(container)
     })
     
     document.querySelector('.gallery-grid').appendChild(df)
