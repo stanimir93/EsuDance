@@ -9,7 +9,7 @@
 
 /* Div wrapping the image container */
 
-.gallery-image-wrapper {
+[data-type="photo"] {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,21 +36,22 @@
     height: 110%;
 }
 
-/*  */
-
-[data-type] {
-    display: none;
-}
-
 /* Div wrapping videos */
 
-.gallery-video-wrapper {
+[data-type="video"] {
     grid-column: 1 / 3;
     display: flex;
     align-items: center;
     justify-content: center;
     
 }
+
+/* Hiding gallery items */
+
+[data-type] {
+    display: none;
+}
+
 
 .gallery-video-container iframe {
     width: calc(80vw + var(--space-2));

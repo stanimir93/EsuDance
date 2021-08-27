@@ -1,25 +1,25 @@
 // Fetch list of images to be loaded
 
 let videos;
-let images;
+let photos;
 
 fetch('json/gallery.json')
 .then( response => response.json())
 .then ( data => {
     videos = data["video_urls"];
-    images = data["photo_names"];
-    buildGallery(images, videos);
+    photos = data["photo_names"];
+    buildGallery(photos, videos);
 })
 
 
 // Build gallery images
-function buildGallery(images, videos) {
+function buildGallery(photos, videos) {
     let df = new DocumentFragment();
     
-    images?.forEach( (photoName) => {
+    photos?.forEach( (photoName) => {
         let wrapper = document.createElement('div');
-        wrapper.classList.add('gallery-image-wrapper', 'visible');
-        wrapper.dataset.type = 'image'
+        wrapper.classList.add('gallery-media-wrapper', 'visible');
+        wrapper.dataset.type = 'photo'
 
         let container = document.createElement('div');
         container.classList.add('gallery-image-container');
@@ -34,7 +34,7 @@ function buildGallery(images, videos) {
 
     videos?.forEach( (videoURL) => {
         let wrapper = document.createElement('div');
-        wrapper.classList.add('gallery-video-wrapper', 'visible');
+        wrapper.classList.add('gallery-media-wrapper', 'visible');
         wrapper.dataset.type = 'video'
 
         let container = document.createElement('div');
@@ -61,7 +61,7 @@ function filterGallery(ev) {
     let mediaTarget = ev.target.dataset.target;
     
     /* If selected all - add class visible and after time out make them hidden
-    I use timeout so the animation gets triggered on all images*/
+    I use timeout so the animation gets triggered on all photos*/
 
     if (mediaTarget === 'all') {
         document.querySelectorAll('[data-type]')
