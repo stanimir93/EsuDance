@@ -153,6 +153,7 @@
     animation-name: fade-out-in;
     animation-duration: 0.5s;
     animation-timing-function: ease-in;
+
 }
 
 
@@ -202,7 +203,7 @@
     position: relative;
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    margin: 0px 4vw;
+    /* margin: 0px 4vw; */
 }
 
 /* .large-image {

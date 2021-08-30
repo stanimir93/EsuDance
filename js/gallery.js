@@ -208,6 +208,7 @@ const GALLERY = {
 
             scrollLargePhotoIntoView(photo);
             setBackgroundImage(index, photo)
+            document.querySelector('body').style.overflowY = 'hiddlen';
         }
 
         // Scroll clicked photo into view
@@ -233,6 +234,7 @@ const GALLERY = {
                     downloadButton.download = GALLERY.largePhotos[index].replace(' (Large)', '');
                     
                 });
+
                 
                 // photo.style.backgroundImage = `url('images/gallery/${GALLERY.largePhotos[index]}')`
         } 
@@ -285,12 +287,44 @@ const GALLERY = {
         let closeFullScreen = function() {
             document.querySelector('.full-screen-container').classList.remove('active');
         }
+
+
+        let changePhotosWithArrows = function() {
+
+            
+            let moveImages = function(ev) {
+                if (document.querySelector('.full-screen-container.active')) {
+                    let imagesWrapper = document.querySelector('.large-images-wrapper')
+                    switch (ev.code) {
+                        case 'ArrowRight':
+                            imagesWrapper.scrollBy(imagesWrapper.scrollWidth / GALLERY.largePhotos.length, 0)
+                            break;
+                            case 'ArrowLeft':
+                            imagesWrapper.scrollBy(-1 * imagesWrapper.scrollWidth / GALLERY.largePhotos.length, 0)
+                            break;
+                        case 'Escape':
+                            closeFullScreen();
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }
+
+            }
+            
+            
+            document.addEventListener('keyup', moveImages)
+        }
         
         document.querySelectorAll('.gallery-image-container').forEach(photo => photo.addEventListener('click', openFullScreen ));  
         document.querySelector('.close-button').addEventListener('click', closeFullScreen )
         setImageOnSwipe();
         imageCounter();
+        changePhotosWithArrows();
     },
+
+
 
     
     // Filter Gallery - Video / Photos 
