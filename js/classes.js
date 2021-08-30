@@ -49,10 +49,6 @@ const DANCE_CLASSES = {
 
     // update classes page on hashchange
     init: function() {
-        if (!window.location.hash) {
-            document.querySelector('.all-classes-container').classList.add('active');
-        }
-
 
         window.addEventListener('hashchange', DANCE_CLASSES.updateDanceClassesPage);
 
@@ -61,6 +57,13 @@ const DANCE_CLASSES = {
         window.dispatchEvent(new HashChangeEvent('hashchange'));
 
     }
+}
+
+
+function(){
+    if (!window.location.hash) {
+    document.querySelector('.all-classes-container').classList.add('active');
+        }
 }
 
 document.addEventListener('dataReady', DANCE_CLASSES.init);
