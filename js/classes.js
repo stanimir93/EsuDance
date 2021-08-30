@@ -11,6 +11,13 @@ How it works:
 
 const DANCE_CLASSES = {
 
+    //Shows all classes page on page load (they are hidden by default)
+    showAllClassesOnPageLoad: function(){
+        if (!window.location.hash) {
+        document.querySelector('.all-classes-container').classList.add('active');
+            }
+        },
+
     // hashchange event starts this function
     updateDanceClassesPage: function(ev) {
         ev.preventDefault();
@@ -50,20 +57,21 @@ const DANCE_CLASSES = {
     // update classes page on hashchange
     init: function() {
 
-        window.addEventListener('hashchange', DANCE_CLASSES.updateDanceClassesPage);
+        this.showAllClassesOnPageLoad();
+
+        document.addEventListener('dataReady', () => {
+
+            window.addEventListener('hashchange', DANCE_CLASSES.updateDanceClassesPage);
+
+            //hash change on page load
+            window.dispatchEvent(new HashChangeEvent('hashchange'));
+        });
+        
 
 
-        //hash change on page load
-        window.dispatchEvent(new HashChangeEvent('hashchange'));
 
     }
 }
 
 
-function(){
-    if (!window.location.hash) {
-    document.querySelector('.all-classes-container').classList.add('active');
-        }
-}
-
-document.addEventListener('dataReady', DANCE_CLASSES.init);
+DANCE_CLASSES.init();
