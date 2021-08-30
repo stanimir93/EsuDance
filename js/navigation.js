@@ -1,38 +1,38 @@
+/* Shrink navigation on scroll
 
+How it works:
+    1. Listen for scroll events
+    2. On scroll call setTimeout to shrink header at the end of the timer
+    3. Each scroll resets timer if timer is still running. (this is used to limit the firing rate of the shrinkNav function and optimize performance)
+    4. When the timer reaches the end the callback shinks the header.
+*/
 
+const NAVIGATION = {
 
-// Shrink navigation menu on scroll
+    shrinkNav: function() {
+        if (window.scrollY > 80) {
+            document.querySelector('header .logo').style.maxWidth = '120px'
+            document.querySelector('header .logo').style.padding = '0.75rem 1.5rem 0.25rem'
+        } else {
+            document.querySelector('header .logo').style.maxWidth = '140px'
+            document.querySelector('header .logo').style.padding = '1rem 1.5rem 0.5rem'
+        }
+    },
 
-window.addEventListener('scroll', debounce(shrinkNav));
+    
+    debounce: function(func){
+        let timer;
+        return () => {
+            if (timer) {
+                clearTimeout(timer);
+            }
+            timer = setTimeout(func, 25);
+        };
+    },
 
-function shrinkNav() {
-    if (window.scrollY > 80) {
-        document.querySelector('header .logo').style.maxWidth = '120px'
-        document.querySelector('header .logo').style.padding = '0.75rem 1.5rem 0.25rem'
-    } else {
-        document.querySelector('header .logo').style.maxWidth = '140px'
-        document.querySelector('header .logo').style.padding = '1rem 1.5rem 0.5rem'
+    init: function() {
+        window.addEventListener('scroll', this.debounce(this.shrinkNav));
     }
 }
 
-/* Reduce firing rate of shringNav on scrolling */
-
-function debounce(func){
-    let timer;
-    return () => {
-        if (timer) {
-            clearTimeout(timer);
-        }
-        timer = setTimeout(func, 25);
-    };
-}
-
-
-// Sub-menu - hide and how
-// document.getElementById('classes-nav-button').addEventListener('click', displayNavSubMenu);
-
-// function displayNavSubMenu(ev){
-//     ev.preventDefault();
-//     document.querySelector('header .sub-menu').classList.toggle('show')
-// }
-
+NAVIGATION.init();

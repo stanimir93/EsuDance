@@ -4,6 +4,7 @@
 :root {
     --color-1: hsl(28, 12%, 87%);
     --color-1a: hsla(28, 12%, 87%, 0.85);
+    --color-1b: rgba(226, 222, 218, 0.15);
     --color-2: hsl(0, 0%, 9%);
     --color-3: hsl(0, 0%, 100%);
     --color-3a: hsla(0, 0%, 0%, 0.8);

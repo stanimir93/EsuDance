@@ -1,115 +1,115 @@
 /* 
-1. Functions to load data on header and footer are created
-2. MutationObserver is listenning of loading the header and footer
-3a. Address and Classes data are fetched and parsed. 
-3a1.Hash event is triggered for any listenners (e.g. classes page)
-3b. Header and Footer are fetched, parsed, rendered
-4. Rendering triggers MutationObserver
-    a. If data is ready, it is added to page and footer
-    b. If data is not ready, we are waiting for an event to tell us the data is ready
+APP will fetch and render header footer and website data 
 
-
-Header and footer are fetched, so there is not need to add them to each html page manually
-Address and Classes data are fetched, so there is not need to edit them on each page individually
-
+How it works:
+    1. Fetch website data (dance classes, contact details) that will be used throughout the website
+    2. Fetch and rended header and footer html files
+    3. Once header and footer are rendered a mutation observer will trigger and will:
+        3.1. load the contact details on the DOM using '.address' or '.email' class names.
+        3.2. if contact details are not fetched yet, it start listenning for the dataReady event, and load the details onces fetched
 */
 
+const APP = {
 
+    // 1. WEBSITE DATA (dance classes and contact details)
 
-// OBSERVE FOR RENDERING OF HEADER AND FOOTER - to load addresses
+    contactDetails: null,
+    danceClasses: null,
+    dataParsed: false, // shows the data has been parsed, so funcitons needing it can use it straight away
 
-let observer = new MutationObserver( function() {  
+    // Fetch website data and anounce data is ready
+    fetchData: function () {
 
-        // if data parsed, load email addresses
-
-        if (dataParsed) {
-            loadAddress();
-            loadEmail();
-            this.disconnect();
-        } 
+        // In case data is still not ready for use, functions will listen for 'dataReady' event
+        let dataReady = new Event('dataReady'); 
         
-        // if data not parsed yet, create a listenner to run callback to load addresses
+        // Fetch and parse
+        fetch('json/data.json')
+        .then((response) => response.json())
+        .then((data => {
+            this.contactDetails = data.contactDetails;
+            this.danceClasses = data.classes;
+            this.dataParsed = true;
+            document.dispatchEvent(dataReady);
+        }));
+    },
 
-        else {
-            document.addEventListener('dataReady', function(){
+    // 2. HEADER & FOOTER HTML (fetch and render)
+
+    loadNavigation: function(){
+
+        fetch(`navigation/header.html`)
+        .then( (response) => {return response.text()})
+        .then( (header) => {
+            document.querySelector('header').innerHTML = header
+        })
+        fetch(`navigation/footer.html`)
+        .then( (response) => {return response.text()})
+        .then( (footer) => {
+            document.querySelector('footer').innerHTML = footer
+        })
+    },
+
+    // 3. LOAD CONTACT DETAILS
+    
+    /* Populate website with contact info once header and footer have been rendered
+    If contact details has not been fetched, listen for "dataReady" event */
+    loadContactInfo: function () {
+
+        //OBSERVE for header and footer rendering (then add the contact details to the address elements)
+        let observer = new MutationObserver( function() {  
+
+            // if contact datails are fetched and parsed, insert them into the DOM
+            if (APP.dataParsed) { 
+
                 loadAddress();
                 loadEmail();
                 this.disconnect();
+            } 
+            // if contact datails are not fetched and parsed, create a listenner to load them into DOM, once they are ready
+            else { 
+                document.addEventListener('dataReady', () =>{
+                    loadAddress();
+                    loadEmail();
+                    this.disconnect();
+                })
+            }
+        })
+
+        // Functions that load the contact details (address and email) onto the website
+        function loadAddress() {
+            document.querySelectorAll('.address').forEach( (addressContainer) => {
+                if (addressContainer.classList.contains('one-line')){
+                    addressContainer.innerHTML = 
+                    `${APP.contactDetails.address_line1}, ${APP.contactDetails.street}, ${APP.contactDetails.postcode}, ${APP.contactDetails.city}`;
+                } else {
+                    addressContainer.innerHTML = 
+                    `${APP.contactDetails.address_line1}<br>${APP.contactDetails.street}<br>${APP.contactDetails.postcode}<br>${APP.contactDetails.city}`;
+                }
             })
         }
-})
-
-// starting the observer
-
-observer.observe(document.querySelector('footer'),{childList: true})
-
-
-
-
-// FETCH AND PREPARE THE DATA
-
-
-// varialbes storing the data
-
-let contactDetails;
-let danceClasses;
-
-// variable to show that the data has been parsed
-
-let dataParsed = false; 
-
-// listenner to tell that the data has been parsed
-
-const dataReady = new Event('dataReady');
-
-// fetch and parse data
-// once done mark it in a variable
-// dispatch an event shouting that data is ready
-
-fetch('json/data.json')
-.then((response) => response.json())
-.then((data => {
-    contactDetails = data.contactDetails;
-    danceClasses = data.classes;
-    dataParsed = true;
-    window.dispatchEvent(new HashChangeEvent('hashchange'))
-    document.dispatchEvent(dataReady);
-}));
-
-
-// FETCH, PARSE, RENDER HEADER AND FOOTER
-
-fetch(`navigation/header.html`)
-.then( (response) => {return response.text()})
-.then( (header) => {
-    document.querySelector('header').innerHTML = header
-})
-fetch(`navigation/footer.html`)
-.then( (response) => {return response.text()})
-.then( (footer) => {
-    document.querySelector('footer').innerHTML = footer
-})
-
-
-// Functions to populate addess and email fields in the footer and on the page
-
-function loadAddress() {
-    document.querySelectorAll('.address').forEach( (addressContainer) => {
-        if (addressContainer.classList.contains('one-line')){
-            addressContainer.innerHTML = 
-            `${contactDetails.address_line1}, ${contactDetails.street}, ${contactDetails.postcode}, ${contactDetails.city}`;
-        } else {
-            addressContainer.innerHTML = 
-            `${contactDetails.address_line1}<br>${contactDetails.street}<br>${contactDetails.postcode}<br>${contactDetails.city}`;
+        function loadEmail() {
+            document.querySelectorAll('.email').forEach( (emailContainer) => {
+                emailContainer.textContent = `${APP.contactDetails.email}`;
+                emailContainer.setAttribute('href', `mailto:${APP.contactDetails.email}`)
+            })
         }
-    })
+
+        // starting the observer
+        observer.observe(document.querySelector('footer'),{childList: true});
+
+    },
+
+    // 4. INITIALIZE APP
+
+    init: function() {
+
+        this.fetchData();
+
+        this.loadNavigation();
+
+        this.loadContactInfo();
+    }
 }
-function loadEmail() {
-    document.querySelectorAll('.email').forEach( (emailContainer) => {
-        emailContainer.textContent = `${contactDetails.email}`;
-        emailContainer.setAttribute('href', `mailto:${contactDetails.email}`)
-    })
-}
 
-
-
+APP.init();
