@@ -214,28 +214,73 @@ const GALLERY = {
         let scrollLargePhotoIntoView = function(photo) {
 
             photo.scrollIntoView(false);
-            console.log(photo)
         }
 
         // Fetch image. Set it as background image and remove the loading spinner
         let setBackgroundImage = function(index, photo) {
+
+            
             fetch(`images/gallery/${GALLERY.largePhotos[index]}`)
                 .then(response => response.blob())
                 .then(imageBlob => {
                     // Then create a local URL for that image and print it 
                     const imageObjectURL = URL.createObjectURL(imageBlob);
                     photo.style.backgroundImage = `url('${imageObjectURL}')`;
-                })
-                .then( () => {
-                    console.log(document.querySelector(`[data-index="${index}"] .spinner`))
+                    
                     document.querySelector(`[data-index="${index}"] .spinner`).classList.remove('active');
+                    let downloadButton = document.querySelector('.download-button a')
+                    downloadButton.href = imageObjectURL;
+                    downloadButton.download = GALLERY.largePhotos[index].replace(' (Large)', '');
+                    
                 });
                 
-            // photo.style.backgroundImage = `url('images/gallery/${GALLERY.largePhotos[index]}')`
+                // photo.style.backgroundImage = `url('images/gallery/${GALLERY.largePhotos[index]}')`
+        } 
+
+        // Watch for image containers when coming into view and fetch and set background image
+        let setImageOnSwipe = function(){ 
+
+            let options = {
+                root: null,
+                rootMargin: "0px 0px" ,
+                threshold: 0.05
+            };
+
+            let beShowing = function(entries) {
+                entries.forEach( entry => {
+                    if (entry.isIntersecting) {
+                        setBackgroundImage(entry.target.dataset.index, entry.target)
+                    }
+                })
+            };
+            
+            let observer = new IntersectionObserver(beShowing, options)
+            document.querySelectorAll('.large-image-container').forEach( container => observer.observe(container));
+            
         }
+        
+        // Count Locations
+        let imageCounter = function() {
+            let options = {
+                root: null,
+                rootMargin: "0px 0px" ,
+                threshold: 0.5
+            };
+            
+            let beShowing = function(entries) {
+                entries.forEach( entry => {
+                    if (entry.isIntersecting) {
+                        let counter = document.querySelector('.gallery-loaction-counter')
+                        counter.textContent = `${1 + Number(entry.target.dataset.index)} / ${GALLERY.largePhotos.length}`              
+                    }
+                })
+            };
 
-        // Listen for removing 
-
+            let observer = new IntersectionObserver(beShowing, options)
+            document.querySelectorAll('.large-image-container').forEach( container => observer.observe(container));
+            
+        }
+        // Close fullscreen mode 
 
         let closeFullScreen = function() {
             document.querySelector('.full-screen-container').classList.remove('active');
@@ -243,6 +288,8 @@ const GALLERY = {
         
         document.querySelectorAll('.gallery-image-container').forEach(photo => photo.addEventListener('click', openFullScreen ));  
         document.querySelector('.close-button').addEventListener('click', closeFullScreen )
+        setImageOnSwipe();
+        imageCounter();
     },
 
     
