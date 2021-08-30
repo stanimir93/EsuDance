@@ -206,16 +206,11 @@ const GALLERY = {
             let index = ev.target.dataset.index;
             let photo = document.querySelector(`.large-image-container[data-index="${index}"]`)
 
-            scrollLargePhotoIntoView(photo);
             setBackgroundImage(index, photo)
-            document.querySelector('body').style.overflowY = 'hiddlen';
-        }
-
-        // Scroll clicked photo into view
-        let scrollLargePhotoIntoView = function(photo) {
-
+            document.body.style.position = 'fixed';
             photo.scrollIntoView(false);
         }
+
 
         // Fetch image. Set it as background image and remove the loading spinner
         let setBackgroundImage = function(index, photo) {
@@ -286,6 +281,8 @@ const GALLERY = {
 
         let closeFullScreen = function() {
             document.querySelector('.full-screen-container').classList.remove('active');
+            document.body.style.position = 'static';
+
         }
 
 
@@ -294,13 +291,23 @@ const GALLERY = {
             
             let moveImages = function(ev) {
                 if (document.querySelector('.full-screen-container.active')) {
-                    let imagesWrapper = document.querySelector('.large-images-wrapper')
+                    let imagesWrapper = document.querySelector('.large-images-wrapper');
+                    let optionsRight = {
+                        top: 0,
+                        left: imagesWrapper.scrollWidth / GALLERY.largePhotos.length,
+                        behavior: 'smooth'
+                        };
+                    let optionsLeft = {
+                        top: 0,
+                        left: -1 * imagesWrapper.scrollWidth / GALLERY.largePhotos.length,
+                        behavior: 'smooth'
+                        };
                     switch (ev.code) {
                         case 'ArrowRight':
-                            imagesWrapper.scrollBy(imagesWrapper.scrollWidth / GALLERY.largePhotos.length, 0)
+                            imagesWrapper.scrollBy(optionsRight)
                             break;
                             case 'ArrowLeft':
-                            imagesWrapper.scrollBy(-1 * imagesWrapper.scrollWidth / GALLERY.largePhotos.length, 0)
+                            imagesWrapper.scrollBy(optionsLeft)
                             break;
                         case 'Escape':
                             closeFullScreen();

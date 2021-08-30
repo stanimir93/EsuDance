@@ -49,7 +49,13 @@ const DANCE_CLASSES = {
 
     // update classes page on hashchange
     init: function() {
-        window.addEventListener('hashchange', updateDanceClassesPage);
+        if (!window.location.hash) {
+            document.querySelector('.all-classes-container').classList.add('active');
+        }
+
+
+        window.addEventListener('hashchange', DANCE_CLASSES.updateDanceClassesPage);
+
 
         //hash change on page load
         window.dispatchEvent(new HashChangeEvent('hashchange'));
@@ -57,4 +63,4 @@ const DANCE_CLASSES = {
     }
 }
 
-DANCE_CLASSES.init()
+document.addEventListener('dataReady', DANCE_CLASSES.init);

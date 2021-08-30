@@ -195,13 +195,13 @@
 }
 
 .large-image-container{
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 80vw;
     background-color: rgba(0,0,0,0);
     background-size: cover;
     background-position: center;
     position: relative;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     scroll-snap-stop: always;
     /* margin: 0px 4vw; */
 }
