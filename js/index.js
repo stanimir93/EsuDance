@@ -7,11 +7,12 @@ How it works:
     3. Once header and footer are rendered a mutation observer will trigger and will:
         3.1. load the contact details on the DOM using '.address' or '.email' class names.
         3.2. if contact details are not fetched yet, it start listenning for the dataReady event, and load the details onces fetched
+    4. Pa
 */
 
 const APP = {
 
-    // 1. WEBSITE DATA (dance classes and contact details)
+    // WEBSITE DATA (dance classes and contact details)
 
     contactDetails: null,
     danceClasses: null,
@@ -34,7 +35,7 @@ const APP = {
         }));
     },
 
-    // 2. HEADER & FOOTER HTML (fetch and render)
+    // HEADER & FOOTER HTML (fetch and render)
 
     loadNavigation: function(){
 
@@ -50,7 +51,7 @@ const APP = {
         })
     },
 
-    // 3. LOAD CONTACT DETAILS
+    // LOAD CONTACT DETAILS
     
     /* Populate website with contact info once header and footer have been rendered
     If contact details has not been fetched, listen for "dataReady" event */
@@ -100,7 +101,21 @@ const APP = {
 
     },
 
-    // 4. INITIALIZE APP
+    // PAGE NOT FOUND
+
+
+    // Load the following html if window.location is not recognized
+    pageNotFound: function () {
+        let div = document.createElement('div');
+        div.classList.add('not-found');
+        div.innerHTML = `
+        <h1>Page not found</h1> 
+        <p>Sorry, the page <strong>${window.location.host + window.location.pathname + window.location.hash}</strong> could not be found.</p>`
+        document.querySelector('main').appendChild(div)        
+    },
+    
+
+    // INITIALIZE APP
 
     init: function() {
 

@@ -196,7 +196,6 @@ const GALLERY = {
      
     },
     
-    
     addFullScreenFunctionalities: function() {
         
         // Open fullscreen mode and scroll into view the chosen photo
@@ -215,6 +214,10 @@ const GALLERY = {
         // Fetch image. Set it as background image and remove the loading spinner
         let setBackgroundImage = function(index, photo) {
 
+            let shareButtonFuctionality = function(){
+
+            }
+
             
             fetch(`images/gallery/${GALLERY.largePhotos[index]}`)
                 .then(response => response.blob())
@@ -224,9 +227,20 @@ const GALLERY = {
                     photo.style.backgroundImage = `url('${imageObjectURL}')`;
                     
                     document.querySelector(`[data-index="${index}"] .spinner`).classList.remove('active');
-                    let downloadButton = document.querySelector('.download-button a')
+
+                    let downloadButton = document.querySelector('.download-button a');
                     downloadButton.href = imageObjectURL;
                     downloadButton.download = GALLERY.largePhotos[index].replace(' (Large)', '');
+
+                    let shareButton =  document.querySelector('.share-button i');
+                    if (navigator.share) {
+                        shareButton.addEventListener('click', navigator.share({
+                            title: 'EsuDance | Dance Classes',
+                            text: window.location.origin,
+                            url: imageObjectURL,
+                        }))
+                    }
+
                     
                 });
 
@@ -235,7 +249,7 @@ const GALLERY = {
         } 
 
         // Watch for image containers when coming into view and fetch and set background image
-        let setImageOnSwipe = function(){ 
+        let setBackgroundImageOnSwipe = function(){ 
 
             let options = {
                 root: null,
@@ -326,14 +340,11 @@ const GALLERY = {
         
         document.querySelectorAll('.gallery-image-container').forEach(photo => photo.addEventListener('click', openFullScreen ));  
         document.querySelector('.close-button').addEventListener('click', closeFullScreen )
-        setImageOnSwipe();
+        setBackgroundImageOnSwipe();
         imageCounter();
         changePhotosWithArrows();
     },
 
-
-
-    
     // Filter Gallery - Video / Photos 
     filterGallery: function(ev) {
         ev.preventDefault();
@@ -355,30 +366,6 @@ const GALLERY = {
     },
 
 
-
-
-  
-
-    // Create Fullscreen Gallery
-
-    createFullScreenGallery: function(ev) {
-
-        GALLERY.largePhotos.forEach( photo => {
-            let df = new DocumentFragment();
-
-            let current = document.createElement('img')
-            let prev = document.createElement('img')
-            let next = document.createElement('img')
-
-            current.attributes.src = `images/gallery/${GALLERY.largePhotos[GALLERY.indexOfClickedPhoto(ev)]}`
-        })
-    },
-
-
-
-
-
-    
     // Initialize Gallery
 
     init: function() {

@@ -18,15 +18,19 @@ const DANCE_CLASSES = {
             }
         },
 
-    // hashchange event starts this function
+    // hashchange event starts this function. The hash is found and matched to database. The elements are crated and added to the DOM.
+    // If there is a hash, the dance class page is displayed, else, we all classes
+
     updateDanceClassesPage: function(ev) {
         ev.preventDefault();
     
         // Name of dance class selected
-        let danceClassName = location.hash.replace('#', '') 
+        let danceClassName = location.hash.replace('#', '')
+
     
         // If the there is a hash value(dance class name), we populate and rended a template showing details for the chosen dance class
-        if (danceClassName) {
+        if (danceClassName && APP.danceClasses[danceClassName]) {
+
             document.querySelector('.all-classes-container').classList.remove('active');
             
             // Cleate a copy of the classpage template
@@ -43,14 +47,14 @@ const DANCE_CLASSES = {
             // Append the cloned templace to main
             document.querySelector('main').appendChild(clone)
             document.querySelector('.classpage-container').classList.add('active');
+            document.title = danceClassName.replaceAll('_', ' ') + ' | EsuDance'
     
         }
 
         // If hashChange does not give us a class name, we remove a previous class page and render all classes
         else {
-            document.querySelector('main').removeChild(document.querySelector('.classpage-container'))
+            document.title = 'Classes | EsuDance'
             document.querySelector('.all-classes-container').classList.add('active');
-    
         }
     },
 
@@ -66,10 +70,6 @@ const DANCE_CLASSES = {
             //hash change on page load
             window.dispatchEvent(new HashChangeEvent('hashchange'));
         });
-        
-
-
-
     }
 }
 

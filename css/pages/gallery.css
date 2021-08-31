@@ -310,8 +310,9 @@ button.next, button.previous {
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: top;
     height: 80px;
+    padding-top: 20px;
     /* padding: 15px; */
     /* pad */
 }
@@ -321,24 +322,26 @@ button.next, button.previous {
     margin-left: 20px;
 }
 
-.download-button {
+.download-button, .share-button {
     background-color: var(--color-2);
 }
 
-.download-button i{
+.download-button i, .share-button i {
     font-size: 30px;
     color: var(--color-1);
     transition: all 0.1s;
+    font-weight: 100;
+    margin-bottom: 20px;
 }
 
-.download-button a:hover {
+.download-button a:hover, .share-button a:hover {
     background-color: var(--color-2);
 }
 
-.download-button i:hover{
+.download-button i:hover, .share-button i:hover{
     color: var(--color-3);
 }
-.download-button i:active{
+.download-button i:active, .share-button i:active {
     background-color: var(--color-1b);
     color: var(--color-3);
 }
@@ -349,4 +352,12 @@ button.next, button.previous {
     font-size: 1.8rem;
     display: flex;
     align-items: center;
+}
+
+.share-download-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
 }
