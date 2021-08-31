@@ -235,8 +235,8 @@ const GALLERY = {
                     let shareButton =  document.querySelector('.share-button i');
                     if (navigator.share) {
 
-                        shareButton.addEventListener('click', ()=> {
-                                navigator.share({
+                        shareButton.addEventListener('click', async ()=> {
+                                await navigator.share({
                                     title: 'EsuDance | Dance Classes',
                                     text: window.location.origin,
                                     url: imageObjectURL,
