@@ -250,10 +250,13 @@ button.next, button.previous {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 50px;
+    height: 50px;
+    top: 5px;
+    right: 5px;
     cursor: pointer;
     position: relative;
+    padding: 15px;
 }
 
 .close-button:active {
@@ -264,9 +267,9 @@ button.next, button.previous {
 
     content: '';
     position: absolute;
-    top: calc(50% - 4px);
-    right: 0px;
-    width: 100%;
+    /* top: 31px;
+    right: 15px; */
+    width: 34px;
     height: 2.5px;
     background-color: inherit;    
     border-radius: 2.5px;
@@ -312,21 +315,23 @@ button.next, button.previous {
     justify-content: space-between;
     align-items: top;
     height: 80px;
-    padding-top: 20px;
+    /* padding-top: 15px; */
     /* padding: 15px; */
     /* pad */
 }
 
-.fullscreen-buttons >div {
-    margin-right: 20px;
-    margin-left: 20px;
-}
+/* .fullscreen-buttons > div {
+    
+    padding: 15px;
 
-.download-button, .share-button {
+} */
+
+.download-button {
     background-color: var(--color-2);
+    padding: 15px;
 }
 
-.download-button i, .share-button i {
+.download-button i {
     font-size: 30px;
     color: var(--color-1);
     transition: all 0.1s;
@@ -334,30 +339,23 @@ button.next, button.previous {
     margin-bottom: 20px;
 }
 
-.download-button a:hover, .share-button a:hover {
+.download-button a:hover {
     background-color: var(--color-2);
 }
 
-.download-button i:hover, .share-button i:hover{
+.download-button i:hover{
     color: var(--color-3);
 }
-.download-button i:active, .share-button i:active {
+.download-button:active {
     background-color: var(--color-1b);
     color: var(--color-3);
 }
 
 
-.gallery-loaction-counter {
+.gallery-location-counter {
     color: var(--color-1);
     font-size: 1.8rem;
     display: flex;
     align-items: center;
 }
 
-.share-download-buttons{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-
-}

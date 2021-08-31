@@ -1,0 +1,108 @@
+main {
+    padding: var(--space-2) var(--space-2) var(--space-3);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+main > div:first-child {
+    background-color: var(--color-1);
+    margin-left: calc(-1 * var(--space-2));
+    width: 100vw;
+    padding: 0px ;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-top: var(--space-3);
+}
+
+
+.find-us-page-social-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+main i::before {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+
+.all-images-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--space-2);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Wrap images with a div that prevents overflow,
+so when hovered they zoom in but don't push the other images away */
+
+.wrapper-image-container {
+    height: 40vw;
+    width: 40vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* How should each image be displayed */
+
+.image-container {
+    height: 40vw;
+    width: 40vw;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+/* Zoom on hover  */
+
+.image-container:hover {
+    height: 44vw;
+    width: 44vw;
+}
+
+
+.wrapper-image-container:nth-child(1) .image-container {
+    background-image: url("../../images/banners/ballerinas.webp");
+}
+.wrapper-image-container:nth-child(2) .image-container {
+    background-image: url("../../images/banners/ballerinas.webp");
+}
+.wrapper-image-container:nth-child(3) .image-container {
+    background-image: url("../../images/banners/ballerinas.webp");
+}
+.wrapper-image-container:nth-child(4) .image-container {
+    background-image: url("../../images/banners/ballerinas.webp");
+}
+
+/* MAP */
+
+.homepage-map-container {
+  width: 100vw;
+}
+
+.map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Width and height of map */
+
+.map iframe{
+    width: calc(100vw * 0.857);
+    height: calc(80vw * 0.857);
+    box-shadow: 0 7px 5px -5px rgba(0,0,0,.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
+
+}

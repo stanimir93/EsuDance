@@ -65,6 +65,8 @@ const APP = {
 
                 loadAddress();
                 loadEmail();
+                loadMessenger();
+
                 this.disconnect();
             } 
             // if contact datails are not fetched and parsed, create a listenner to load them into DOM, once they are ready
@@ -72,6 +74,7 @@ const APP = {
                 document.addEventListener('dataReady', () =>{
                     loadAddress();
                     loadEmail();
+                    loadMessenger();
                     this.disconnect();
                 })
             }
@@ -93,6 +96,12 @@ const APP = {
             document.querySelectorAll('.email').forEach( (emailContainer) => {
                 emailContainer.textContent = `${APP.contactDetails.email}`;
                 emailContainer.setAttribute('href', `mailto:${APP.contactDetails.email}`)
+            })
+        }
+        function loadMessenger() {
+            document.querySelectorAll('.messenger').forEach( (messengerLink) => {
+                messengerLink.setAttribute('target', '_blank');
+                messengerLink.setAttribute('href', APP.contactDetails.messenger)
             })
         }
 

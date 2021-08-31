@@ -225,26 +225,13 @@ const GALLERY = {
                     // Then create a local URL for that image and print it 
                     const imageObjectURL = URL.createObjectURL(imageBlob);
                     photo.style.backgroundImage = `url('${imageObjectURL}')`;
+                    console.log(imageBlob);
                     
                     document.querySelector(`[data-index="${index}"] .spinner`).classList.remove('active');
 
                     let downloadButton = document.querySelector('.download-button a');
                     downloadButton.href = imageObjectURL;
                     downloadButton.download = GALLERY.largePhotos[index].replace(' (Large)', '');
-
-                    let shareButton =  document.querySelector('.share-button i');
-                    if (navigator.share) {
-
-                        shareButton.addEventListener('click', async ()=> {
-                                await navigator.share({
-                                    title: 'EsuDance | Dance Classes',
-                                    text: window.location.origin,
-                                    url: imageObjectURL,
-                                })
-                            }
-                        )
-                    }
-
                     
                 });
 
@@ -285,7 +272,7 @@ const GALLERY = {
             let beShowing = function(entries) {
                 entries.forEach( entry => {
                     if (entry.isIntersecting) {
-                        let counter = document.querySelector('.gallery-loaction-counter')
+                        let counter = document.querySelector('.gallery-location-counter')
                         counter.textContent = `${1 + Number(entry.target.dataset.index)} / ${GALLERY.largePhotos.length}`              
                     }
                 })

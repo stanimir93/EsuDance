@@ -136,7 +136,7 @@ so when hovered they zoom in but don't push the other images away */
     background-size: cover;
     background-position: center;
     transition: all 0.4s;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 /* Zoom on hover  */
