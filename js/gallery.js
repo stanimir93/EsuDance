@@ -238,8 +238,8 @@ const GALLERY = {
                         shareButton.addEventListener('click', async ()=> {
                                 await navigator.share({
                                     title: 'EsuDance | Dance Classes',
-                                    text: window.location.origin,
-                                    url: imageObjectURL,
+                                    text: 'window.location.origin',
+                                    url: 'esudance.co.uk',
                                 })
                             }
                         )
