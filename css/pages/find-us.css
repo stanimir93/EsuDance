@@ -106,6 +106,12 @@ so when hovered they zoom in but don't push the other images away */
     background-image: url("../../images/banners/ballerinas.webp");
 }
 
+/* Address */
+.address-container  address {
+    margin-bottom: var(--space-1);
+    
+}
+
 /* MAP */
 
 .homepage-map-container {
