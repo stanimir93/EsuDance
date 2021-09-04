@@ -1,101 +1,135 @@
-
-/* FOOTER */
+/* GENERAL */
 
 footer {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    padding-bottom: 0px;
+    margin: 0 auto;    
     display: flex;
     flex-direction: column;
-    padding: var(--space-2) var(--space-1) 0;
-    justify-content: space-between;
-    color: var(--color-1);
-    background-color: var(--color-2);
-    height: auto;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Footer navigation menu */
-
-footer .menu-container ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;    
-    line-height: 2;
-}
-
-/* Footer navigation menu links */
-
-footer .menu-container li {
-    list-style-type: none;
-    padding-right: var(--space-1);
-}
-footer .menu-container li:hover {
-    text-decoration-color: var(--color-1);
-    text-decoration: underline;
-    color: var(--color-1);
-}
-
-footer .menu-container a {
-    text-decoration: none;
-}
-
-/* Horizontal line */
-
-footer hr {
-    border-color: rgba(255, 255, 255, 0.2);
-    border-radius: 2.5px;
-    border-width: 1px;
-    margin-top: 1rem;
-}
-
-/* Footer middle area with address and about us*/
-
-footer .middle-container {
-    padding-bottom: var(--space-1);
+/* Div wrapping the footer, except last child (social media links) */
+footer > div:first-child {
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 1080px;
 }
 
 footer h3 {
-    margin: var(--space-1) 0 1rem;
-    color: var(--color-1);
+    text-align: start;
+    margin-bottom: 10px;
+    margin-top: 2.5rem;
 }
 
 footer a {
-  color: var(--color-1);  
+    color: var(--color-3);
 }
-footer a:hover {
-  color: var(--color-3); 
-  background-color: unset; 
-}
-
-.middle-container i {
-    font-size: 30px;
-    padding: 16px;
-    color: white;
-    transition: all 0.1s;
+footer a:hover,
+footer a:active {
+    background-color: rgba(255,255,255,0);
 }
 
-/* Social Media Buttons */
+/* NAVIGATION MENU */
+
+footer .menu-container {
+    margin-bottom: 0.5rem;
+}
+
+/* navigation items */
+footer nav li {
+    list-style-type: none;
+    color: var(--color-3);
+    margin-right: 2.5rem;
+    line-height: 2;
+}
+
+/* navigation layout */
+footer nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* navigation menu links */
+footer nav li a {
+    text-decoration: none;
+}
+footer nav li a:hover {
+    background-color: rgba(158, 141, 141, 0.1);
+    text-decoration: revert;
+}
+footer nav li a:active {
+    background-color: rgba(158, 141, 141, 0.2);
+    text-decoration: revert;
+}
+
+/* Horizontal line */
+ hr {
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2.5px;
+    border-width: 1px;
+}
+
+
+/* MIDDLE CONTAINER */
+
+/* spacing of container*/
+footer .middle-container {
+    margin-bottom: 2.5rem;
+}
+
+/* links */
+footer .middle-container a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+footer .middle-container a:active {
+    background-color: rgba(255,255,255,0.2);
+}
+
+
+/* SOCIAL MEDIA CONTAINER */
+
+/* container for social media links */
 
 .social-links-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 102.5vw;
+    height: 60px;
+    margin-left: -2.5rem;
     background-color: var(--color-1);
-    width: 102vw;
-    margin-left: calc(-2vw*3);
-    height: 65px;
     border-bottom: 8px solid var(--color-2)
 }
 
+/* social media buttons */
 .social-links-container i {
-    font-size: 34px;
+    font-size: 31px;
     padding: 16px;
     color: var(--color-2);
     transition: all 0.1s;
 }
-
 .social-links-container i:hover {
     opacity: 0.7;
     cursor: pointer;
 }
-
 .social-links-container i:active {
     opacity: 0.4;
+}
+
+@media screen and (min-width: 750px) {
+
+    footer .middle-container{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: right;
+    }
+
+    footer .middle-container > div {
+        width: 50%;
+    }
+
 }

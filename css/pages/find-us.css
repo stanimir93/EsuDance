@@ -5,15 +5,16 @@ main {
 }
 /* all sections */
 main > div {
-padding: var(--space-3) var(--space-2) var(--space-3);
+padding: var(--space-2) var(--space-2) var(--space-2);
 width: 100vw;
 
 }
 /* contact */
 main > div:first-child {
     background-color: var(--color-1);
-    padding: var(--space-1);
+    /* padding-bottom: var(--space-1); */
 }
+
 /* social */
 main >div:nth-child(3) {
     background-color: var(--color-4);

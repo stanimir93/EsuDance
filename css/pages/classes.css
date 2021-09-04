@@ -176,3 +176,39 @@ section > div:first-child h3 {
 .classpage-info-container > div {
     padding-bottom: var(--space-1);
 }
+
+@media screen and (min-width: 700px) {
+
+    section > div:nth-child(2) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3vw;
+        padding: 3vw;
+        align-items: stretch;
+        justify-items: stretch;
+    }
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        min-height: fit-content;
+        position: relative;
+        align-items: center;
+        padding: 30px;
+        text-align: center;
+        justify-content: flex-start;
+
+    }
+
+    .dance-class-icon-container {
+        margin-top: -50px;
+        z-index: 50;
+    }
+
+    .dance-class-button-container {
+        margin-top: 20px;
+        float: none;
+        
+}
+}

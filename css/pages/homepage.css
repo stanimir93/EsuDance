@@ -1,52 +1,62 @@
-main {
+/* GENERAL */
+
+main > div {
+    width: 100%;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    margin-top: 0px;
+
 }
 
-h2 {
-  text-align: center;
+/* max view on large screen */
+main > div > div {
+    max-width: 1080px;
+}
+
+main div {
+    margin: auto;
+    
 }
 
 /* HERO CONTAINER */
 
+/* outer container */
 .homepage-hero-container {
-    background-color: var(color-1);
+    padding-left: 0px;
+    padding-right: 0px;
+    height: calc(100vh - 73px);
     background-image: linear-gradient(hsla(0, 0%, 27%, 0.4), hsla(0, 0%, 27%, 0.4)), url("../../images/banners/ballerina-toes-mobile.jpg");
-    background-position: bottom;
+    background-position: center;
     background-size: cover;
-    color: white;
-
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
+    color: var(--color-3);   
 }
 
-.homepage-hero-container p {
-    max-width: 90vw;
+/* inner container */
+.homepage-hero-container > div {
+    margin: 40vh 2.5rem;
+    transform: translateY(-50%);
 }
 
+/* horizontal line */
 .homepage-hero-container hr {
-    width: 70px;
-    margin: 3rem;
-    border-color: var(--color-3);
+    width: 90px;
+    margin: auto;
     border-width: 1px;
+    border-color: var(--color-3);
+    background-color: var(--color-3);
 }
 
+/* button */
 .homepage-hero-container a {
-    margin: 3rem;
-    height: 5.4rem;
-    width: 14rem;
+    margin: 2.5rem auto;
+    height: calc(54px);
+    width: calc(130px);
     border-radius: 2.5px;
     border: none;
     cursor: pointer;
-    background-color: var(--color-1);
+    background-color: var(--color-3);
     color: var(--color-2);
     transition: all 0.4s;
     text-decoration: none;
@@ -56,7 +66,7 @@ h2 {
 }
 
 .homepage-hero-container a:hover {
-    color: var(--color-1);
+    color: #fff;
     background-color: var(--color-2);
     text-decoration: underline;    
 }
@@ -65,173 +75,320 @@ h2 {
     opacity: 0.4;
 }
 
-/* BANNER CONTAINER */
+/* VIDEO CONTAINER */
 
-.homepage-banner-container {
-    display: flex;
-    flex-direction: column;
-    padding: var(--space-3) var(--space-1);
-    background-color: var(--color-2);
-    color: var(--color-1);
-}
-
-.homepage-banner-container h2 {
-    color: var(--color-1);
-}
-
-.homepage-banner-container img {
+/* VIDEO CONTAINER */
+.homepage-video-container {
     width: 100%;
-    max-width: 470px;
+    background-color: var(--color-2);
+    color: var(--color-3);
+    text-align: center;
 }
 
-.homepage-banner-container > div:nth-child(2) {
-    padding-top: var(--space-1);
+.homepage-video-container .title-container {
+    margin-bottom: 2.5rem;
 }
 
-/* GALLERY CONTAINER */
+/* Link */
+.homepage-video-container a {
+    color: inherit;
+    padding: 10px;
+    color: var(--color-3);
+}
+.homepage-video-container a:hover{
+    text-decoration-color: #fff;
+    text-decoration: underline;
+    color: var(--color-2);
+    background-color: var(--color-1);
+    
+}
+.homepage-video-container a:active{
+    text-decoration-color: #fff;
+    text-decoration: underline;
+    background-color: rgba(255,255,255,0.2);
+    color: var(--color-2);
+
+}
+
+/* Wrapper  that hides extra margin used to give ratio to the video */
+.video-wrapper-hides-overflow {
+    width: 100%;
+    max-height: 562.5px; 
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+/* creates ratio to the video */
+.video-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    padding-top: 56.25%;
+
+    height: 0px;
+    position: relative;
+}
+.homepage-video-container iframe {  
+    width: 100%;
+    height: 100%;
+    max-height: 562.5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
+}
+
+
+/* GALLERY */
 
 .homepage-gallery-container {
-    padding: var(--space-2); 
-    padding-bottom: var(--space-3);
     margin: auto;
-}
-
-.homepage-banner-container h2 {
-    text-align: center;
-    padding-bottom: var(--space-1);
-}
-
-/* Display images as a grid */
-
-.homepage-gallery-container > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: var(--space-2);
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    background-color: var(--color-3);
 }
 
 .homepage-gallery-container h2 {
-    padding-bottom: var(--space-2);
+    padding-bottom: 20px;
+}
+/* Display images as a grid */
+.homepage-gallery-container > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: calc(20px + 0.5rem);
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    padding: 2.5rem;
 }
 
-/* Wrap images with a div that prevents overflow,
-so when hovered they zoom in but don't push the other images away */
 
-.wrapper-image-container {
+/* Div wrapping the image */
+.image-wrapper {
     height: 40vw;
-    width: 40vw;
+    width: 100%;
     overflow: hidden;
+    transition: all 0.4s;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* How should each image be displayed */
+@supports (aspect-ratio: 1) {
+    .image-wrapper {
+        height: auto;
+        aspect-ratio: 1;
+    }
+}
 
+/* Div holding the image*/
 .image-container {
-    height: 40vw;
-    width: 40vw;
+    height: 100%;
+    width: 100%;
+    background-position: center ;
     background-size: cover;
-    background-position: center;
     transition: all 0.4s;
     /* cursor: pointer; */
 }
 
 /* Zoom on hover  */
-
 .image-container:hover {
-    height: 44vw;
-    width: 44vw;
+    height: 110%;
+    width: 110%;
+}
+
+/* Hide last two photos on mobile */
+.desktop-only {
+    display: none;
 }
 
 /* Choose images to be displayed */
-
-.wrapper-image-container:nth-child(1) .image-container {
+.image-wrapper:nth-child(1) .image-container {
     background-image: url("../../images/banners/ballerinas.webp");
 }
-.wrapper-image-container:nth-child(2) .image-container {
+.image-wrapper:nth-child(2) .image-container {
     background-image: url("../../images/banners/ballerinas.webp");
 }
-.wrapper-image-container:nth-child(3) .image-container {
+.image-wrapper:nth-child(3) .image-container {
     background-image: url("../../images/banners/ballerinas.webp");
 }
-.wrapper-image-container:nth-child(4) .image-container {
+.image-wrapper:nth-child(4) .image-container {
     background-image: url("../../images/banners/ballerinas.webp");
 }
-.wrapper-image-container:nth-child(5) .image-container {
+.image-wrapper:nth-child(5) .image-container {
     background-image: url("../../images/banners/ballerinas.webp");
 }
-.wrapper-image-container:nth-child(6) .image-container {
+.image-wrapper:nth-child(6) .image-container {
     background-image: url("../../images/banners/ballerinas.webp");
 }
 
-/* VIDEO CONTAINER */
-.homepage-video-container {
-    background-color: var(--color-4);
-    padding: var(--space-2) var(--space-2) var(--space-3);
+/* link for gallery*/
+
+.homepage-gallery-container .view-more {
+    grid-column: 1 / 3;
+    margin-bottom: -1rem;
+}
+.homepage-gallery-container .view-more a {
+    padding: 10px
+}
+.homepage-gallery-container .view-more a:hover {
+    background-color: var(--color-2);
+    color: var(--color-3);
+}
+.homepage-gallery-container .view-more a:active {
+    background-color: var(--color-1a);
+    color: var(--color-3);
 }
 
-.homepage-video-container div:nth-child(1) {
-    padding-bottom: var(--space-2);
+/* LOCATION */
+.homepage-location-container {
+    background: linear-gradient(to bottom, var(--color-1) 60%, var(--color-2) 60% );
+    padding-bottom: 0px;
+    
 }
-.homepage-video-container div:nth-child(2) {
-    height: auto;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.homepage-video-container iframe {  
-    width: calc(100vw * 0.857);
-    height: calc(56.25vw * 0.857);
-    box-shadow: 0 7px 5px -5px rgba(0,0,0,.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
-
+.homepage-location-container >div {
+    width: 100%;
+    max-width: 1080px;
 }
 
-/* ADDRESS CONTAINER */
-
-.homepage-address-container {
-    padding: var(--space-2) var(--space-2) var(--space-3);
-    background: linear-gradient(to bottom, var(--color-3) 60%, var(--color-1) 60% );
-}
-
-.homepage-address-container > div:first-child{
-    width: 100vw;
-    padding: var(--space-2);
-    padding-top: 0px;
-}
-
-
-.homepage-address-container h2 {
-    margin-bottom: var(--space-1);
-}
-
+/* div wrapping the map */
 .homepage-map-container {
-  width: 100vw;
+    width: 100%;
+    padding-top: 66%;
+    height: 0px;
+    position: relative;
 }
 
-.map {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Width and height of map */
-
-.map iframe{
-    width: calc(100vw * 0.857);
-    height: calc(66vw * 0.857);
-    box-shadow: 0 7px 5px -5px rgba(0,0,0,.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
-
+/* map */
+.homepage-map-container iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
 }
 
 
-.view-more {
-    text-align: center;
-    margin-top: -10px;
-    margin-bottom: var(--space-3);
+
+
+/* DESKTOP VIEW */
+
+@media screen and (min-width: 750px) {
+
+
+    
+    /* VIDEO */
+    .homepage-video-container > div {
+        display: grid;
+        grid-template-columns: minmax(300px, 1fr) 2fr;
+        grid-template-rows: 1fr 30px;
+        gap: 0rem 2.5rem;
+    }
+
+    .homepage-video-container .title-container {
+        margin-top: unset;
+    }
+
+    .homepage-video-container .view-more {
+        grid-column-start: 2;
+    }
+
+ 
+    /* GALLERY */
+
+    /* grid - 3 columns */
+    .homepage-gallery-container > div {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem;
+    }
+
+    /* Div wrapping the image */
+    .image-wrapper {
+        height: 24vw;
+        max-height: 290px;
+        width: 24vw;
+        max-width: 290px;
+        overflow: hidden;
+        transition: all 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @supports (aspect-ratio: 1) {
+        .image-wrapper {
+            height: auto;
+            width: 100%;
+            max-width: revert;
+            max-height: revert;
+            aspect-ratio: 1;
+        }
+    }
+
+    /* Div holding the image*/
+    .image-container {
+        height: 100%;
+        width: 100%;
+    }
+
+    /* Zoom on hover  */
+    .image-container:hover {
+        height: 110%;
+        width: 110%;
+    }
+    /* Link to view more photos */
+    .homepage-gallery-container .view-more {
+        grid-column: 1 / 4;
+    }
+
+    /* Show last two photos on desktop */
+    .desktop-only {
+        display: unset;
+    }
+
+    .homepage-gallery-container .view-more {
+        margin-top: 1rem;
+        margin-bottom: -1rem;
+    }
+
+      /* LOCATION */
+
+    /* location container */
+    .homepage-location-container {
+        background: linear-gradient(to left, var(--color-1) 60%, var(--color-2) 60% );
+    }
+
+    .homepage-location-container h2 {
+        text-align: start;
+    }
+
+    /* div inside location container */
+    .homepage-location-container > div{
+        display: flex;
+        flex-direction: row-reverse;
+        padding-bottom: 2.5rem;
+        width: 100%;
+    }
+    /* div containing address and contact info */
+    .homepage-location-container > div:first-child{
+        margin-top: revert;
+    }
+
+    /* container holding the map */
+    .homepage-map-container {
+        margin: 0px 2.5rem;
+        width: 100%;
+        padding-top: 40%;
+        height: 0px;
+        position: relative;
+    }
+
+    /* map */
+    .homepage-map-container iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
+    }
+
 }
