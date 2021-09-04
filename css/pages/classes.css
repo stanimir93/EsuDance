@@ -1,4 +1,93 @@
+
+/* AGE GROUP SECTION */
+main {
+    margin-top: 75px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+}
+
+/* HOLDER FOR ALL CARDS */
+
 .all-cards-wrapper {
     display: grid;
-    grid-template-columns: minmax(auto, 50px) 1fr;
+    gap: 2rem;
+    grid-template-areas: 
+    'card1'
+    'card2'
+    'card3';
+    grid-auto-rows: 1fr;
+    max-width: 1080px;
+}
+
+.all-cards-wrapper .card:nth-child(1) {
+    grid-area: card1;
+}
+.all-cards-wrapper .card:nth-child(2) {
+    grid-area: card2;
+}
+.all-cards-wrapper .card:nth-child(3) {
+    grid-area: card3;
+}
+
+/* INDIVIDUAL CARD */
+
+.card {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    background-color: var(--color-1);
+    gap: 1fr;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    align-items: center;
+    height: 100%;
+}
+
+/* Link */
+.dance-class-button-container {
+    float: right;
+    overflow: hidden;
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    padding-right: 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+@media screen and (min-width: 750px) {
+    
+    .all-cards-wrapper{
+        grid-template-areas:
+        'card1 card2 card3';
+        grid-auto-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .card {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow:visible;
+        gap: 2.5rem;
+        padding: 2.5rem;
+        margin-top: 10%;
+    }
+    
+    .dance-class-image-wrapper {
+        margin-top: -25%;
+        width: 100%;
+    }
+    
+    .card img {
+        padding: 0 20%;
+    }
+    
 }

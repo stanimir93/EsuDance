@@ -2,13 +2,14 @@
 
 
 :root {
-    --color-1: #e3ded0;
+    --color-1: #ddd2c3; 
     --color-1a: rgba(227, 222, 208, 0.3);
     --color-2: rgb(23, 23, 23);
     --color-3: hsl(0, 0%, 100%);
     --color-4: hsl(0 , 0% , 96%);
     --color-5: rgb(235, 235, 235);
     --color-6: rgb(245, 245, 245);
+    --color-7: #e3ded0;
     
     
     
@@ -65,10 +66,9 @@ h2 {
 h3 {
     font-size: calc(20px + 1.7vw);
 }
-/* h4 {
-    font-size: 2rem;
-    font-size: calc(1.5rem + 1.7vw);
-} */
+h4 {
+    font-size: calc(20px + 1vw);
+}
 
 
 main {
@@ -108,7 +108,7 @@ p, a, li, address, button, div {
         font-size: 37px;
     }
     h4 {
-        font-size: 24px;
+        font-size: 30px;
     }
 
 }
