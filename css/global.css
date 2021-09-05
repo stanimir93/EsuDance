@@ -65,16 +65,18 @@ h2 {
 }
 h3 {
     font-size: calc(20px + 1.7vw);
+    line-height: 1.2;
 }
 h4 {
-    font-size: calc(20px + 1vw);
+    font-size: calc(20px + 1.2vw);
+    line-height: 1.2;
 }
 
 
 main {
     /* max-width: 1100px; */
     margin-top: 73px;
-    min-height: 70vw;
+    min-height: 99vw;
 }
 
 
@@ -108,7 +110,7 @@ p, a, li, address, button, div {
         font-size: 37px;
     }
     h4 {
-        font-size: 30px;
+        font-size: 37px;
     }
 
 }

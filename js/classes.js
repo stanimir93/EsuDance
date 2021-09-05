@@ -46,24 +46,6 @@ Hashchange needs to be triggered:
 const DANCE_CLASSES_APP = {
 
     danceClasses: [],
-    // dataParsed: false,
-
-    // // Fetch dance class data and annouce it has been fetched using dataParsed variable and classedDataReady event
-    // fetchData: function() {
-
-        
-    //     // In case data is still not ready for use, the function will wait for the event
-    //     let classesDataReady = new Event('classesDataReady'); 
-              
-    //     // Fetch classes data
-    //     fetch('json/dance-classes.json')
-    //     .then((response) => response.json())
-    //     .then((data => {
-    //         this.danceClasses = data;
-    //         this.dataParsed = true;
-    //         document.dispatchEvent(classesDataReady);
-    //         }));
-    // },
 
     // Build and show individual dance class page
     buildShowIndividualClass: function () {
@@ -77,7 +59,6 @@ const DANCE_CLASSES_APP = {
         
         // Create the banner section containing title, age, photo and append to clonedTemplate
         
-        console.log(DANCE_CLASSES_APP.danceClasses[className].banner.title)
         clonedTemplate.querySelector('.classpage-banner-container').style.backgroundImage = "url(" + DANCE_CLASSES_APP.danceClasses[className].banner.bannerURL + ")"
         clonedTemplate.querySelector('.classpage-banner-box h2').textContent = DANCE_CLASSES_APP.danceClasses[className].banner.title
         clonedTemplate.querySelector('.classpage-banner-box h3').textContent = DANCE_CLASSES_APP.danceClasses[className].banner.age
@@ -121,7 +102,7 @@ const DANCE_CLASSES_APP = {
 
     // Hide all classes 
     hideAllClasses: function () {
-        document.querySelector('.all-classes-container').classList.remove('active')
+        document.querySelector('.all-classes-container').classList.remove('active');
     },
     
     // Show all classes
@@ -129,6 +110,29 @@ const DANCE_CLASSES_APP = {
         document.querySelector('.all-classes-container').classList.add('active')
         document.title = 'Classes | EsuDance'
         history.replaceState({}, document.title)
+    },
+
+    runAllOnHashChange: function() {
+
+        let className = window.location.hash.replace('#','')
+
+        // If hash value equals any dance class name - show that class
+        if (DANCE_CLASSES_APP.danceClasses[className]) {
+            DANCE_CLASSES_APP.buildShowIndividualClass();
+            DANCE_CLASSES_APP.hideAllClasses();
+            NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
+            NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
+
+            // to reload the contact details for the new page
+        }
+
+        /* If there is not hash value or it does not correspond to a class name in danceClasses 
+            - show all classes 
+            - delete individual class element if it exists*/
+        if (window.location.hash === '' || DANCE_CLASSES_APP.danceClasses[className] == undefined) {
+            DANCE_CLASSES_APP.showAllClasses();
+            DANCE_CLASSES_APP.deleteIndividualClass();
+        }
     },
 
 
@@ -142,38 +146,17 @@ const DANCE_CLASSES_APP = {
             DANCE_CLASSES_APP.danceClasses = data;
 
             // On hashchange
-            window.addEventListener('hashchange', function() {
-
-                let className = window.location.hash.replace('#','')
-
-                // If hash value equals any dance class name - show that class
-                if (DANCE_CLASSES_APP.danceClasses[className]) {
-                    DANCE_CLASSES_APP.buildShowIndividualClass();
-                    DANCE_CLASSES_APP.hideAllClasses();
-                    NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
-                    NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
-    
-                    // to reload the contact details for the new page
-                }
-
-                /* If there is not hash value or it does not correspond to a class name in danceClasses 
-                    - show all classes 
-                    - delete individual class element if it exists*/
-                if (window.location.hash === '' || DANCE_CLASSES_APP.danceClasses[className] == undefined) {
-                    DANCE_CLASSES_APP.showAllClasses();
-                    DANCE_CLASSES_APP.deleteIndividualClass();
-                }
-            });
+            window.addEventListener('hashchange', DANCE_CLASSES_APP.runAllOnHashChange);
 
             // Dispatch hashChange on page load
             window.dispatchEvent(new HashChangeEvent('hashchange'));
             
-            // Listen for clicking the details button
+            // On button click
             document.querySelectorAll('.dance-class-button-container a')
-                .forEach( link => link.addEventListener('click', DANCE_CLASSES_APP.buildShowIndividualClass))
+                .forEach( link => link.addEventListener('click', DANCE_CLASSES_APP.runAllOnHashChange))
             }))            
         
- 
+            
 
 
 
