@@ -64,8 +64,7 @@ const NAV_AND_CONTACT_INFO_APP = {
                 NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
                 NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
                 NAV_AND_CONTACT_INFO_APP.loadContactInfo.decorateLinkOnCurrentPage();
-                // NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
-                setTimeout(NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize, 0)
+                NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
                 this.disconnect();
             } 
             // if contact datails are not fetched and parsed, create a listenner to load them into DOM, once they are ready
@@ -75,8 +74,7 @@ const NAV_AND_CONTACT_INFO_APP = {
                     NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
                     NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
                     NAV_AND_CONTACT_INFO_APP.loadContactInfo.decorateLinkOnCurrentPage();
-                    // NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
-                    setTimeout(NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize, 0)
+                    NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
                     this.disconnect();
                 })
             }
@@ -110,7 +108,9 @@ const NAV_AND_CONTACT_INFO_APP = {
         maintainHorizontalNavSize: function() {
            document.querySelectorAll('nav .menu li').forEach( li => {
                let itemWidth = li.offsetWidth;
-               li.style.maxWidth = `${itemWidth}px`
+               li.style.maxWidth = `${itemWidth}px`;
+               console.log(itemWidth)
+               document.querySelector('main>div:first-child').innerHTML =`<br><br><br><p>${itemWidth}</p>`;
            })            
         },
 
