@@ -109,9 +109,9 @@ const NAV_AND_CONTACT_INFO_APP = {
         //    document.querySelectorAll('nav .menu li').forEach( li => {
         //        let itemWidth = li.offsetWidth;
         //        li.style.maxWidth = `${itemWidth}px`;
-            //    console.log(itemWidth)
-            //    document.querySelector('main>div:first-child').innerHTML =`<br><br><br><p>${itemWidth}</p>`;
-           })            
+        //     //    console.log(itemWidth)
+        //     //    document.querySelector('main>div:first-child').innerHTML =`<br><br><br><p>${itemWidth}</p>`;
+        //    })            
         },
 
          // Decorate navigation to match current page
