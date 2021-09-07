@@ -62,7 +62,7 @@ header ul li {
     line-height: 4; 
     list-style-type: none;
     border-radius: 1px;
-    word-break: normal;
+    word-wrap: normal;
 }
 
 header nav a {
