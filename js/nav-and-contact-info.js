@@ -106,11 +106,11 @@ const NAV_AND_CONTACT_INFO_APP = {
 
         // Get width of menu items and make it max width (this prevent menu items from pushing other items when they get bold and wider on hover)
         maintainHorizontalNavSize: function() {
-           document.querySelectorAll('nav .menu li').forEach( li => {
-               let itemWidth = li.offsetWidth;
-               li.style.maxWidth = `${itemWidth}px`;
-               console.log(itemWidth)
-               document.querySelector('main>div:first-child').innerHTML =`<br><br><br><p>${itemWidth}</p>`;
+        //    document.querySelectorAll('nav .menu li').forEach( li => {
+        //        let itemWidth = li.offsetWidth;
+        //        li.style.maxWidth = `${itemWidth}px`;
+            //    console.log(itemWidth)
+            //    document.querySelector('main>div:first-child').innerHTML =`<br><br><br><p>${itemWidth}</p>`;
            })            
         },
 
