@@ -64,7 +64,8 @@ const NAV_AND_CONTACT_INFO_APP = {
                 NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
                 NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
                 NAV_AND_CONTACT_INFO_APP.loadContactInfo.decorateLinkOnCurrentPage();
-                NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
+                // NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
+                setTimeout(NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize, 0)
                 this.disconnect();
             } 
             // if contact datails are not fetched and parsed, create a listenner to load them into DOM, once they are ready
@@ -74,7 +75,8 @@ const NAV_AND_CONTACT_INFO_APP = {
                     NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
                     NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
                     NAV_AND_CONTACT_INFO_APP.loadContactInfo.decorateLinkOnCurrentPage();
-                    NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
+                    // NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
+                    setTimeout(NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize, 0)
                     this.disconnect();
                 })
             }
