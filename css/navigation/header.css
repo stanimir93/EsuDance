@@ -14,8 +14,6 @@ header {
     z-index: 100;
     border-bottom: 0.5px solid var(--color-7);
     box-shadow: 0px 0.5px 5px var(--color-7);
-    
-
 }
 
 
@@ -64,6 +62,7 @@ header ul li {
     line-height: 4; 
     list-style-type: none;
     border-radius: 1px;
+    word-break: normal;
 }
 
 header nav a {
