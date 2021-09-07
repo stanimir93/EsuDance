@@ -77,6 +77,9 @@ const DANCE_CLASSES_APP = {
             h3.textContent = Object.getOwnPropertyNames(elem)[0];
             container.innerHTML = elem[Object.getOwnPropertyNames(elem)[0]];   
 
+            // Class to each element to be used for styling
+            div.classList.add((Object.getOwnPropertyNames(elem)[0]).toLowerCase().replaceAll(' ', '-'))
+
             div.appendChild(h3);
             div.appendChild(container)
             df.appendChild(div)
@@ -122,6 +125,7 @@ const DANCE_CLASSES_APP = {
             DANCE_CLASSES_APP.hideAllClasses();
             NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
             NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
+            window.scrollTo(0, 0)
 
             // to reload the contact details for the new page
         }

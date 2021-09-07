@@ -9,7 +9,7 @@
     --color-4: hsl(0 , 0% , 96%);
     --color-5: rgb(235, 235, 235);
     --color-6: rgb(245, 245, 245);
-    --color-7: #e3ded0;
+    --color-7: rgb(227, 222, 208);
     
     
     
@@ -35,6 +35,9 @@ html, body {
     width: auto !important;
 }
 
+main {
+    min-height: calc(100vh - 460px);
+}
 
 
 a {
@@ -59,9 +62,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
     font-size: calc(40px + 2vw);
+    line-height: 1.2;
 }
 h2 {
     font-size: calc(30px + 1.7vw);
+    line-height: 1.2;
 }
 h3 {
     font-size: calc(20px + 1.7vw);
@@ -74,9 +79,7 @@ h4 {
 
 
 main {
-    /* max-width: 1100px; */
     margin-top: 73px;
-    min-height: 99vw;
 }
 
 

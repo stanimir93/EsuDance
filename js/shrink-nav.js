@@ -32,7 +32,8 @@ const NAVIGATION = {
             timer = setTimeout(func, 25);
         };
     },
-    
+
+
 
     init: function() {
         window.addEventListener('scroll', this.debounce(this.shrinkNav));

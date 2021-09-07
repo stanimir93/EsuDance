@@ -1,9 +1,11 @@
-
+main {
+    margin-top: 97px;
+   }
 
 main h1, main p {
     text-align: center;
 }
 
-main >div:first-child{
+main > div:first-child{
     background-color: var(--color-1);
 }

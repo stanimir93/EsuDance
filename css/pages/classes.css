@@ -1,5 +1,6 @@
 
 /* AGE GROUP SECTION */
+
 main {
     margin-top: 75px;
 }
@@ -7,8 +8,18 @@ main {
 .all-classes-container{
     display: none;
 }
-.all-classes-container.active{
-    display: revert;
+.all-classes-container.active,
+.classpage-container.active {
+    display: block;
+    transition-property: opacity;
+    animation-name: fade-out-in;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes fade-out-in {
+    0% { opacity: 0 ; }
+    100% { opacity: 1; }
 }
 
 section {
@@ -58,7 +69,7 @@ section:nth-child(even){
     overflow: hidden;
     align-items: center;
     height: 100%;
-    border: 0.8px solid rgba(180, 180, 180, 0.2);
+    border-top: 1px solid rgba(180, 180, 180, 0.2);
     border-radius: 4px;
     background-color: var(--color-3);
     box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
@@ -84,6 +95,7 @@ section:nth-child(even){
     padding-right: 1rem;
     border-radius: 50%;
     object-fit: cover;
+    max-width: 160px;
 }
 
 
@@ -111,6 +123,7 @@ section:nth-child(even){
     }
     .card h3 {
         margin-bottom: 2.5rem;
+        margin-top: -25%;
         text-align: center;font-size: 30px;
     }    
     .card p {
@@ -142,12 +155,18 @@ section:nth-child(even){
     }
     
     .dance-class-image-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: -25%;
         width: 100%;
+        margin-bottom: calc(12% + 0.5rem);
     }
     
     .card img {
         padding: 0 20%;
+        min-width: 170px;
+        max-width: 270px;
     }
     
 }

@@ -64,6 +64,7 @@ const NAV_AND_CONTACT_INFO_APP = {
                 NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
                 NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
                 NAV_AND_CONTACT_INFO_APP.loadContactInfo.decorateLinkOnCurrentPage();
+                NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
                 this.disconnect();
             } 
             // if contact datails are not fetched and parsed, create a listenner to load them into DOM, once they are ready
@@ -73,6 +74,7 @@ const NAV_AND_CONTACT_INFO_APP = {
                     NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
                     NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
                     NAV_AND_CONTACT_INFO_APP.loadContactInfo.decorateLinkOnCurrentPage();
+                    NAV_AND_CONTACT_INFO_APP.loadContactInfo.maintainHorizontalNavSize();
                     this.disconnect();
                 })
             }
@@ -101,8 +103,16 @@ const NAV_AND_CONTACT_INFO_APP = {
                 messengerLink.setAttribute('href', NAV_AND_CONTACT_INFO_APP.contactDetails.messenger)
             })
         },
-        
-    // Decorate navigation to match current page
+
+        // Get width of menu items and make it max width (this prevent menu items from pushing other items when they get bold and wider on hover)
+        maintainHorizontalNavSize: function() {
+           document.querySelectorAll('nav .menu li').forEach( li => {
+               let itemWidth = li.offsetWidth;
+               li.style.maxWidth = `${itemWidth}px`
+           })            
+        },
+
+         // Decorate navigation to match current page
 
         decorateLinkOnCurrentPage: function() {
             document.querySelectorAll('header nav li a').forEach( a => {

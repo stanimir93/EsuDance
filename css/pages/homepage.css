@@ -6,7 +6,7 @@ main > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
 }
 
 /* max view on large screen */
@@ -19,6 +19,10 @@ main div {
     
 }
 
+/* Hide on mobile */
+.desktop-only {
+    display: none;
+}
 /* HERO CONTAINER */
 
 /* outer container */
@@ -195,10 +199,6 @@ main div {
     width: 110%;
 }
 
-/* Hide last two photos on mobile */
-.desktop-only {
-    display: none;
-}
 
 /* Choose images to be displayed */
 .image-wrapper:nth-child(1) .image-container {
@@ -347,7 +347,7 @@ main div {
         margin-bottom: -1rem;
     }
 
-      /* LOCATION */
+    /* LOCATION */
 
     /* location container */
     .homepage-location-container {
