@@ -70,6 +70,7 @@ header nav a {
     position: relative;
     border-radius: 2px;
     padding: 10px;
+    white-space: nowrap;
 }
 
 header nav li a:hover {

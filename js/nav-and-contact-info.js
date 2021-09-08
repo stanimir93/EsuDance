@@ -108,9 +108,7 @@ const NAV_AND_CONTACT_INFO_APP = {
         maintainHorizontalNavSize: function() {
            document.querySelectorAll('nav .menu li').forEach( li => {
                let itemWidth = li.offsetWidth;
-               let itemHeight = li.offsetHeight;
                li.style.maxWidth = `${itemWidth}px`;
-               li.style.maxHeight = `${itemHeight}px`;
            })            
         },
 
