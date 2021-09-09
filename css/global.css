@@ -2,8 +2,9 @@
 
 
 :root {
-    --color-1: #ddd2c3; 
+    --color-1: hsl(35, 28%, 82%); 
     --color-1a: rgba(227, 222, 208, 0.3);
+    --color-1b: rgba(227, 222, 208, 0.8);
     --color-2: rgb(23, 23, 23);
     --color-3: hsl(0, 0%, 100%);
     --color-4: hsl(0 , 0% , 96%);

@@ -1,104 +1,286 @@
+/* GENERAL */
 main {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-/* all sections */
-main > div {
-padding: 2.5rem;
-width: 100vw;
-
-}
-/* contact */
-main > div:first-child {
-    background-color: var(--color-1);
+    justify-content: center;
 }
 
-/* social */
-main >div:nth-child(3) {
-    background-color: var(--color-4);
+/* Outer containers */
+main > div > div {
+    display: flex;
+    justify-content: center;
 }
 
-/* location */
-main > div:nth-last-child(2) {
-    background: linear-gradient(to bottom, var(--color-3) 70%, var(--color-1) 70% );
-
-
-}
-/* gallery */
-main > div:last-child {
-    background-color: var(--color-1);
+/* Inner containers */
+main > div > div > div {
+    max-width: 1080px;
+    padding: 2.5rem;
 }
 
-main h1 {
-    text-align: center;
+.banner-outer-container,
+.contact-outer-container,
+.social-outer-container,
+.map-outer-container {
+    border-bottom: 1px solid var(--color-7);
 }
 
-main h2 {
-    text-align: center;
+/* PAGE HEADING */
+
+/* Banner container */
+.banner-outer-container {
+    /* height: 40vh; */
+    /* height: 300px; */
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    max-width: 1920px;
+    background-image: url("../../images/banners/ballerina-toes.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 5rem;
 }
 
+.banner-inner-container {
+    transform: translateY(10.5px);
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    padding: 5px;
+}
 
-.find-us-page-social-wrapper {
+.banner-inner-container > div{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2.5rem;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    max-width: 500px;
+
+}
+
+/* CONTACT US AND SOCIAL MEDIA */
+/* position */
+.contact-inner-container address,
+.social-inner-container address {
     display: flex;
     align-items: center;
 }
-
-main i::before {
+.contact-inner-container i,
+.social-inner-container i {
     font-size: 30px;
     margin-right: 10px;
 }
 
-
-.all-images-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+/* decoration */
+.contact-inner-container a:first-child:hover,
+.social-inner-container a:first-child:hover {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0);
+    opacity: 0.6;
 }
 
-/* Wrap images with a div that prevents overflow,
-so when hovered they zoom in but don't push the other images away */
+.contact-inner-container a:hover,
+.social-inner-container a:hover {
+    background-color: rgba(0,0,0,0);
+    opacity: 0.7;
+}
 
-.wrapper-image-container {
-    height: 40vw;
-    width: 40vw;
+/* MAP */
+
+#map-inner-container {
+    width: calc(100% - 2.5rem * 2);
+    padding-bottom: 66%;
+    position: relative;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+#map-inner-container iframe {
+    width: calc(100%);
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+/* GALLERY */
+
+/* Layout */
+.gallery-inner-container {
+    display: grid;
+    grid-gap: 2.5rem;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.image-wrapper {
+    width: 290px;
+    height: 290px;
+    max-width: 40vw;
+    max-height: 40vw;
     overflow: hidden;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-
-
-
-
-/* LOCATION */
-.find-us-page-location-container {
-    background: linear-gradient(to bottom, var(--color-1) 60%, var(--color-2) 60% );
-    padding-bottom: 0px;
-    
-}
-.find-us-page-location-container >div {
-    width: 100%;
-    max-width: 1080px;
-}
-
-/* div wrapping the map */
-.find-us-page-map-container {
-    width: 100%;
-    padding-top: 66%;
-    height: 0px;
-    position: relative;
-}
-
-/* map */
-.find-us-page-map-container iframe {
+.image-container {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
+    background-size: cover;
+    transition: all 0.4s;
+}
+
+@supports (aspect-ratio: 1) {
+    .image-container {
+        height: auto;
+        width: 100%;
+        max-width: revert;
+        max-height: revert;
+        aspect-ratio: 1;
+    }
+}
+
+.image-container:hover {
+    width: 110%;
+    height: 110%;
+}
+
+/* photos */
+/* Choose images to be displayed */
+.image-wrapper:nth-child(1) .image-container {
+    background-image: url("../../images/gallery/Street Dance 1 (Small).jpg");
+}
+.image-wrapper:nth-child(2) .image-container {
+    background-image: url("../../images/gallery/Street Dance 2 (Small).jpg");
+}
+.image-wrapper:nth-child(3) .image-container {
+    background-image: url("../../images/gallery/Ballet 1 (Small).jpg");
+}
+.image-wrapper:nth-child(4) .image-container {
+    background-image: url("../../images/gallery/Ballet 18 (Small).jpg");
+}
+
+
+
+@media screen and (min-width: 750px) {
+    /* PAGE LAYOUT */
+    .page-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* column-gap: 15rem; */
+        justify-items: end start;
+        grid-template-areas: 
+        "banner banner"
+        "contact social"
+        "address address"
+        "gallery gallery"
+        "map map";
+    }
+    .banner-outer-container {grid-area: banner;} 
+    .contact-outer-container {grid-area: contact;}
+    .social-outer-container {grid-area: social;}
+    .address-outer-container {grid-area: address;}
+    .map-outer-container {grid-area: map;}
+    .gallery-outer-container {grid-area: gallery;}
+
+    /* spacing and alignment */
+    .contact-outer-container {
+        justify-self: end;
+        max-width: 56rem;
+        width: 100%;
+    }
+    .social-outer-container {
+        justify-self: start;
+        max-width: 56rem;
+        width: 100%;
+    }
+    
+    .contact-inner-container,
+    .social-inner-container {
+        width: 100%;
+    }
+
+     /* titles  */
+    .contact-inner-container h2,
+    .social-inner-container h2 {
+        text-align: start;
+    }
+    
+    /* BORDERS AND COLOURS */
+
+    /* Borders */
+    .banner-outer-container,
+    .contact-outer-container,
+    .social-outer-container,
+    .map-outer-container {
+        border-bottom: none;
+    }
+
+    /* Colours */
+    .address-inner-container {
+        border-top: 1.5px solid var(--color-7);
+    }
+    .map-outer-container {    
+        background: linear-gradient(to bottom, var(--color-3) 70%, var(--color-2) 70% );
+        padding: 2.5rem;
+    }
+    .gallery-outer-container {
+        background-color: var(--color-3);
+    }
+    /* BANNER */
+    
+    .banner-inner-container > div{
+        min-height: 220px;
+        max-width: 450px;
+
+    }
+
+
+    /* MAP */
+    #map-inner-container {
+        padding-bottom: 450px;
+    }
+
+    /* GALERY */
+
+    /* GALLERY */
+    /* Layout */
+
+    .gallery-inner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .image-wrapper {
+        width: 20vw;
+        height: 20vw;
+        max-width: 250px;
+        max-height: 250px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+        @supports (aspect-ratio: 1) {
+            .image-container {
+                height: auto;
+                width: 100%;
+                max-width: revert;
+                max-height: revert;
+            }
+        }
+
+    .image-container {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        transition: all 0.4s;
+    }
+
+
 }
