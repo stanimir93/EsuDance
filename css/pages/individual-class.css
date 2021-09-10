@@ -17,6 +17,9 @@
     align-items: center;
     justify-content: center;
     max-width: 1920px;
+    background-color: var(--color-1);
+    background-position: center;
+    background-size: cover;
 
 }
 
@@ -51,8 +54,7 @@
     margin: 2.5rem;
 }
 
-.classpage-info-container > div:first-child,
-.classpage-info-container > div:nth-child(2) {
+.classpage-info-container > div:first-child {
     border: none;
 }
 
@@ -68,6 +70,10 @@
     
     .classpage-banner-container {
         height: 340px;
+    }
+
+    .classpage-banner-box > div {
+        min-width: 450px;
     }
 
     /* INFO CONTAINER */
@@ -101,6 +107,10 @@
         background-color: var(--color-1);
         border-radius: 2px;
         min-width: 250px;   
+    }
+
+    .classpage-info-container .how-to-book {
+        border-top: none;
     }
 
     .classpage-info-container > div:first-child > h3 {

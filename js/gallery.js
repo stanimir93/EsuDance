@@ -364,18 +364,19 @@ const GALLERY = {
         //Get the data
         this.getData();
 
+        
         // Build the gallery + fullscreen view
         document.addEventListener('galleryDataReady', ()=> {
             this.buildGallery();
             this.buildFullScreenView();
             this.addFullScreenFunctionalities();
         })
-
-
+        
+        
         // Attach listeners to filter button
         document.querySelectorAll('.tabs > button ')
-            .forEach( button => button.addEventListener('click', this.filterGallery))
-
+        .forEach( button => button.addEventListener('click', this.filterGallery))
+        
     }
 }
 

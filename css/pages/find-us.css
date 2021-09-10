@@ -33,7 +33,7 @@ main > div > div > div {
     align-items: center;
     width: 100vw;
     max-width: 1920px;
-    background-image: url("../../images/banners/ballerina-toes.jpg");
+    background-image: url("../../images/studio/IMG_20210520_145022_699.jpg");
     background-position: center;
     background-size: cover;
     padding: 5rem;
@@ -148,16 +148,16 @@ main > div > div > div {
 /* photos */
 /* Choose images to be displayed */
 .image-wrapper:nth-child(1) .image-container {
-    background-image: url("../../images/gallery/Street Dance 1 (Small).jpg");
+    background-image: url("../../images/location/studio-millhill\ \(4\).jpg");
 }
 .image-wrapper:nth-child(2) .image-container {
-    background-image: url("../../images/gallery/Street Dance 2 (Small).jpg");
+    background-image: url("../../images/location/studio-millhill\ \(6\).jpg");
 }
 .image-wrapper:nth-child(3) .image-container {
-    background-image: url("../../images/gallery/Ballet 1 (Small).jpg");
+    background-image: url("../../images/location/studio-millhill\ \(2\).jpg");
 }
 .image-wrapper:nth-child(4) .image-container {
-    background-image: url("../../images/gallery/Ballet 18 (Small).jpg");
+    background-image: url("../../images/studio/IMG_20210520_145022_699.jpg");
 }
 
 

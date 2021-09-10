@@ -84,19 +84,35 @@ section:nth-child(even){
 /* Link */
 .dance-class-button-container {
     float: right;
-    position: absolute; 
+    position: absolute;
     bottom: 1rem;
-    right: 1rem;
+    right: 1.3rem;
 }
 
 /* Image */
-.card img {
-    width: 100%;
+
+.dance-class-image-wrapper {
+    width: 21vw;
+    height: 21vw;
     padding-right: 1rem;
     border-radius: 50%;
-    object-fit: cover;
+    background-position: center;
+    background-size: cover;
     max-width: 160px;
+    max-height: 160px;
 }
+
+.ballet-minis .dance-class-image-wrapper { background-image: url("../../images/icons/ballet-minis.jpg"); }
+.contemporary-minis .dance-class-image-wrapper { background-image: url("../../images/icons/contemporary-minis.jpg"); }
+.street-minis .dance-class-image-wrapper { background-image: url("../../images/icons/street-dance-minis.jpg"); }
+.ballet-kids .dance-class-image-wrapper { background-image: url("../../images/icons/ballet-kids.jpg"); }
+.contemporary-kids .dance-class-image-wrapper { background-image: url("../../images/icons/contemporary-kids.jpg"); }
+.street-kids .dance-class-image-wrapper { background-image: url("../../images/icons/street-dance-kids.jpg"); }
+.ballet-juniors .dance-class-image-wrapper { background-image: url("../../images/icons/ballet-juniors.jpg"); }
+.contemporary-juniors .dance-class-image-wrapper { background-image: url("../../images/icons/contemporary-juniors.jpg"); }
+.street-juniors .dance-class-image-wrapper { background-image: url("../../images/icons/street-dance-juniours.jpg"); }
+.ballet-adults .dance-class-image-wrapper { background-image: url("../../images/icons/ballet-adults.jpg"); }
+.contemporary-adults .dance-class-image-wrapper { background-image: url("../../images/icons/contemporary-adults.jpg"); }
 
 
 @media screen and (min-width: 750px) {
@@ -115,20 +131,29 @@ section:nth-child(even){
     .card {
         display: grid;
         grid-template-columns: 1fr;
-        overflow:visible;
+        grid-template-rows: auto auto;
+        overflow: visible;
         gap: 2.5rem;
         padding: 2.5rem;
         margin-top: 10%;
         max-width: 340px;
+        justify-items: center;
     }
+
+    .card .dance-class-info-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     .card h3 {
         margin-bottom: 2.5rem;
-        margin-top: -25%;
+        margin-top: -10%;
         text-align: center;font-size: 30px;
     }    
     .card p {
         text-align: center;
-        margin-bottom: 2.5rem;
     }
 
     .card .dance-class-button-container {
@@ -136,6 +161,7 @@ section:nth-child(even){
         position: static;
         display: flex;
         justify-content: center;
+        padding-top: 2rem;
     }
 
     .card a {
@@ -155,18 +181,9 @@ section:nth-child(even){
     }
     
     .dance-class-image-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: -25%;
-        width: 100%;
-        margin-bottom: calc(12% + 0.5rem);
-    }
-    
-    .card img {
-        padding: 0 20%;
         min-width: 170px;
-        max-width: 270px;
+        max-width: 170px;
+        margin-top: -30%;
     }
     
 }
