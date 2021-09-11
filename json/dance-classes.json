@@ -38,7 +38,7 @@
 
             {"Dress Code": ""},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     },
 
@@ -80,7 +80,7 @@
 
             {"Dress Code": ""},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     },
 
@@ -101,7 +101,7 @@
 
             {"Dress Code": ""},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     },
 
@@ -122,7 +122,7 @@
 
             {"Dress Code": ""},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     },
 
@@ -143,7 +143,7 @@
 
             {"Dress Code": ""},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     },
 
@@ -164,7 +164,7 @@
 
             {"Dress Code": ""},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     },
 
@@ -185,15 +185,15 @@
 
             {"Dress Code": ""},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     },
 
-    "Ballet_for_Adults_Begginners": {
+    "Ballet_for_Adults_Beginners": {
 
         "banner": {
             "bannerURL": "images/banners/ballet-juniors.jpg",
-            "title": "Ballet for Adults - Begginners",
+            "title": "Ballet for Adults - Beginners",
             "age": "18+ years old"
         },
         "info": [
@@ -206,15 +206,15 @@
 
             {"Dress Code": ""},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     },
 
-    "Contemporary_for_Adults_Begginers": {
+    "Contemporary_for_Adults_Beginners": {
 
         "banner": {
             "bannerURL": "images/banners/contemporary-adults.jpg",
-            "title": "Contemporary for Adults Begginers",
+            "title": "Contemporary for Adults - Beginners",
             "age": "18+ years old"
         },
         "info": [
@@ -227,7 +227,7 @@
 
             {"Dress Code": ""},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     }
 

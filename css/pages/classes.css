@@ -60,13 +60,38 @@ section:nth-child(even){
 
 /* INDIVIDUAL CARD */
 
+/* Opening soon ribbon */
+
+
+.opening-soon .dance-class-info-container::before {
+    content: "Opening Soon";
+    position: absolute;
+    left: -76px;
+    top: 32px;
+    width: 250px;
+    background-color: rgb(226, 77, 77);
+    color: white;
+    text-align: center;
+    padding: 4px;
+    font-weight: bold;
+    transform: rotate(-45deg);
+}
+
+
+/* 
+Dance class info container to be relative on desktop
+Make the ribbon OPENING SOON under the image horizonal
+
+On mobile view - use the old system
+ */
+
 .card {
     display: grid;
     grid-template-columns: 30% 1fr;
     gap: 1fr;
+    overflow: hidden;
     position: relative;
     padding: 1rem;
-    overflow: hidden;
     align-items: center;
     height: 100%;
     border-top: 1px solid rgba(180, 180, 180, 0.2);
@@ -74,6 +99,7 @@ section:nth-child(even){
     background-color: var(--color-3);
     box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
 }
+
 
 /* Title */
 .card h3 {
@@ -94,12 +120,13 @@ section:nth-child(even){
 .dance-class-image-wrapper {
     width: 21vw;
     height: 21vw;
-    padding-right: 1rem;
+    padding-right: 1.5rem;
     border-radius: 50%;
     background-position: center;
     background-size: cover;
     max-width: 160px;
     max-height: 160px;
+    overflow: hidden;
 }
 
 .ballet-minis .dance-class-image-wrapper { background-image: url("../../images/icons/ballet-minis.jpg"); }
@@ -140,6 +167,17 @@ section:nth-child(even){
         justify-items: center;
     }
 
+    /* Ribbon */
+    .opening-soon .dance-class-info-container::before {
+        transform: none;
+        left: 50%;
+        top: 25%;
+        width: 155px;
+        border-radius: 1px;
+        transform: translateX(-50%);
+        padding: 5px;
+    }
+
     .card .dance-class-info-container {
         height: 100%;
         display: flex;
@@ -149,7 +187,7 @@ section:nth-child(even){
 
     .card h3 {
         margin-bottom: 2.5rem;
-        margin-top: -10%;
+        margin-top: -1%;
         text-align: center;font-size: 30px;
     }    
     .card p {
@@ -183,7 +221,7 @@ section:nth-child(even){
     .dance-class-image-wrapper {
         min-width: 170px;
         max-width: 170px;
-        margin-top: -30%;
+        margin-top: -60px;
     }
     
 }
