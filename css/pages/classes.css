@@ -69,12 +69,13 @@ section:nth-child(even){
     left: -76px;
     top: 32px;
     width: 250px;
-    background-color: rgb(226, 77, 77);
+    background-color: var(--color-1);
     color: white;
     text-align: center;
     padding: 4px;
     font-weight: bold;
     transform: rotate(-45deg);
+    display: none;
 }
 
 
