@@ -101,7 +101,10 @@ const DANCE_CLASSES_APP = {
     deleteIndividualClass: function () {
         if (document.querySelector('.classpage-container')) {
             document.querySelector('.classpage-container').remove();
+            setTimeout( ()=> {window.scrollTo(0, 0)}, 0)
+            
         }
+
     },
 
     // Hide all classes 
@@ -139,7 +142,7 @@ const DANCE_CLASSES_APP = {
             DANCE_CLASSES_APP.hideAllClasses();
             NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
             NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
-            window.scrollTo(0, 0)
+            window.scrollTo(0, 0);
 
             // to reload the contact details for the new page
         }
