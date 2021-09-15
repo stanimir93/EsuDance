@@ -46,6 +46,7 @@ Hashchange needs to be triggered:
 const DANCE_CLASSES_APP = {
 
     danceClasses: [],
+    ageGroups: ['minis', 'kids', 'juniors', 'adults'],
 
     // Build and show individual dance class page
     buildShowIndividualClass: function () {
@@ -106,13 +107,26 @@ const DANCE_CLASSES_APP = {
     // Hide all classes 
     hideAllClasses: function () {
         document.querySelector('.all-classes-container').classList.remove('active');
+        document.querySelector('.filter-container').classList.remove('active');
     },
     
-    // Show all classes
+    // Show all classes page
     showAllClasses: function () {
         document.querySelector('.all-classes-container').classList.add('active')
+        document.querySelector('.filter-container').classList.add('active');
         document.title = 'Classes | EsuDance'
         history.replaceState({}, document.title)
+
+    },
+
+    // Filter classes by age group
+    filterAllClasses: function() {
+        let hash = window.location.hash.replace('#','');
+        document.querySelector('.pressed')?.classList.remove('pressed');
+        document.querySelector('.visible')?.classList.remove('visible');
+        document.querySelector(`.${hash}`)?.classList.add('visible');
+        document.querySelector(`[data-classes="${hash}"]`)?.classList.add('pressed');
+        
     },
 
     runAllOnHashChange: function() {
@@ -137,6 +151,11 @@ const DANCE_CLASSES_APP = {
             DANCE_CLASSES_APP.showAllClasses();
             DANCE_CLASSES_APP.deleteIndividualClass();
         }
+        // Filter and show only the required class
+        if (DANCE_CLASSES_APP.ageGroups.indexOf[window.location.hash.replace('#','')] != -1 ) {
+            DANCE_CLASSES_APP.filterAllClasses();
+
+        }
     },
 
 
@@ -155,9 +174,17 @@ const DANCE_CLASSES_APP = {
             // Dispatch hashChange on page load
             window.dispatchEvent(new HashChangeEvent('hashchange'));
             
-            // On button click
+            // On button click of individual class
             document.querySelectorAll('.dance-class-button-container a')
                 .forEach( link => link.addEventListener('click', DANCE_CLASSES_APP.runAllOnHashChange))
+
+            // Change hash on button click
+            document.querySelectorAll('.tabs button')
+                .forEach( button => {button
+                    .addEventListener('click', (ev) => {
+                        window.location.hash = ev.currentTarget.dataset.classes 
+                    })
+                })
             }))            
         
             

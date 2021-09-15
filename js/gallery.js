@@ -241,8 +241,8 @@ const GALLERY = {
             
             let beShowing = function(entries) {
                 entries.forEach( entry => {
-                   
-                    if (entry.isIntersecting) {
+
+                    if (entry.isIntersecting && !entry.target.style['background-image']) {
                         setBackgroundImage(entry.target.dataset.index, entry.target)
                     }
                 })
