@@ -1,3 +1,5 @@
+/* GENERAL */
+
 @keyframes fade-out-in {
     0% { opacity: 0 ;}
     100% { opacity: 1; }
@@ -15,173 +17,124 @@
   100% { transform: rotate(360deg); }
 }
 
-
-
-
-
-/* Title */
-
-.gallery-title-container {
-    /* background-color: var(--color-1); */
-    /* background-image: linear-gradient(hsla(0, 0%, 27%, 0.4), hsla(0, 0%, 27%, 0.4)), url("../../images/banners/ballerina-toes-mobile.jpg");
-    background-size: cover;
-    background-position: center; */
-    text-align: center;
-    padding: var(--space-1);
-    border-top: 1px solid var(--color-1);
+/* TITLE */
+.gallery-title-container{
+    padding: 2.5rem
 }
 
-/* .gallery-title-container h1 {
-    z-index: 103;
-    position: sticky;
-} */
+/* FILTER  MENU*/
 
-/* Filter buttons */
-
+/* Filter container */
 .gallery-filter-container {
     background-color: var(--color-1);
-    padding: 0 var(--space-2);
-    border-top: 8px solid var(--color-1);
-    /* box-shadow: 0 7px 5px -5px rgba(0,0,0,.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1); */
-
-    /* border-bottom: 10px solid var(--color-1); */
-}
-
-.tabs {
     display: flex;
     justify-content: center;
 }
 
+/* Filter buttons */
 .tabs button {
-    margin-right: var(--space-2);
-    height: var(--space-2);
+    background: var(--color-1);
     border: none;
-    padding: var(--space-1);
-    display: flex;
-    align-items: center;
+    padding: 5px 10px;
     cursor: pointer;
-    background-color: var(--color-1);
-    border-radius: 2px 2px 0px 0px;
+    border-top: 4px solid var(--color-1);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
-
-
-.tabs button.active{
+.tabs button:hover,
+.tabs button.active {
     background-color: var(--color-3);
-    color: var(--color-2);
-}
-.tabs button:hover{
-    background-color: var(--color-3);
-    color: var(--color-2);
 }
 
-.tabs button:active{
-    /* background-color: var(--color-1); */
-}
+/* GALLERY CONTAINER */
 
-/* Gallery of images and videos */
-
+/* Layout */
 .gallery-grid {
+    max-width: 1080px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-2);
-    justify-items: center;
-    align-items: center;
-
+    gap: 2.5rem;
+    grid-template-columns: auto auto;
+    padding: 2.5rem;
 }
 
-/* Div wrapping the image container */
+/* PHOTOS */
 
+/* Photo wrapper */
 [data-type="photo"] {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40vw;
     width: 40vw;
+    height: 40vw;
     overflow: hidden;
-    /* box-shadow: 0 7px 5px -5px rgba(0,0,0,.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1); */
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Div containing the image */
-
-.gallery-image-container {
+/* Photo container */
+[data-type="photo"] > div {
     width: 100%;
     height: 100%;
-    background-size: cover;
     background-position: center;
-    transition: all 0.4s;
+    background-size: cover;
     cursor: pointer;
-
+    transition: all 0.4s;
 }
 
-/* Zoom on hover */
-
-.gallery-image-container:hover {
+/* Photo hover */
+[data-type="photo"] > div:hover {
     width: 110%;
     height: 110%;
 }
 
-/* Div wrapping videos */
-
+/* VIDEOS */
 [data-type="video"] {
     grid-column: 1 / 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.gallery-video-container iframe {
-    width: calc(80vw + var(--space-2));
-    height: calc(80vw * 0.5625 + var(--space-2));
-    box-shadow: 0 7px 5px -5px rgba(0,0,0,.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
-
-}
-
-
-/* Hiding gallery items */
-
-[data-type] {
-    display: none;
-}
-
-/* Show images and videos */
-.visible {
-    display: flex;
-    transition-property: opacity;
-    animation-name: fade-out-in;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in;
-}
-
-
-/* FULL SCREEN */
-
-.full-screen-container {
+    overflow: hidden;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+    max-width: calc(720px);
+    max-height: (720px * 0.5625);
+}
+[data-type="video"] > div {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+[data-type="video"] iframe {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 0px;
-    left: 0px;
+}
+
+
+/* FULL SCREEN GALLERY */
+
+.fullscreen-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: var(--color-2);
     z-index: 200;
-    display: none;
     transition-property: display;
     animation-name: fade-out-in;
     animation-duration: 0.4s;
     animation-timing-function: ease;
-    
+    display: none;
+    width: 100vw;
+
 }
-.full-screen-container.active {
-    display: flex;
+.fullscreen-container.active {
+    display: block;
 }
 
-.large-images-wrapper {
+/* Fullscreen images container */
+
+
+.fullscreen-images-container {
     display: flex;
     overflow: auto;
     flex: none;
@@ -189,100 +142,86 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    height: calc(100vh - 71px);
     scroll-snap-type: x mandatory;
+}
+
+/* Fullscreen images */
+
+.fullscreen-image {
+    height: 100%;
+    max-height: 720px;
+    min-width: 100vw;
+    background-color: rgba(0,0,0,0);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    z-index: 205;
+    margin: 0 4vw;
+    margin-top: -71px;
+    position: relative;
     
 }
 
-.large-image-container{
-    min-width: 100vw;
-    min-height: 80vw;
-    background-color: rgba(0,0,0,0);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-    margin: 0px 4vw;
+/* Scrollbar */
+::-webkit-scrollbar {
+    display: none;
 }
 
-/* .large-image {
+/* Arrow */
+.fullscreen-arrows {
+    display: none;
+}
+
+/* All buttons */
+.fullscreen-buttons {
+    color: var(--color-7);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem 1.5rem;
     max-width: 100vw;
-    max-height: 90vh; 
-    margin: 10px;   
-} */
-/* 
-.button-wrapper {
-    width: 20vw;
-    height: 50vw;
+}
+.fullscreen-buttons a {
     display: flex;
-    align-items: center;
-}
-
-.button-wrapper:hover {
-    background-color: rgba(0,0,0,0.5);
-}
-
-.button-wrapper.previous {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 201;
-    justify-content: start;
-}
-
-.button-wrapper.next {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 201;
-    justify-content: end;
-}
-
-button.next, button.previous {
-    width: 20vw;
-    background-color: rgba(0,0,0,0);
-} */
-
-.close-button {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    align-items: center;
+}
+.fullscreen-buttons a:hover {
+    background-color: rgba(0,0,0,0);
+}
+
+/* Counter */
+.gallery-location-counter {
+    font-size: 19px;
+    
+}
+
+/* Download button */
+
+.fullscreen-buttons i {
+    font-size: 30px;
+    color: var(--color-1);
+    display: block;
+}
+.fullscreen-buttons i:hover,
+.fullscreen-buttons i:active {
+    color: var(--color-7);
+}
+
+/* Close button */
+.fullscreen-buttons svg {
+    fill: var(--color-1);
     cursor: pointer;
-    position: relative;
+    height: 30px;
+}
+.fullscreen-buttons svg:hover,
+.fullscreen-buttons svg:active {
+    fill: var(--color-7)
 }
 
-.close-button:active {
-    background-color: var(--color-1b);
-}
-
-.close-button::before, .close-button::after {
-
-    content: '';
-    position: absolute;
-    top: calc(50% - 4px);
-    right: 0px;
-    width: 100%;
-    height: 2.5px;
-    background-color: inherit;    
-    border-radius: 2.5px;
-    transform: rotate(45deg);
-    background-color: var(--color-1);
-    cursor: pointer;
-    transition: all 0.5 ease;
-}
-
-.close-button::after {
-    transform: rotate(-45deg);
-}
-
-.close-button:hover::before, .close-button:hover::after {
-    height: 3px;
-    border-color: var(--color-3);
-}
+/* SPINNER */
 
 .spinner {
     display: none;
@@ -293,63 +232,140 @@ button.next, button.previous {
     position: absolute;
     top: calc(50% - 25px);
     left: calc(50% - 25px);
-    border: 8px solid var(--color-1b);
+    border: 8px solid var(--color-1a);
     border-radius: 50%;
-    border-top: 8px solid var(--color-1);
+    border-top: 8px solid var(--color-7);
     width: 50px;
     height: 50px;
     -webkit-animation: spin 1.3s linear infinite; /* Safari */
     animation: spin 1.3s linear infinite;
 }
 
-.fullscreen-buttons {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
+
+
+@media screen and (min-width: 750px) {
+
+    /* Layout */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        /* gap: 3rem; */
+        /* max-width: calc(290px); */
+        /* padding: 4rem 2.5rem; */
+    }
+   
+    /* Filter */
+    .tabs h3 {
+        font-size: 30px;
+    }
+
+    /* Photo wrapper */
+    [data-type="photo"] {
+        height: 21vw;
+        max-height: 230px;
+        width: 21vw;
+        max-width: 230px;
+        overflow: hidden;
+        transition: all 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: span 2;
+        justify-self: center;
+    }
+    /* Video wrapper */
+    [data-type="video"] {
+        position: relative;
+        grid-column: span 4;
+
+
+
+    }
+    
+    /* FULLSCREEN */
+/* 
+    .fullscreen-image {
+        align-items: flex-start;
+        margin-bottom: 150px;
+    } */
+
+    /* arrows */
+    .fullscreen-arrows {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        left: 50%;
+        top: 50vh;
+        transform: translate(-50%, -75%);
+        width: 100%;
+        max-width: 1200px;
+        z-index: 206;
+    }
+    .arrow {
+        /* position: absolute; */
+        /* left: 10;
+        z-index: 500; */
+        font-size: 30px;
+        width: 50px;
+        background-color: rgba(0,0,0,0.4);
+        color: var(--color-7);
+        cursor: pointer;
+        margin: 0 2.5rem;
+        text-align: center;
+        border-radius: 3px;
+    }
+    .arrow:hover{
+        background-color: rgba(0,0,0,0.9);
+        color: var(--color-7);
+    }
+
+}
+
+/* HIDE AND SHOW ITEMS */
+
+/* Hide gallery items */
+[data-type] {
+    display: none;
+}
+
+/* Show gallery items */
+.visible {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    height: 80px;
-    /* padding: 15px; */
-    /* pad */
+    transition-property: opacity;
+    animation-name: fade-out-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 
-.close-button, .download-button {
-    margin: 20px;
-}
+@media screen and (max-height: 480px) {
 
-/* .fullscreen-buttons >div {
-    margin-right: 20px;
-    margin-left: 20px;
-} */
+    .fullscreen-arrows {
+        transform: translate(-50%, -100%);
+        
+    }
 
-.download-button {
-    background-color: var(--color-2);
-}
+    .fullscreen-images-container {
+        top: 0;
+        height: 100vh;
+    }
+    .fullscreen-buttons {
+        position: absolute;
+        top: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        width: 100vw;
+    }
 
-.download-button i{
-    font-size: 30px;
-    color: var(--color-1);
-    transition: all 0.1s;
-}
+    .fullscreen-buttons > div {
+        z-index: 206;
+        background-color: rgba(0,0,0,0.4);
+        padding: 1rem;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+    }
 
-.download-button a:hover {
-    background-color: var(--color-2);
-}
-
-.download-button a:hover, .download-button i:hover{
-    color: var(--color-3);
-}
-.download-button a:active, .download-button i:active{
-    background-color: var(--color-1b);
-    color: var(--color-3);
-}
-
-
-.gallery-loaction-counter {
-    color: var(--color-1);
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
+    
 }

@@ -52,6 +52,8 @@ main div {
     background-color: var(--color-3);
 }
 
+
+
 /* button */
 .homepage-hero-container a {
     margin: 2.5rem auto;
@@ -273,6 +275,12 @@ main div {
 /* DESKTOP VIEW */
 
 @media screen and (min-width: 750px) {
+
+    /* HERO CONTAINER */
+    /* text */
+    .homepage-hero-container p {
+        font-size: 18px;
+    }
     
     /* VIDEO */
     .homepage-video-container > div {

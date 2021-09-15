@@ -129,17 +129,17 @@ On mobile view - use the old system
     overflow: hidden;
 }
 
-.ballet-minis .dance-class-image-wrapper { background-image: url("../../images/icons/ballet-minis.jpg"); }
-.contemporary-minis .dance-class-image-wrapper { background-image: url("../../images/icons/contemporary-minis.jpg"); }
-.street-minis .dance-class-image-wrapper { background-image: url("../../images/icons/street-dance-minis.jpg"); }
-.ballet-kids .dance-class-image-wrapper { background-image: url("../../images/icons/ballet-kids.jpg"); }
-.contemporary-kids .dance-class-image-wrapper { background-image: url("../../images/icons/contemporary-kids.jpg"); }
-.street-kids .dance-class-image-wrapper { background-image: url("../../images/icons/street-dance-kids.jpg"); }
-.ballet-juniors .dance-class-image-wrapper { background-image: url("../../images/icons/ballet-juniors.jpg"); }
-.contemporary-juniors .dance-class-image-wrapper { background-image: url("../../images/icons/contemporary-juniors.jpg"); }
-.street-juniors .dance-class-image-wrapper { background-image: url("../../images/icons/street-dance-juniours.jpg"); }
-.ballet-adults .dance-class-image-wrapper { background-image: url("../../images/icons/ballet-adults.jpg"); }
-.contemporary-adults .dance-class-image-wrapper { background-image: url("../../images/icons/contemporary-adults.jpg"); }
+.ballet-minis .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-minis.jpg"); }
+.contemporary-minis .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-minis.jpg"); }
+.street-minis .dance-class-image-wrapper { background-image: url("../../images/classes/street-dance-minis.jpg"); }
+.ballet-kids .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-kids.jpg"); }
+.contemporary-kids .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-kids.jpg"); }
+.street-kids .dance-class-image-wrapper { background-image: url("../../images/classes/street-dance-kids.jpg"); }
+.ballet-juniors .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-juniors.jpg"); }
+.contemporary-juniors .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-juniors.jpg"); }
+.street-juniors .dance-class-image-wrapper { background-image: url("../../images/classes/street-dance-juniours.jpg"); }
+.ballet-adults .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-adults.jpg"); }
+.contemporary-adults .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-adults.jpg"); }
 
 
 @media screen and (min-width: 750px) {

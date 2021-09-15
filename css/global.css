@@ -3,6 +3,7 @@
 
 :root {
     --color-1: hsl(35, 28%, 82%); 
+    /* --color-1: #faebd7;  */
     --color-1a: rgba(227, 222, 208, 0.3);
     --color-1b: rgba(227, 222, 208, 0.8);
     --color-2: rgb(23, 23, 23);
@@ -11,6 +12,7 @@
     --color-5: rgb(235, 235, 235);
     --color-6: rgb(245, 245, 245);
     --color-7: rgb(227, 222, 208);
+    /* --color-7: #faebd7; */
     
     
     

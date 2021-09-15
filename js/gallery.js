@@ -93,24 +93,14 @@ const GALLERY = {
         let galleryDataReady = new Event('galleryDataReady');
         
         // Fetches names of small photos and video urls. Saves them into arrays + large photos array
-        let getPhotoNamesAndVideoURLS = function() {
-            fetch('json/gallery.json')
-            .then( response => response.json())
-            .then ( data => {
-                GALLERY.videos = data["video_urls"];
-                GALLERY.smallPhotos = data["photo_names"];
-                createLargePhotosArray();
-                document.dispatchEvent(galleryDataReady);
-            })  
-        };
-
-        // Creates an array of larger photos
-        let createLargePhotosArray = function() {
-            GALLERY.smallPhotos.forEach( photo => GALLERY.largePhotos.push(photo.replace('(Small)', '(Large)')) )
-        };
-
-        getPhotoNamesAndVideoURLS();
-
+        fetch('json/gallery.json')
+        .then( response => response.json())
+        .then ( data => {
+            GALLERY.videos = data["video_urls"];
+            GALLERY.smallPhotos = data["photo_names"];
+            GALLERY.smallPhotos.forEach( photo => GALLERY.largePhotos.push(photo.replace('(Small)', '(Large)')) )  // Array with names of large photos
+            document.dispatchEvent(galleryDataReady);
+        })  
     },
 
     // Create elements and render gallery
@@ -165,48 +155,53 @@ const GALLERY = {
     // Create empty <img> elements to be used in fullscreen mode. 
     buildFullScreenView: function() {
 
-        let createAndAppendToDOM = function(){
-    
-            let df = new DocumentFragment();
-    
-            // Append photos to df
-            GALLERY.largePhotos.forEach( (photo) => {
-                // let img = document.createElement('img');
-                // img.classList.add('large-image');
-                // img.dataset.index = GALLERY.largePhotos.indexOf(photo);
+        let df = new DocumentFragment();
 
-                let wrapper = document.createElement('div');
-                wrapper.classList.add('large-image-container');
-                wrapper.dataset.index = GALLERY.largePhotos.indexOf(photo);
+        // Append photos to df
+        GALLERY.largePhotos.forEach( (photo) => {
+            // let img = document.createElement('img');
+            // img.classList.add('large-image');
+            // img.dataset.index = GALLERY.largePhotos.indexOf(photo);
 
-                let spinner = document.createElement('div');
-                spinner.classList.add('spinner', 'active');
-                wrapper.appendChild(spinner);
+            let wrapper = document.createElement('div');
+            wrapper.classList.add('fullscreen-image');
+            wrapper.dataset.index = GALLERY.largePhotos.indexOf(photo);
 
-                // wrapper.appendChild(img)
+            let spinner = document.createElement('div');
+            spinner.classList.add('spinner', 'active');
+            wrapper.appendChild(spinner);
 
-                df.appendChild(wrapper);
-            })
-    
-            // Append df to images wrapper
-            document.querySelector('.large-images-wrapper').appendChild(df);
-        }
+            // wrapper.appendChild(img)
 
-        createAndAppendToDOM();
-     
+            df.appendChild(wrapper);
+        })
+
+        // Append df to images wrapper
+        document.querySelector('.fullscreen-images-container').appendChild(df);
+        
+
+        // Add listenners to arrows
+        document.querySelector('.arrow.left').addEventListener('click', function(){
+            document.dispatchEvent(new KeyboardEvent('keyup', {code: 'ArrowLeft'}))
+        })
+        document.querySelector('.arrow.right').addEventListener('click', function(){
+            document.dispatchEvent(new KeyboardEvent('keyup', {code: 'ArrowRight'}))
+        })
     },
     
     addFullScreenFunctionalities: function() {
+
         
         // Open fullscreen mode and scroll into view the chosen photo
         let openFullScreen = function(ev) {
-            document.querySelector('.full-screen-container').classList.add('active');
+
+            document.querySelector('.fullscreen-container').classList.add('active');
 
             let index = ev.target.dataset.index;
-            let photo = document.querySelector(`.large-image-container[data-index="${index}"]`)
+            let photo = document.querySelector(`.fullscreen-image[data-index="${index}"]`)
 
             setBackgroundImage(index, photo)
-            document.body.style.position = 'fixed';
+            document.body.style.position = 'fixed'; // Prevents up and down scrolling
             photo.scrollIntoView(false);
         }
 
@@ -214,18 +209,14 @@ const GALLERY = {
         // Fetch image. Set it as background image and remove the loading spinner
         let setBackgroundImage = function(index, photo) {
 
-            let shareButtonFuctionality = function(){
 
-            }
-
-            
+           
             fetch(`images/gallery/${GALLERY.largePhotos[index]}`)
                 .then(response => response.blob())
                 .then(imageBlob => {
                     // Then create a local URL for that image and print it 
                     const imageObjectURL = URL.createObjectURL(imageBlob);
                     photo.style.backgroundImage = `url('${imageObjectURL}')`;
-                    console.log(imageBlob);
                     
                     document.querySelector(`[data-index="${index}"] .spinner`).classList.remove('active');
 
@@ -241,15 +232,16 @@ const GALLERY = {
 
         // Watch for image containers when coming into view and fetch and set background image
         let setBackgroundImageOnSwipe = function(){ 
-
+           
             let options = {
                 root: null,
                 rootMargin: "0px 0px" ,
                 threshold: 0.05
             };
-
+            
             let beShowing = function(entries) {
                 entries.forEach( entry => {
+                   
                     if (entry.isIntersecting) {
                         setBackgroundImage(entry.target.dataset.index, entry.target)
                     }
@@ -257,7 +249,7 @@ const GALLERY = {
             };
             
             let observer = new IntersectionObserver(beShowing, options)
-            document.querySelectorAll('.large-image-container').forEach( container => observer.observe(container));
+            document.querySelectorAll('.fullscreen-image').forEach( container => observer.observe(container));
             
         }
         
@@ -279,13 +271,13 @@ const GALLERY = {
             };
 
             let observer = new IntersectionObserver(beShowing, options)
-            document.querySelectorAll('.large-image-container').forEach( container => observer.observe(container));
+            document.querySelectorAll('.fullscreen-image').forEach( container => observer.observe(container));
             
         }
         // Close fullscreen mode 
 
         let closeFullScreen = function() {
-            document.querySelector('.full-screen-container').classList.remove('active');
+            document.querySelector('.fullscreen-container').classList.remove('active');
             document.body.style.position = 'static';
 
         }
@@ -295,8 +287,8 @@ const GALLERY = {
 
             
             let moveImages = function(ev) {
-                if (document.querySelector('.full-screen-container.active')) {
-                    let imagesWrapper = document.querySelector('.large-images-wrapper');
+                if (document.querySelector('.fullscreen-container.active')) {
+                    let imagesWrapper = document.querySelector('.fullscreen-images-container');
                     let optionsRight = {
                         top: 0,
                         left: imagesWrapper.scrollWidth / GALLERY.largePhotos.length,
@@ -330,7 +322,7 @@ const GALLERY = {
         }
         
         document.querySelectorAll('.gallery-image-container').forEach(photo => photo.addEventListener('click', openFullScreen ));  
-        document.querySelector('.close-button').addEventListener('click', closeFullScreen )
+        document.querySelector('.close-button').addEventListener('click', closeFullScreen );
         setBackgroundImageOnSwipe();
         imageCounter();
         changePhotosWithArrows();
