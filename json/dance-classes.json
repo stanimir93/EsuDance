@@ -15,7 +15,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": "Ballet leotard, tights, ballet shoes, skirt (optional), tap shoes, water bottle"},
+            {"Dress Code": "Ballet leotard, tights, skirt, ballet shoes, tap shoes, ballet bun hairstyle(girls), water bottle"},
 
             {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
         ]
@@ -36,7 +36,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "Ballet leotard or tight T-shirt and stretchy shorts/joggers/leggings, tied up hairstyle, water bottle"},
 
             {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
@@ -57,7 +57,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "T-shirt and shorts/joggers, trainers, tied up hairstyle, water bottle"},
 
             {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
         ]
@@ -67,7 +67,7 @@
 
         "banner": {
             "bannerURL": "images/banners/ballet-kids.jpg",
-            "title": "Baller for Kids",
+            "title": "Baller and Tap Dance for Kids",
             "age": "8 - 12 years old"
         },
         "info": [
@@ -78,7 +78,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "Ballet leotard, tights, skirt, ballet shoes, tap shoes, ballet bun hairstyle(girls), water bottle"},
 
             {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
@@ -99,7 +99,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "Ballet leotard or tight T-shirt and stretchy shorts/joggers/leggings, tied up hairstyle, water bottle"},
 
             {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
@@ -120,7 +120,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "T-shirt and shorts/joggers, trainers, tied up hairstyle, water bottle"},
 
             {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
@@ -141,7 +141,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "Ballet leotard, tights, skirt, ballet shoes, ballet bun hairstyle(girls), water bottle"},
 
             {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
@@ -162,7 +162,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "T-shirt/leotard and stretchy shorts/joggers/leggings, water bottle"},
 
             {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
@@ -183,7 +183,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "T-shirt and shorts/joggers, trainers, water bottle"},
 
             {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
@@ -204,7 +204,7 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "Ballet leotard/T-shirt, tights/leggings, skirt (optional), ballet shoes, ballet bun hairstyle(girls), water bottle"},
 
             {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
@@ -225,9 +225,9 @@
 
             {"Price": "£32 per month (4 weeks / £8 per class)"},
 
-            {"Dress Code": ""},
+            {"Dress Code": "T-shirt/leotard and stretchy shorts/joggers/leggings, water bottle"},
 
-            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+            {"Timetable": "Wednesdays 6 - 7pm<br><br>Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     }
 
