@@ -2,7 +2,7 @@
 /* AGE GROUP SECTION */
 
 main {
-    margin-top: 105px;
+    margin-top: 75px;
     width: 100vw;
 }
 
@@ -46,6 +46,7 @@ section.visible {
 
 /* FILTER */
 .filter-container {
+    margin-top: 105px;
     width: 100vw;
     display: flex;
     flex-direction: column;
