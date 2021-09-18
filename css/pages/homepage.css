@@ -14,7 +14,7 @@ main > div > div {
     max-width: 1080px;
 }
 
-main div {
+main > div {
     margin: auto;
     
 }
@@ -151,78 +151,45 @@ main div {
     margin: auto;
     background-color: var(--color-3);
 }
-
-.homepage-gallery-container h2 {
-    padding-bottom: 20px;
-}
-/* Display images as a grid */
-.homepage-gallery-container > div {
+/* Layout */
+.small-images-container {
+    max-width: 1080px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: calc(20px + 0.5rem);
-    justify-items: center;
-    align-items: center;
-    width: 100%;
+    gap: 2.5rem;
+    grid-template-columns: auto auto;
     padding: 2.5rem;
 }
 
+/* PHOTOS */
 
-/* Div wrapping the image */
-.image-wrapper {
+/* Photo wrapper */
+[data-type="photo"] {
+    width: 40vw;
     height: 40vw;
-    width: 100%;
     overflow: hidden;
-    transition: all 0.4s;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-@supports (aspect-ratio: 1) {
-    .image-wrapper {
-        height: auto;
-        aspect-ratio: 1;
-    }
-}
-
-/* Div holding the image*/
-.image-container {
-    height: 100%;
+/* Photo container */
+[data-type="photo"] > div {
     width: 100%;
-    background-position: center ;
+    height: 100%;
+    background-position: center;
     background-size: cover;
+    cursor: pointer;
     transition: all 0.4s;
-    /* cursor: pointer; */
 }
 
-/* Zoom on hover  */
-.image-container:hover {
-    height: 110%;
+/* Photo hover */
+[data-type="photo"] > div:hover {
     width: 110%;
+    height: 110%;
 }
 
-
-/* Choose images to be displayed */
-.image-wrapper:nth-child(1) .image-container {
-    background-image: url("../../images/gallery/Street Dance 1 (Small).jpg");
-}
-.image-wrapper:nth-child(2) .image-container {
-    background-image: url("../../images/gallery/Street Dance 2 (Small).jpg");
-}
-.image-wrapper:nth-child(3) .image-container {
-    background-image: url("../../images/gallery/Ballet 1 (Small).jpg");
-}
-.image-wrapper:nth-child(4) .image-container {
-    background-image: url("../../images/gallery/Ballet 18 (Small).jpg");
-}
-.image-wrapper:nth-child(5) .image-container {
-    background-image: url("../../images/gallery/Tap 7 (Small).jpg");
-}
-.image-wrapper:nth-child(6) .image-container {
-    background-image: url("../../images/gallery/Street Dance 4 (Small).jpg");
-}
-
-/* link for gallery*/
+/* link to gallery page*/
 
 .homepage-gallery-container .view-more {
     grid-column: 1 / 3;
@@ -299,62 +266,6 @@ main div {
     }
 
  
-    /* GALLERY */
-
-    /* grid - 3 columns */
-    .homepage-gallery-container > div {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 2rem;
-    }
-
-    /* Div wrapping the image */
-    .image-wrapper {
-        height: 24vw;
-        max-height: 290px;
-        width: 24vw;
-        max-width: 290px;
-        overflow: hidden;
-        transition: all 0.4s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    @supports (aspect-ratio: 1) {
-        .image-wrapper {
-            height: auto;
-            width: 100%;
-            max-width: revert;
-            max-height: revert;
-            aspect-ratio: 1;
-        }
-    }
-
-    /* Div holding the image*/
-    .image-container {
-        height: 100%;
-        width: 100%;
-    }
-
-    /* Zoom on hover  */
-    .image-container:hover {
-        height: 110%;
-        width: 110%;
-    }
-    /* Link to view more photos */
-    .homepage-gallery-container .view-more {
-        grid-column: 1 / 4;
-    }
-
-    /* Show last two photos on desktop */
-    .desktop-only {
-        display: unset;
-    }
-
-    .homepage-gallery-container .view-more {
-        margin-top: 1rem;
-        margin-bottom: -1rem;
-    }
-
     /* LOCATION */
 
     /* location container */
@@ -397,4 +308,57 @@ main div {
         box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
     }
 
+     /* GALLERY */
+
+    /* Layout */
+    .small-images-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        /* gap: 3rem; */
+        /* max-width: calc(290px); */
+        padding: 1.5rem 0;
+    }
+   
+    /* Filter */
+    .tabs h3 {
+        font-size: 30px;
+    }
+
+    /* Photo wrapper */
+    [data-type="photo"] {
+        height: 24vw;
+        max-height: 260px;
+        width: 24vw;
+        max-width: 260px;
+        overflow: hidden;
+        transition: all 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: span 2;
+        justify-self: center;
+    }
+    /* Video wrapper */
+    [data-type="video"] {
+        position: relative;
+        grid-column: span 4;
+
+    }
+
+}
+
+/* HIDE AND SHOW ITEMS */
+
+/* Hide gallery items */
+[data-type] {
+    display: none;
+}
+
+/* Show gallery items */
+.visible {
+    display: flex;
+    transition-property: opacity;
+    animation-name: fade-out-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }

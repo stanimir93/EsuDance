@@ -1,0 +1,217 @@
+/* FULL SCREEN GALLERY */
+
+.fullscreen-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-2);
+    z-index: 200;
+    transition-property: display;
+    animation-name: fade-out-in;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    display: none;
+    width: 100vw;
+
+}
+.fullscreen-container.active {
+    display: block;
+}
+
+/* Fullscreen images container */
+
+
+.fullscreen-images-container {
+    display: flex;
+    overflow: auto;
+    flex: none;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 71px);
+    scroll-snap-type: x mandatory;
+}
+
+/* Fullscreen images */
+
+.fullscreen-image {
+    height: 100%;
+    max-height: 720px;
+    min-width: 100vw;
+    background-color: rgba(0,0,0,0);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    z-index: 205;
+    margin: 0 2.5rem;
+    margin-top: -71px;
+    position: relative;
+    
+}
+
+/* Arrow */
+.fullscreen-arrows {
+    display: none;
+}
+
+/* All buttons */
+.fullscreen-buttons {
+    color: var(--color-7);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem 1.5rem;
+    max-width: 100vw;
+}
+.fullscreen-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fullscreen-buttons a:hover {
+    background-color: rgba(0,0,0,0);
+}
+
+
+/* Download button */
+
+.fullscreen-buttons i {
+    font-size: 27px;
+    color: var(--color-1);
+    display: block;
+}
+.fullscreen-buttons i:hover,
+.fullscreen-buttons i:active {
+    color: var(--color-7);
+}
+
+/* counter */
+.gallery-location-counter {
+    font-size: 17px;
+}
+
+/* Close button */
+.fullscreen-buttons svg {
+    fill: var(--color-1);
+    cursor: pointer;
+    height: 27px;
+}
+.fullscreen-buttons svg:hover,
+.fullscreen-buttons svg:active {
+    fill: var(--color-7)
+}
+
+/* SPINNER */
+
+.spinner {
+    display: none;
+}
+
+.spinner.active {
+    display: block;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    border: 8px solid var(--color-1a);
+    border-radius: 50%;
+    border-top: 8px solid var(--color-7);
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 1.3s linear infinite; /* Safari */
+    animation: spin 1.3s linear infinite;
+}
+
+
+
+
+@media screen and (min-width: 750px) {
+    
+    /* FULLSCREEN */
+
+    /* counter */
+    .gallery-location-counter {
+        font-size: 19px;
+    }
+    .fullscreen-buttons i {
+        font-size: 30px;
+    }
+    .fullscreen-buttons svg {
+        height: 30px;
+    }   
+
+    /* arrows */
+    .fullscreen-arrows {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        left: 50%;
+        top: 50vh;
+        transform: translate(-50%, -75%);
+        width: 100%;
+        max-width: 1200px;
+        z-index: 206;
+    }
+    .arrow {
+        /* position: absolute; */
+        /* left: 10;
+        z-index: 500; */
+        font-size: 30px;
+        width: 50px;
+        background-color: rgba(0,0,0,0.4);
+        color: var(--color-7);
+        
+        cursor: pointer;
+        margin: 0 2.5rem;
+        text-align: center;
+        border-radius: 3px;
+    }
+    .arrow:hover{
+        background-color: rgba(0,0,0,0.9);
+        color: var(--color-7);
+    }
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
+}
+
+
+
+@media screen and (max-height: 480px) {
+    
+    .fullscreen-arrows {
+        transform: translate(-50%, -100%);
+        
+    }
+
+    .fullscreen-images-container {
+        top: 0;
+        height: 100vh;
+    }
+    .fullscreen-buttons {
+        position: absolute;
+        top: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        width: 100vw;
+    }
+
+    .fullscreen-buttons > div {
+        z-index: 206;
+        background-color: rgba(0,0,0,0.4);
+        padding: 1rem;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    
+}

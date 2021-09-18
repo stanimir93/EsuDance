@@ -11,7 +11,11 @@ main > div > div {
 }
 
 /* Inner containers */
-main > div > div > div {
+.banner-inner-container,
+.contact-inner-container,
+.social-inner-container,
+.address-inner-container,
+.map-inner-container {
     max-width: 1080px;
     padding: 2.5rem;
 }
@@ -86,7 +90,7 @@ main > div > div > div {
 
 /* MAP */
 
-#map-inner-container {
+.map-inner-container {
     width: calc(100% - 2.5rem * 2);
     padding-bottom: 66%;
     position: relative;
@@ -94,7 +98,7 @@ main > div > div > div {
     margin-right: 2.5rem;
 }
 
-#map-inner-container iframe {
+.map-inner-container iframe {
     width: calc(100%);
     height: 100%;
     top: 0px;
@@ -102,62 +106,44 @@ main > div > div > div {
     position: absolute;
 }
 
-/* GALLERY */
+/* GALLERY CONTAINER */
 
 /* Layout */
-.gallery-inner-container {
+.small-images-container {
+    max-width: 1080px;
+    margin: 0 auto;
     display: grid;
-    grid-gap: 2.5rem;
-    grid-template-columns: 1fr 1fr;
-
+    gap: 2.5rem;
+    grid-template-columns: auto auto;
+    padding: 2.5rem;
 }
 
-.image-wrapper {
-    width: 290px;
-    height: 290px;
-    max-width: 40vw;
-    max-height: 40vw;
+/* PHOTOS */
+
+/* Photo wrapper */
+[data-type="photo"] {
+    width: 40vw;
+    height: 40vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.image-container {
+/* Photo container */
+[data-type="photo"] > div {
     width: 100%;
     height: 100%;
+    background-position: center;
     background-size: cover;
+    cursor: pointer;
     transition: all 0.4s;
 }
 
-@supports (aspect-ratio: 1) {
-    .image-container {
-        height: auto;
-        width: 100%;
-        max-width: revert;
-        max-height: revert;
-        aspect-ratio: 1;
-    }
-}
-
-.image-container:hover {
+/* Photo hover */
+[data-type="photo"] > div:hover {
     width: 110%;
     height: 110%;
-}
-
-/* photos */
-/* Choose images to be displayed */
-.image-wrapper:nth-child(1) .image-container {
-    background-image: url("../../images/location/studio-millhill\ \(4\).jpg");
-}
-.image-wrapper:nth-child(2) .image-container {
-    background-image: url("../../images/location/studio-millhill\ \(6\).jpg");
-}
-.image-wrapper:nth-child(3) .image-container {
-    background-image: url("../../images/location/studio-millhill\ \(2\).jpg");
-}
-.image-wrapper:nth-child(4) .image-container {
-    background-image: url("../../images/studio/IMG_20210520_145022_699.jpg");
 }
 
 
@@ -237,50 +223,62 @@ main > div > div > div {
 
 
     /* MAP */
-    #map-inner-container {
+    .map-inner-container {
         padding-bottom: 450px;
     }
 
-    /* GALERY */
 
     /* GALLERY */
+
     /* Layout */
-
-    .gallery-inner-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 0;
-        padding-right: 0;
+    .small-images-container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        /* gap: 3rem; */
+        /* max-width: calc(290px); */
+        padding: 2.5rem 0;
+    }
+   
+    /* Filter */
+    .tabs h3 {
+        font-size: 30px;
     }
 
-    .image-wrapper {
-        width: 20vw;
-        height: 20vw;
-        max-width: 250px;
+    /* Photo wrapper */
+    [data-type="photo"] {
+        height: 21vw;
         max-height: 250px;
+        width: 21vw;
+        max-width: 250px;
         overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
-    
-        @supports (aspect-ratio: 1) {
-            .image-container {
-                height: auto;
-                width: 100%;
-                max-width: revert;
-                max-height: revert;
-            }
-        }
-
-    .image-container {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
         transition: all 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: span 2;
+        justify-self: center;
+    }
+    /* Video wrapper */
+    [data-type="video"] {
+        position: relative;
+        grid-column: span 4;
+
     }
 
+}
 
+/* HIDE AND SHOW ITEMS */
+
+/* Hide gallery items */
+[data-type] {
+    display: none;
+}
+
+/* Show gallery items */
+.visible {
+    display: flex;
+    transition-property: opacity;
+    animation-name: fade-out-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
