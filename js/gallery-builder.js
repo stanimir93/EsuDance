@@ -112,7 +112,7 @@ export let GALLERY_BUILDER = {
         let imageBuilder = function() {
             GALLERY_BUILDER.smallPhotos?.forEach( (photoName) => {
                 let wrapper = document.createElement('div');
-                wrapper.classList.add('gallery-media-wrapper', 'visible');
+                wrapper.classList.add('gallery-media-wrapper');
                 wrapper.dataset.type = 'photos'
     
                 let container = document.createElement('div');
