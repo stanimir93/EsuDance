@@ -56,8 +56,9 @@ const GALLERY_FILTER = {
     }
 }
 
-// Build gallery and apply the filter on the gallery (change button color is applied in order to preven the button from delayed clicking)
-GALLERY_BUILDER.init('json/gallery.json', '.gallery','images/gallery', [GALLERY_FILTER.changeButtonColor, GALLERY_FILTER.init]);
+// Build gallery and apply the filter on the gallery 
+// Change button color is applied in order to preven the button from delayed clicking
+GALLERY_BUILDER.init('json/gallery.json', '.gallery','images/gallery', ['photos', 'videos'] ,[GALLERY_FILTER.changeButtonColor, GALLERY_FILTER.init]);
 
 
 

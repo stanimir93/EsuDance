@@ -105,7 +105,7 @@ export let GALLERY_BUILDER = {
     },
 
     // Create elements and render gallery
-    buildSmallImageGallery: function(selectorGalleryContainer) {
+    buildSmallImageGallery: function(selectorGalleryContainer, hideMedia) {
 
         // Build photo gallery
 
@@ -113,25 +113,31 @@ export let GALLERY_BUILDER = {
             GALLERY_BUILDER.smallPhotos?.forEach( (photoName) => {
                 let wrapper = document.createElement('div');
                 wrapper.classList.add('gallery-media-wrapper');
+                if (!hideMedia.includes('photos')) {
+                    wrapper.classList.add('visible')
+                }
                 wrapper.dataset.type = 'photos'
-    
+                
                 let container = document.createElement('div');
                 container.classList.add('gallery-image-container');
                 container.dataset.index = GALLERY_BUILDER.smallPhotos.indexOf(photoName);
                 container.style.backgroundImage = `url('${GALLERY_BUILDER.imagesFolder}/${photoName}')`;
-    
+                
                 wrapper.appendChild(container)
-    
+                
                 galleryContainer.appendChild(wrapper)  
             })
         }
-
+        
         // Build video gallery
-
+        
         let videoBuilder = function() {
             GALLERY_BUILDER.videos?.forEach( (videoURL) => {
                 let wrapper = document.createElement('div');
                 wrapper.classList.add('gallery-media-wrapper');
+                if (!hideMedia.includes('videos')) {
+                    wrapper.classList.add('visible')
+                }
                 wrapper.dataset.type = 'videos'
 
                 let container = document.createElement('div');
@@ -359,9 +365,10 @@ export let GALLERY_BUILDER = {
         changePhotosWithArrows();
     },
 
-    // Initialize Gallery. The callback functions are functions that need to be applied to the gallery once it is built
-
-    init: function(jsonFile, selectorGalleryContainer, imagesFolder, callbacks) {
+    // Initialize Gallery. 
+    // hideMedia is an array which tells what media types to be hidden when gallery is initially loaded
+    // The callback functions are functions that need to be applied to the gallery once it is built
+    init: function(jsonFile, selectorGalleryContainer, imagesFolder, hideMedia=[], callbacks=[]) {
 
         //Get the data
         this.getData(jsonFile);
@@ -372,10 +379,10 @@ export let GALLERY_BUILDER = {
         
         // Build the gallery + fullscreen view
         document.addEventListener('galleryDataReady', ()=> {
-            this.buildSmallImageGallery(selectorGalleryContainer);
+            this.buildSmallImageGallery(selectorGalleryContainer, hideMedia);
             this.buildFullScreenView(selectorGalleryContainer);
             this.addFullScreenFunctionalities();
-            callbacks.forEach( fun => fun())
+            callbacks.forEach( fun => fun());
         })
         
     }
