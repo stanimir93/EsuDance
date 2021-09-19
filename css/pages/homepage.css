@@ -164,7 +164,7 @@ main > div {
 /* PHOTOS */
 
 /* Photo wrapper */
-[data-type="photo"] {
+[data-type="photos"] {
     width: 40vw;
     height: 40vw;
     overflow: hidden;
@@ -174,7 +174,7 @@ main > div {
 }
 
 /* Photo container */
-[data-type="photo"] > div {
+[data-type="photos"] > div {
     width: 100%;
     height: 100%;
     background-position: center;
@@ -184,7 +184,7 @@ main > div {
 }
 
 /* Photo hover */
-[data-type="photo"] > div:hover {
+[data-type="photos"] > div:hover {
     width: 110%;
     height: 110%;
 }
@@ -325,7 +325,7 @@ main > div {
     }
 
     /* Photo wrapper */
-    [data-type="photo"] {
+    [data-type="photos"] {
         height: 24vw;
         max-height: 260px;
         width: 24vw;
@@ -339,7 +339,7 @@ main > div {
         justify-self: center;
     }
     /* Video wrapper */
-    [data-type="video"] {
+    [data-type="videos"] {
         position: relative;
         grid-column: span 4;
 

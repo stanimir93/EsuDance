@@ -113,7 +113,7 @@ export let GALLERY_BUILDER = {
             GALLERY_BUILDER.smallPhotos?.forEach( (photoName) => {
                 let wrapper = document.createElement('div');
                 wrapper.classList.add('gallery-media-wrapper', 'visible');
-                wrapper.dataset.type = 'photo'
+                wrapper.dataset.type = 'photos'
     
                 let container = document.createElement('div');
                 container.classList.add('gallery-image-container');
@@ -132,7 +132,7 @@ export let GALLERY_BUILDER = {
             GALLERY_BUILDER.videos?.forEach( (videoURL) => {
                 let wrapper = document.createElement('div');
                 wrapper.classList.add('gallery-media-wrapper');
-                wrapper.dataset.type = 'video'
+                wrapper.dataset.type = 'videos'
 
                 let container = document.createElement('div');
                 container.classList.add('gallery-video-container');
@@ -208,7 +208,6 @@ export let GALLERY_BUILDER = {
         })
         df.appendChild(fullscreenContainer);
 
-        console.dir(df)
         // Append df to images wrapper
         document.querySelector(selectorGalleryContainer).appendChild(df);
         
@@ -360,27 +359,6 @@ export let GALLERY_BUILDER = {
         changePhotosWithArrows();
     },
 
-    // Filter Gallery - Video / Photos 
-    filterGallery: function(ev) {
-        ev.preventDefault();
-
-        let mediaTarget = ev.currentTarget.dataset.target;
-        document.querySelector('.active').classList.remove('active');
-        ev.currentTarget.classList.add('active');
-        
-        // Find all gallery types (the ones that match the data-type of the button get shown, the others get hidden)
-
-        document.querySelectorAll('[data-type]')
-            .forEach( media => {
-                if (media.dataset.type === mediaTarget) {
-                    media.classList.add('visible');
-                } else {
-                    media.classList.remove('visible');
-                }
-            })
-    },
-
-
     // Initialize Gallery
 
     init: function(jsonFile, selectorGalleryContainer, imagesFolder) {
@@ -398,11 +376,6 @@ export let GALLERY_BUILDER = {
             this.buildFullScreenView(selectorGalleryContainer);
             this.addFullScreenFunctionalities();
         })
-        
-        
-        // Attach listeners to filter button
-        document.querySelectorAll('.tabs > button ')
-        .forEach( button => button.addEventListener('click', this.filterGallery))
         
     }
 }
