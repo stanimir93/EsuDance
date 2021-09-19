@@ -359,9 +359,9 @@ export let GALLERY_BUILDER = {
         changePhotosWithArrows();
     },
 
-    // Initialize Gallery
+    // Initialize Gallery. The callback functions are functions that need to be applied to the gallery once it is built
 
-    init: function(jsonFile, selectorGalleryContainer, imagesFolder) {
+    init: function(jsonFile, selectorGalleryContainer, imagesFolder, callbacks) {
 
         //Get the data
         this.getData(jsonFile);
@@ -375,6 +375,7 @@ export let GALLERY_BUILDER = {
             this.buildSmallImageGallery(selectorGalleryContainer);
             this.buildFullScreenView(selectorGalleryContainer);
             this.addFullScreenFunctionalities();
+            callbacks.forEach( fun => fun())
         })
         
     }

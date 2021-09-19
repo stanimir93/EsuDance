@@ -36,12 +36,12 @@ const GALLERY_FILTER = {
         window.addEventListener('hashchange', (ev) =>{
             ev.preventDefault();
             if (!window.location.hash) {
-                this.filterGallery('photos');        
-                this.changeButtonColor('photos');
+                GALLERY_FILTER.filterGallery('photos');        
+                GALLERY_FILTER.changeButtonColor('photos');
             } 
             else {
-                this.filterGallery(window.location.hash.toLowerCase().replace('#', ''));
-                this.changeButtonColor(window.location.hash.toLowerCase().replace('#', ''));
+                GALLERY_FILTER.filterGallery(window.location.hash.toLowerCase().replace('#', ''));
+                GALLERY_FILTER.changeButtonColor(window.location.hash.toLowerCase().replace('#', ''));
             }
         });
         
@@ -56,13 +56,8 @@ const GALLERY_FILTER = {
     }
 }
 
-// Gallery
-GALLERY_BUILDER.init('json/gallery.json', '.gallery','images/gallery');
-
-// Filter
-GALLERY_FILTER.init();
-
-
+// Build gallery and apply the filter on the gallery (change button color is applied in order to preven the button from delayed clicking)
+GALLERY_BUILDER.init('json/gallery.json', '.gallery','images/gallery', [GALLERY_FILTER.changeButtonColor ,GALLERY_FILTER.init]);
 
 
 
