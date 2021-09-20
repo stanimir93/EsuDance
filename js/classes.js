@@ -1,10 +1,16 @@
 /* 
 
+WHAT IT DOES:
 
+    * dance-classs.json stores info about each dance class page (instead of creating multiple HTML files)
+    * dance-class.json is fetched and parsed and used to build the individual class page
+    
+    * hashchange event is dispatched on page load or hashchange
 
+    * hashchange is used to run callbacks that show individual class info while hiding all classes
+    * hashchange is also used on all classes page to filter the age groups
 
 */
-
 
 const DANCE_CLASSES_APP = {
 
@@ -65,9 +71,7 @@ const DANCE_CLASSES_APP = {
         if (document.querySelector('.classpage-container')) {
             document.querySelector('.classpage-container').remove();
             setTimeout( ()=> {window.scrollTo(0, 0)}, 0)
-            
         }
-
     },
 
     // Hide all classes 
@@ -82,7 +86,6 @@ const DANCE_CLASSES_APP = {
         document.querySelector('.filter-container').classList.add('active');
         document.title = 'Classes | EsuDance'
         history.replaceState({}, document.title)
-
     },
 
     // Filter classes by age group
@@ -94,7 +97,6 @@ const DANCE_CLASSES_APP = {
             document.querySelector(`.${hash}`)?.classList.add('visible'); 
         }
         document.querySelector(`[data-classes="${hash}"]`)?.classList.add('pressed');
-        
     },
 
     runAllOnHashChange: function() {
@@ -119,13 +121,11 @@ const DANCE_CLASSES_APP = {
             DANCE_CLASSES_APP.showAllClasses();
             DANCE_CLASSES_APP.deleteIndividualClass();
         }
-        // Filter and show only the required class
+        // Filter and show only the required age group on all classes page
         if (DANCE_CLASSES_APP.ageGroups.indexOf[window.location.hash.replace('#','')] != -1 ) {
             DANCE_CLASSES_APP.filterAllClasses();
-
         }
     },
-
 
     init: function() {
 
@@ -154,11 +154,6 @@ const DANCE_CLASSES_APP = {
                     })
                 })
             }))            
-        
-            
-
-
-
     }
 }
 
