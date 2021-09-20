@@ -197,7 +197,7 @@
     }
     .fullscreen-image {
         height: 100vh;
-        margin-top: 90px;
+        margin-top: 0px;
     }
     
     .gallery-location-counter.hiddenOnMobileLandscape {
