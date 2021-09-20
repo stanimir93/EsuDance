@@ -16,7 +16,6 @@ main > div > div {
 
 main > div {
     margin: auto;
-    
 }
 
 /* Hide on mobile */
@@ -52,8 +51,6 @@ main > div {
     background-color: var(--color-3);
 }
 
-
-
 /* button */
 .homepage-hero-container a {
     margin: 2.5rem auto;
@@ -70,18 +67,14 @@ main > div {
     align-items: center;
     justify-content: center;
 }
-
 .homepage-hero-container a:hover {
     color: var(--color-7);
     background-color: var(--color-2);
     text-decoration: underline;    
 }
-
 .homepage-hero-container a:active {
     opacity: 0.4;
 }
-
-/* VIDEO CONTAINER */
 
 /* VIDEO CONTAINER */
 .homepage-video-container {
@@ -113,7 +106,6 @@ main > div {
     text-decoration: underline;
     background-color: rgba(255,255,255,0.2);
     color: var(--color-2);
-
 }
 
 /* Wrapper  that hides extra margin used to give ratio to the video */
@@ -235,8 +227,6 @@ main > div {
     left: 0;
     box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
 }
-
-
 
 
 /* DESKTOP VIEW */

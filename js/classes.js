@@ -1,42 +1,5 @@
 /* 
-SPA which shows a page with all dance classes and then on hashchange shows a page with individual dance class details.
 
-How it works: 
-    1. Clicking on <a>Details</a> changes the hash. 
-    2. The hash is matched to name of the dance class from a JSON file (APP.danceClasses from indes.js)
-    3. The details for this class are copied into a copy of html template
-    4. The template is rendered on the page 
-    5. History API saves the SPA 'pages' onto the history array
-*/
-
-
-/* 
-
-/classes OR /classes#unknown
-
-1. Page LOAD on all classes or uknown #
-    - show all classes
-
-2. Go BACK  or FORWARD on all classes or on unknown #
-    - show all classes
-    - delete individual class
-
-/classes#known
-
-1. Page load on known # 
-    - keep all classes hidden
-    - show individual class
-
-5. Go BACK or FORWARD  on know #
-    - show individual class
-    - keep all classes hidden
-
-
-Listener to hashchange. 
-Hashchange needs to be triggered:
-1. When clicking on <a> and changing the hash (default behaviour)
-2. When clicking BACK / FORWARD
-3. When initially loading the pages
 
 
 

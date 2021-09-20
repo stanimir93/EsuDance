@@ -56,18 +56,13 @@ section.visible {
     padding: 2.5rem;
     display: none;
 }
-
 .filter-container.active{
     display: flex;
 }
-
 .filter-container p {
     text-align: center;
     max-width: 750px;
 }
-/* .filter-container > br:last-child {
-    border-bottom: 1px solid var(--color-1);
-} */
 
 .tabs {
     display: flex;
@@ -88,12 +83,9 @@ section.visible {
 .tabs button p:nth-child(2){
     font-style: italic;
 }
-
 .tabs button:hover {
-    background-color: var(--color-3);
-    
+    background-color: var(--color-3);   
 }
-
 .tabs .visible,
 .tabs button:active,
 .tabs button.pressed {
@@ -101,7 +93,6 @@ section.visible {
 }
 
 /* HOLDER FOR ALL CARDS */
-
 .all-cards-wrapper {
     display: grid;
     gap: 2rem;
@@ -112,7 +103,6 @@ section.visible {
     grid-auto-rows: 1fr;
     max-width: 1080px;
 }
-
 .all-cards-wrapper .card:nth-child(1) {
     grid-area: card1;
 }
@@ -126,8 +116,6 @@ section.visible {
 /* INDIVIDUAL CARD */
 
 /* Opening soon ribbon */
-
-
 .opening-soon .dance-class-info-container::before {
     content: "Opening Soon";
     position: absolute;
@@ -142,15 +130,6 @@ section.visible {
     transform: rotate(-45deg);
     display: none;
 }
-
-
-/* 
-Dance class info container to be relative on desktop
-Make the ribbon OPENING SOON under the image horizonal
-
-On mobile view - use the old system
- */
-
 .card {
     display: grid;
     grid-template-columns: 30% 1fr;
@@ -165,7 +144,6 @@ On mobile view - use the old system
     background-color: var(--color-3);
     box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
 }
-
 
 /* Title */
 .card h3 {
@@ -182,7 +160,6 @@ On mobile view - use the old system
 }
 
 /* Image */
-
 .dance-class-image-wrapper {
     width: 21vw;
     height: 21vw;
@@ -194,7 +171,6 @@ On mobile view - use the old system
     max-height: 160px;
     overflow: hidden;
 }
-
 .ballet-minis .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-minis.jpg"); }
 .contemporary-minis .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-minis.jpg"); }
 .street-minis .dance-class-image-wrapper { background-image: url("../../images/classes/street-dance-minis.jpg"); }
@@ -207,20 +183,18 @@ On mobile view - use the old system
 .ballet-adults .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-adults.jpg"); }
 .contemporary-adults .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-adults.jpg"); }
 
-
+/* WIDE-SCREEN VIEW */
 @media screen and (min-width: 750px) {
     
     section {
         padding: 2.5rem 5rem 9rem;
     }
-
     .all-cards-wrapper{
         grid-template-areas:
         'card1 card2 card3';
         grid-auto-columns: 1fr;
         gap: 2.5rem;
     }
-    
     .card {
         display: grid;
         grid-template-columns: 1fr;
@@ -234,27 +208,18 @@ On mobile view - use the old system
     }
 
     /* FILTER */
-
     .filter-container {
         margin-top: 105px;
     }
-
     .tabs {
         flex-direction: row;
     }
-    /* .tabs {
-        justify-content: space-between;
-        width: 90vw;
-        max-width: 750px;
-    } */
     .tabs button p {
         display: block;
     }
 
-
-
-    /* Ribbon */
-    .opening-soon .dance-class-info-container::before {
+    /* Ribbon - NOT IN USE AT THE MOMENT */
+    /* .opening-soon .dance-class-info-container::before {
         transform: none;
         left: 50%;
         top: 25%;
@@ -262,7 +227,7 @@ On mobile view - use the old system
         border-radius: 1px;
         transform: translateX(-50%);
         padding: 5px;
-    }
+    } */
 
     .card .dance-class-info-container {
         height: 100%;
@@ -270,7 +235,6 @@ On mobile view - use the old system
         flex-direction: column;
         justify-content: space-between;
     }
-
     .card h3 {
         margin-bottom: 2.5rem;
         margin-top: -1%;
@@ -279,7 +243,6 @@ On mobile view - use the old system
     .card p {
         text-align: center;
     }
-
     .card .dance-class-button-container {
         float: none;
         position: static;
@@ -287,7 +250,6 @@ On mobile view - use the old system
         justify-content: center;
         padding-top: 2rem;
     }
-
     .card a {
         padding: 8px 16px;
         background-color: var(--color-1);
@@ -297,17 +259,13 @@ On mobile view - use the old system
     .card a:hover {
         color: var(--color-7);
         background-color: var(--color-2);
-        /* text-decoration: underline;
-        text-decoration-color: var(--color-7); */
     }
     .card a:active {
         opacity: 0.5;
     }
-    
     .dance-class-image-wrapper {
         min-width: 170px;
         max-width: 170px;
         margin-top: -60px;
     }
-    
 }

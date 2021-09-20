@@ -2,9 +2,9 @@
 
 How it works:
     1. Listen for scroll events
-    2. On scroll call setTimeout to shrink header at the end of the timer
-    3. Each scroll resets timer if timer is still running. (this is used to limit the firing rate of the shrinkNav function and optimize performance)
-    4. When the timer reaches the end the callback shinks the header.
+    2. On scroll call setTimeout to start a timer and to shrink header at the end of the timer
+    3. Each scroll resets the timer if it is still running. (this is used to limit the firing rate of the shrinkNav function and optimize performance)
+    4. When the timer reaches the end, the callback shinks the header.
 */
 
 const NAVIGATION = {

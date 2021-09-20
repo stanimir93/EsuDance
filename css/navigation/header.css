@@ -18,32 +18,24 @@ header {
 
 
 /* Logo */
-
 .logo-container a:hover {
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0);
-
 }
-
 header .logo {
     max-width: 140px;
     padding: 7px 15px 2.5px;
     transition: 0.5s;
-    
 }
 
 /* Position menu container */
-
 header .menu-container{
     position: relative;
     height: 50px;
     width: 50px;
 }
 
-
-
 /* Navigation menu in the header */
-
 header nav .menu {
     position: absolute;
     display: flex;
@@ -57,13 +49,11 @@ header nav .menu {
     right: -100vw;
     transition: 0.4s ease;
 }
-
 header ul li {
     line-height: 4; 
     list-style-type: none;
     border-radius: 1px;
 }
-
 header nav a {
     text-decoration: none;
     color: var(--color-2);
@@ -72,7 +62,6 @@ header nav a {
     padding: 10px;
     white-space: nowrap;
 }
-
 header nav li a:hover {
     background-color: rgba(255, 255, 255, 0);
     text-decoration: none;
@@ -95,7 +84,6 @@ header nav li a:hover::after {
 header nav li.current a {
     font-weight: bold;
 }
-
 header nav li.current a::after {
     content: "";
     position: absolute;
@@ -106,13 +94,11 @@ header nav li.current a::after {
     transition: all 0.4s ease;
 }
 /* Show navigation menu on clicking the hamburger */
-
 header .toggler:checked ~ nav > ul {
     right: 0px;
 }
 
 /* Hamburger */
-
 header .toggler {
     position: absolute;
     top: 0;
@@ -124,7 +110,6 @@ header .toggler {
     opacity: 0;
     
 }
-
 .hamburger {
     position: absolute;
     top: 0;
@@ -137,7 +122,6 @@ header .toggler {
     justify-content: center;
     padding: 10px;
 }
-
 .hamburger div {
     position: relative;
     width: 100%;
@@ -147,11 +131,9 @@ header .toggler {
     align-items: center;
     justify-content: center;
     border-radius: 2.5px;
-
 }
 
 /* Top and bottom lines */
-
 .hamburger div::before,
 .hamburger div::after {
     content: '';
@@ -162,49 +144,43 @@ header .toggler {
     top: calc(-6px - 0.3vw);
     transition: all 0.2s;
     border-radius: 2.5px;
-
 }
-/* Moves line down */
 
+/* Moves line down */
 .hamburger div::after {
     top: calc(6px + 0.3vw);
 }
 
 /* Hide middle line on click */
-
 header .toggler:checked + .hamburger div {
     height: 0px;
 }
 
 /* Rotate top and bottom hamburger lines */
-
 header .toggler:checked + .hamburger div::before {
     top: 0px;
     transform: rotate(45deg);
 }
-
 header .toggler:checked + .hamburger div::after {
     top: 0px;
     transform: rotate(-45deg);
 }
+
+/* WIDE-SCREEN VIEW */
 
 @media screen and (min-width: 750px) {
 
     header .logo {
         max-width: 150px;
     }
-
     header .toggler,
     header .hamburger {
         display: none;
     }
-
     header .menu-container {
         width: auto;
         height: auto;
     }
-    
-
     header nav .menu {
         padding-top: revert;
         height: revert;
@@ -215,10 +191,7 @@ header .toggler:checked + .hamburger div::after {
         flex-direction: row;
         width: revert;
     }
-
     header .menu li {
         margin-right: 2.5rem;
     }
-
-
 }

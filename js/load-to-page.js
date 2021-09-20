@@ -1,10 +1,10 @@
 /* 
-WHAT IT DOES
+WHAT IT DOES:
     * fetches and renders header
     * fetches and renders footer
     * fetches and renders contact info (address, social media etc.)
 
-HOW TO USE
+HOW TO USE:
     * add this scriped to each HTML page 
     * use HTML classes ('address', 'address one-line', 'messenger', 'email' ) and the contact info will be rendred
 
