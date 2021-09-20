@@ -191,12 +191,11 @@
 
     .fullscreen-images-container {
         top: 0;
-        height: 100vh;
         visibility: visible;
         
     }
     .fullscreen-image {
-        height: 100vh;
+        height: 100%;
         margin-top: 0px;
     }
     
