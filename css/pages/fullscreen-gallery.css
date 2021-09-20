@@ -190,8 +190,8 @@
     }
 
     .fullscreen-images-container {
-        top: 5px;
-        bottom: 5px;
+        top: 2px;
+        bottom: 2px;
         position: absolute;
         visibility: visible;
         
