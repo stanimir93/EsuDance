@@ -45,7 +45,6 @@ main {
 
 a {
     color: var(--color-2);
-    /* padding: 1px; */
     border-radius: 1px;
 }
 
