@@ -1,88 +1,52 @@
 /*
 
-GALLERY_BUILDER 
-    - find photo names in JSON, fetch them and load them
-    - filter videos and photos
-    - display photos fullscreen (bigger resolution images) on click
-    - allow changing the images back and forth
+-------------------- HOW TO USE --------------------
 
-How it works:
+Import GALLERY_BUILDER and call GALLERY_BUILDER.init() and pass parameters:
 
-    LOADING SMALL IMAGES
-    1. Fetch JSON with photo names and video urls
-    2. Create divs wrapping and divs holding the images (as backgorund-image).
+    1. path json file holding image titles, 
+    2. query selector for container to hold the gallery, 
+    3. path to folder storing the images
+    4. (optional) array specifying media type to be hidden by default e.g. ['photos', 'videos']
+    5. (optional) array of callbacks to be run once the gallery has been build (e.g. to add extra functionality)
+    6. CSS needs to be added to each page using the gallery
+        - CSS specific to the page telling how to display small photos and videos
+        - CCS for fullscreen mode - fullscreen-gallery.css
 
-    FILTERING IMAGES
-    1. The filter works by setting display none to the irrelevant media
+-------------------- HOW IT WORKS --------------------
 
-    FULLSCREEN VIEW
-    1. The background images are 
-    1. The background image is found and its title is changed to match the bigger version of the same image
-    2. The bigger image is fetched and loaded into a fullscreen div, which is rendered over the the rest of the elements
-
-    CHANGE IMAGES IN FULLSCREEN
-    6. Before and after elements work as arrows which change to next image
-    5. Then parsing the title clicks
-    5. Then it
-*/
-
-
-
-
-
-
-
-
-
-/* 
-
-GALLERY_BUILDER {
-
-    DATA
-
-	FETCH DATA + BUILD 2 ARRAYS - BIG AND SMALL
-
-	BUILD SMALL GALLERY_BUILDER FROM SMALL ARRAY
-
-	BUILD BIG GALLERY_BUILDER - empty + ADD LISTENERS 
-    - each img will have data-index
-    - there will be scroll snap
-    - there will be intersection observer - when img into view - load src
-    - ther will be arrows
-    - there will be counter of the index +1 / total
-
-
-
-
-
-
-	ON CLICK - 
-    1. get indices of current image
-    2. make fullscreen visible
-    3. scroll right image into view
-    4. load image src
-
-    4.4 fetch the 2 images
-
-
-
-
-    5. fetch 2 large images (next and prev)
-	
+    * GALLERY_BUILDER stores arrays with urls of videos, small photos, large photos (same photo but higher resolution), the folder storing the photos
+    * getData() fetches the photo and video urls and populates the arrays
     
+    (The index of large and small photos are matching. The div elements which show the photos (large and small) hava data-index that matches as well)
+    
+    * buildSmallImageGallery() adds to DOM the HTML elements to hold each video and photo (background images)
+    * buildFullScrenView() adds to DOM the HTML elements to hold larger photos. 
+    * addFullScreenFunctionalities():
+        - when small photo is clicked a fullscreen gallery  is opened and the div with same data-index as data-index of small photo div is scrolled into view
+        - when a certain fullscreen div is into view its background photo is fetched and rendered
+        - keyboard arrows and scrolling/swipping change the div into view and therefor its background photo is also fetched and set
 
+        - when 'X' is clicked or escape key is pressed, the gallery is closed
+        - the counter on the top indicates which number of photo we are on (data-index + 1)
+        
+    * init() 
+        - runs getData() and builds arrays of urls
+        - runs buildSmallImageGallery(), buildFullScrenView(), addFullScreenFunctionalities()
+        - hides photos or videos if required not to be visible on page load
+        - runs callbacks once gallery has been built to add extra functionalities (e.g. filter)
 
-
-
-	FILTER SMALL GALLERY_BUILDER
-
+    * CSS 
+        - specific css for each page to tell how the small photo and video gallery to be displayed
+        - fullscreen-gallery.css tells how fullscreen mode to be displayed
 
 */
 
 
 export let GALLERY_BUILDER = {
 
-    videos: [],
+    // urls of videos, small photos, large photos, folder storing the photos
+    videos: [], 
     smallPhotos: [],
     largePhotos: [],
     imagesFolder: '',
@@ -104,11 +68,10 @@ export let GALLERY_BUILDER = {
         })  
     },
 
-    // Create elements and render gallery
+    // Build HTML elements to hold and show videos and images
     buildSmallImageGallery: function(selectorGalleryContainer, hideMedia) {
 
         // Build photo gallery
-
         let imageBuilder = function() {
             GALLERY_BUILDER.smallPhotos?.forEach( (photoName) => {
                 let wrapper = document.createElement('div');
@@ -129,8 +92,7 @@ export let GALLERY_BUILDER = {
             })
         }
         
-        // Build video gallery
-        
+        // Build video gallery       
         let videoBuilder = function() {
             GALLERY_BUILDER.videos?.forEach( (videoURL) => {
                 let wrapper = document.createElement('div');
@@ -150,13 +112,13 @@ export let GALLERY_BUILDER = {
             })
         }
 
-        
         let galleryContainer = document.createElement('div');
         galleryContainer.classList.add('small-images-container');
         
         let df = new DocumentFragment();
         df.appendChild(galleryContainer);
 
+        // Call functions to build the elements
         imageBuilder();
         videoBuilder();
 
@@ -164,14 +126,18 @@ export let GALLERY_BUILDER = {
         document.querySelector(selectorGalleryContainer).appendChild(df);
     },
 
-    // Create buttons and empty <img> elements to be used in fullscreen mode. 
+    // Build HTML elemetns for fullscren view of photos 
     buildFullScreenView: function(selectorGalleryContainer) {
 
         let df = new DocumentFragment();
 
+        // Create the full screen HTML elements
+
+        // container
         let fullscreenContainer = document.createElement('div');
         fullscreenContainer.classList.add('fullscreen-container')
 
+        // buttons
         let fullscreenButtons = document.createElement('div');
         fullscreenButtons.classList.add('fullscreen-buttons');
         fullscreenButtons.innerHTML = `
@@ -182,6 +148,7 @@ export let GALLERY_BUILDER = {
                 </div>`
         fullscreenContainer.appendChild(fullscreenButtons);
 
+        // arrows
         let fullscreenArrows = document.createElement('div');
         fullscreenArrows.classList.add('fullscreen-arrows');
         fullscreenArrows.innerHTML = `
@@ -190,22 +157,20 @@ export let GALLERY_BUILDER = {
         `
         fullscreenContainer.appendChild(fullscreenArrows);
 
-
+        // div to images
         let fullscreenImages = document.createElement('div');
         fullscreenImages.classList.add('fullscreen-images-container');
         
         fullscreenContainer.appendChild(fullscreenImages);
 
-        // Append photos to df
+        // divs for each photo in the gallery (the images will be set as background later)
         GALLERY_BUILDER.largePhotos.forEach( (photo) => {
-            // let img = document.createElement('img');
-            // img.classList.add('large-image');
-            // img.dataset.index = GALLERY_BUILDER.largePhotos.indexOf(photo);
 
             let wrapper = document.createElement('div');
             wrapper.classList.add('fullscreen-image');
             wrapper.dataset.index = GALLERY_BUILDER.largePhotos.indexOf(photo);
 
+            // loading spinner to indicate that a photo is being fetched
             let spinner = document.createElement('div');
             spinner.classList.add('spinner', 'active');
             wrapper.appendChild(spinner);
@@ -214,11 +179,11 @@ export let GALLERY_BUILDER = {
         })
         df.appendChild(fullscreenContainer);
 
-        // Append df to images wrapper
+        // Append gallery HTML to DOM
         document.querySelector(selectorGalleryContainer).appendChild(df);
         
 
-        // Add listenners to arrows
+        // Add listenners to arrows (to press the keyboard's left and right arrows)
         document.querySelector('.arrow.left').addEventListener('click', function(){
             document.dispatchEvent(new KeyboardEvent('keyup', {code: 'ArrowLeft'}))
         })
@@ -227,9 +192,9 @@ export let GALLERY_BUILDER = {
         })
     },
     
+    // Add functionalities to fullscreen gallery
     addFullScreenFunctionalities: function() {
 
-        
         // Open fullscreen mode and scroll into view the chosen photo
         let openFullScreen = function(ev) {
 
@@ -239,15 +204,15 @@ export let GALLERY_BUILDER = {
             let photo = document.querySelector(`.fullscreen-image[data-index="${index}"]`)
 
             setBackgroundImage(index, photo)
-            document.body.style.position = 'fixed'; // Prevents up and down scrolling
+            // Prevents up and down scrolling
+            document.body.style.position = 'fixed'; 
+
+            // Scroll right photo into view 
             photo.scrollIntoView(false);
         }
 
-
         // Fetch image. Set it as background image and remove the loading spinner
         let setBackgroundImage = function(index, photo) {
-
-
            
             fetch(`${GALLERY_BUILDER.imagesFolder}/${GALLERY_BUILDER.largePhotos[index]}`)
                 .then(response => response.blob())
@@ -263,8 +228,6 @@ export let GALLERY_BUILDER = {
                     downloadButton.download = GALLERY_BUILDER.largePhotos[index].replace(' (Large)', '');
                     
                 });
-
-      
         } 
 
         // Watch for image containers when coming into view and fetch and set background image
@@ -301,7 +264,7 @@ export let GALLERY_BUILDER = {
             let beShowing = function(entries) {
                 entries.forEach( entry => {
                     if (entry.isIntersecting) {
-                        let counter = document.querySelector('.gallery-location-counter')
+                        let counter = document.querySelector('.gallery-location-counter');
                         counter.textContent = `${1 + Number(entry.target.dataset.index)} / ${GALLERY_BUILDER.largePhotos.length}`              
                     }
                 })
@@ -311,6 +274,15 @@ export let GALLERY_BUILDER = {
             document.querySelectorAll('.fullscreen-image').forEach( container => observer.observe(container));
             
         }
+        // Hide and show counter (used on mobile landscape mode only)
+        let toggleCounter = function () {
+            document.querySelectorAll('.fullscreen-image').forEach( image => {
+                image.addEventListener('click', () => {
+                    document.querySelector('.gallery-location-counter').classList.toggle('hiddenOnMobileLandscape');
+                    })
+                })
+
+        }
         // Close fullscreen mode 
 
         let closeFullScreen = function() {
@@ -319,9 +291,8 @@ export let GALLERY_BUILDER = {
 
         }
 
-
+        // Use keyboard arrows to change photos
         let changePhotosWithArrows = function() {
-
             
             let moveImages = function(ev) {
                 if (document.querySelector('.fullscreen-container.active')) {
@@ -351,9 +322,7 @@ export let GALLERY_BUILDER = {
                             break;
                     }
                 }
-
             }
-            
             
             document.addEventListener('keyup', moveImages)
         }
@@ -363,11 +332,11 @@ export let GALLERY_BUILDER = {
         setBackgroundImageOnSwipe();
         imageCounter();
         changePhotosWithArrows();
+        toggleCounter();
     },
 
-    // Initialize Gallery. 
-    // hideMedia is an array which tells what media types to be hidden when gallery is initially loaded
-    // The callback functions are functions that need to be applied to the gallery once it is built
+    // Initialize Gallery
+
     init: function(jsonFile, selectorGalleryContainer, imagesFolder, hideMedia=[], callbacks=[]) {
 
         //Get the data
@@ -375,7 +344,6 @@ export let GALLERY_BUILDER = {
 
         //Where images are stored
         this.imagesFolder = imagesFolder
-
         
         // Build the gallery + fullscreen view
         document.addEventListener('galleryDataReady', ()=> {

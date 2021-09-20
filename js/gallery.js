@@ -1,7 +1,7 @@
 import {GALLERY_BUILDER} from "./gallery-builder.js";
 
 
-// Filter gallery based on hash
+// Filter gallery based on location.hash (#photos or #videos)
 const GALLERY_FILTER = {
 
     // Show media corresponding to hash and hide media that does not
@@ -56,9 +56,8 @@ const GALLERY_FILTER = {
     }
 }
 
-// Build gallery and apply the filter on the gallery 
-// Change button color is applied in order to preven the button from delayed clicking
-GALLERY_BUILDER.init('json/gallery.json', '.gallery','images/gallery', ['photos', 'videos'] ,[GALLERY_FILTER.changeButtonColor, GALLERY_FILTER.init]);
+// Build gallery and pass the filter to the gallery (the filter button is passed separately)
+GALLERY_BUILDER.init('json/gallery.json', '.gallery','images/gallery', ['photos', 'videos'] ,[ GALLERY_FILTER.init]);
 
 
 

@@ -140,8 +140,8 @@ const DANCE_CLASSES_APP = {
         if (DANCE_CLASSES_APP.danceClasses[className]) {
             DANCE_CLASSES_APP.buildShowIndividualClass();
             DANCE_CLASSES_APP.hideAllClasses();
-            NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadEmail();
-            NAV_AND_CONTACT_INFO_APP.loadContactInfo.loadMessenger();
+            LOAD_TO_PAGE.afterNavigation.loadEmail();
+            LOAD_TO_PAGE.afterNavigation.loadMessenger();
             window.scrollTo(0, 0);
 
             // to reload the contact details for the new page

@@ -187,13 +187,18 @@
     
     .fullscreen-arrows {
         transform: translate(-50%, -100%);
-        
     }
 
     .fullscreen-images-container {
         top: 0;
         height: 100vh;
+        visibility: visible;
     }
+    .gallery-location-counter.hiddenOnMobileLandscape {
+        visibility: hidden;
+        display: none;
+    }
+
     .fullscreen-buttons {
         position: absolute;
         top: 5px;

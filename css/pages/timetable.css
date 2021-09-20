@@ -9,3 +9,39 @@ main h1, main p {
 main > div:first-child{
     background-color: var(--color-1);
 }
+
+h3 {
+    text-align: start;
+}
+
+/* TIMETABLE */
+.timetable-container {
+    margin: auto;
+    max-width: 1080px;
+    padding: 2.5rem;
+}
+
+
+.table-row {
+    display: grid;
+    grid-template-columns: 240px 1fr 1.2fr 1fr 280px;
+    border: 2px solid var(--color-1);
+    border-radius: 4px;
+    margin: 2rem 0;
+}
+
+.table-row > div {
+    padding: 1rem;
+    border-right: 2px solid var(--color-1);
+
+}
+
+.table-row > div:last-child {
+    border-right: none;
+}
+
+.time,
+.date,
+.age {
+    font-style: italic;
+}
