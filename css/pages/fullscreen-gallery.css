@@ -193,7 +193,13 @@
         top: 0;
         height: 100vh;
         visibility: visible;
+        
     }
+    .fullscreen-image {
+        height: 100vh;
+        margin-top: 90px;
+    }
+    
     .gallery-location-counter.hiddenOnMobileLandscape {
         visibility: hidden;
     }

@@ -276,7 +276,7 @@ export let GALLERY_BUILDER = {
         }
         // Hide and show counter (used on mobile landscape mode only)
         let toggleCounter = function () {
-            document.querySelectorAll('.fullscreen-image').forEach( image => {
+            document.querySelectorAll('.fullscreen-images-container').forEach( image => {
                 image.addEventListener('click', () => {
                     document.querySelector('.gallery-location-counter').classList.toggle('hiddenOnMobileLandscape');
                     })
