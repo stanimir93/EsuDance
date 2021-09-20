@@ -180,7 +180,6 @@
 }
 
 
-
 @media screen and (max-height: 480px) {
     
     .fullscreen-arrows {
@@ -189,7 +188,6 @@
 
     .fullscreen-images-container {
         height: 100%;
-        visibility: visible;
     }
     .fullscreen-image {
         height: 100%;
