@@ -196,7 +196,6 @@
     }
     .gallery-location-counter.hiddenOnMobileLandscape {
         visibility: hidden;
-        display: none;
     }
 
     .fullscreen-buttons {
