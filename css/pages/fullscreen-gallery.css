@@ -168,6 +168,10 @@
     ::-webkit-scrollbar-thumb {
         display: none;
     }
+    .fullscreen-buttons {
+        padding: 1rem 2.5rem;
+
+    }
     
 }
 
