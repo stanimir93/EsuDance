@@ -204,8 +204,23 @@ export let GALLERY_BUILDER = {
             let photo = document.querySelector(`.fullscreen-image[data-index="${index}"]`)
 
             setBackgroundImage(index, photo)
+
+            // Open Fullscreen in browser if on mobile
+            if(navigator.userAgent.toLowerCase().match(/mobile/i)) { 
+
+                if (document.body.requestFullscreen) {
+                    document.body.requestFullscreen();
+                } else if (document.body.webkitRequestFullscreen) { /* Safari */
+                    document.body.webkitRequestFullscreen();
+                } else if (document.body.msRequestFullscreen) { /* IE11 */
+                    document.body.msRequestFullscreen();
+                }
+            }
+                
             // Prevents up and down scrolling
-            document.body.style.position = 'fixed'; 
+            document.querySelector('.small-images-container').style.display = 'none'; 
+            document.querySelector('footer').style.display = 'none'
+            document.querySelector('header').style.display = 'none'
 
             // Scroll right photo into view 
             photo.scrollIntoView(false);
@@ -275,19 +290,37 @@ export let GALLERY_BUILDER = {
             
         }
         // Hide and show counter (used on mobile landscape mode only)
-        let toggleCounter = function () {
+        let hideShowArrowsAndCounter = function () {
             document.querySelectorAll('.fullscreen-images-container').forEach( image => {
                 image.addEventListener('click', () => {
                     document.querySelector('.gallery-location-counter').classList.toggle('hiddenOnMobileLandscape');
+                    document.querySelectorAll('.arrow').forEach( arrow => {
+                        arrow.classList.toggle('hiddenOnMobileLandscape')
                     })
                 })
+                
+            });
 
         }
         // Close fullscreen mode 
 
         let closeFullScreen = function() {
+            
             document.querySelector('.fullscreen-container').classList.remove('active');
-            document.body.style.position = 'static';
+            document.querySelector('.small-images-container').style.display = 'grid';
+            document.querySelector('footer').style.display = 'flex'
+            document.querySelector('header').style.display = 'flex'
+
+            // Close fullscreen on mobile only
+            if(navigator.userAgent.toLowerCase().match(/mobile/i)) { 
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+            }
 
         }
 
@@ -332,7 +365,7 @@ export let GALLERY_BUILDER = {
         setBackgroundImageOnSwipe();
         imageCounter();
         changePhotosWithArrows();
-        toggleCounter();
+        hideShowArrowsAndCounter();
     },
 
     // Initialize Gallery

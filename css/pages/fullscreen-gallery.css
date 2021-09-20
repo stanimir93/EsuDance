@@ -4,7 +4,7 @@
     display: flex;
     position: absolute;
     top: 0;
-    bottom: 0;
+    height: 101vh;
     left: 0;
     right: 0;
     background-color: var(--color-2);
@@ -127,11 +127,9 @@
 }
 
 
-
-
 @media screen and (min-width: 750px) {
     
-    /* FULLSCREEN */
+
 
     /* counter */
     .gallery-location-counter {
@@ -143,6 +141,7 @@
     .fullscreen-buttons svg {
         height: 30px;
     }   
+    
 
     /* arrows */
     .fullscreen-arrows {
@@ -157,9 +156,6 @@
         z-index: 206;
     }
     .arrow {
-        /* position: absolute; */
-        /* left: 10;
-        z-index: 500; */
         font-size: 30px;
         width: 50px;
         background-color: rgba(0,0,0,0.4);
@@ -175,7 +171,9 @@
         color: var(--color-7);
     }
     /* Scrollbar */
-    ::-webkit-scrollbar {
+    ::-webkit-scrollbar,
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb {
         display: none;
     }
     
@@ -186,23 +184,24 @@
 @media screen and (max-height: 480px) {
     
     .fullscreen-arrows {
-        transform: translate(-50%, -100%);
+        transform: translate(-50%, -50%);
     }
 
     .fullscreen-images-container {
-        top: 2px;
-        bottom: 2px;
-        position: absolute;
+        height: 100%;
         visibility: visible;
-        
     }
     .fullscreen-image {
         height: 100%;
         margin-top: 0px;
     }
     
-    .gallery-location-counter.hiddenOnMobileLandscape {
+    .gallery-location-counter.hiddenOnMobileLandscape,
+    .arrow.hiddenOnMobileLandscape {
         visibility: hidden;
+    }
+    .arrow {
+        margin: 0 3rem;
     }
 
     .fullscreen-buttons {

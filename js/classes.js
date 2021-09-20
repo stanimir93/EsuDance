@@ -127,7 +127,9 @@ const DANCE_CLASSES_APP = {
         let hash = window.location.hash.replace('#','');
         document.querySelector('.pressed')?.classList.remove('pressed');
         document.querySelector('.visible')?.classList.remove('visible');
-        document.querySelector(`.${hash}`)?.classList.add('visible');
+        if (location.hash) {
+            document.querySelector(`.${hash}`)?.classList.add('visible'); 
+        }
         document.querySelector(`[data-classes="${hash}"]`)?.classList.add('pressed');
         
     },
