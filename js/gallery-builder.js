@@ -305,7 +305,7 @@ export let GALLERY_BUILDER = {
         // Close fullscreen mode 
 
         let closeFullScreen = function() {
-            
+
             document.querySelector('.fullscreen-container').classList.remove('active');
             document.querySelector('.small-images-container').style.display = 'grid';
             document.querySelector('footer').style.display = 'flex'
