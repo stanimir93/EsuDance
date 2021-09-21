@@ -193,10 +193,10 @@ export let GALLERY_BUILDER = {
     },
     
     // Add functionalities to fullscreen gallery
-    addFullScreenFunctionalities: function(gallerySelector) {
+    addFullScreenFunctionalities: function() {
 
         // Open fullscreen mode and scroll into view the chosen photo
-        let openFullScreen = function(ev, gallerySelector) {
+        let openFullScreen = function(ev) {
 
             document.querySelector('.fullscreen-container').classList.add('active');
 
@@ -218,12 +218,6 @@ export let GALLERY_BUILDER = {
             }
                 
             // Prevents up and down scrolling
-            document.querySelectorAll('main > *').forEach( elem => {
-                if(elem !== document.querySelector('.' + gallerySelector)) {
-                    elem.style.visibility = 'hidden';
-                    elem.style.height = 0;
-                }
-            });
             document.querySelector('.small-images-container').style.display = 'none'; 
             document.querySelector('footer').style.display = 'none'
             document.querySelector('header').style.display = 'none'
@@ -310,14 +304,8 @@ export let GALLERY_BUILDER = {
         }
         // Close fullscreen mode 
 
-        let closeFullScreen = function(gallerySelector) {
+        let closeFullScreen = function() {
 
-            document.querySelectorAll('main > *').forEach( elem => {
-                if(elem !== document.querySelector('.' + gallerySelector)) {
-                    elem.style.visibility = 'null';
-                    elem.style.height = 'null';
-                }
-            });
             document.querySelector('.fullscreen-container').classList.remove('active');
             document.querySelector('.small-images-container').style.display = 'grid';
             document.querySelector('footer').style.display = 'flex'
@@ -394,7 +382,7 @@ export let GALLERY_BUILDER = {
         document.addEventListener('galleryDataReady', ()=> {
             this.buildSmallImageGallery(selectorGalleryContainer, hideMedia);
             this.buildFullScreenView(selectorGalleryContainer);
-            this.addFullScreenFunctionalities(selectorGalleryContainer);
+            this.addFullScreenFunctionalities();
             callbacks.forEach( fun => fun());
         })
         
