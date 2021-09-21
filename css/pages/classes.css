@@ -180,8 +180,7 @@ section.visible {
 .ballet-juniors .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-juniors.jpg"); }
 .contemporary-juniors .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-juniors.jpg"); }
 .street-juniors .dance-class-image-wrapper { background-image: url("../../images/classes/street-dance-juniours.jpg"); }
-.ballet-adults .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-adults.jpg"); }
-.contemporary-adults .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-adults.jpg"); }
+.dance-mix-adults .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-adults.jpg"); }
 
 /* WIDE-SCREEN VIEW */
 @media screen and (min-width: 750px) {

@@ -1,6 +1,6 @@
 {
 
-    "Ballet_and_Tap_Dance_for_Minis": {
+    "ballet_and_tap_dance_for_minis": {
 
         "banner": {
             "bannerURL": "images/banners/ballet-minis.jpg",
@@ -21,7 +21,7 @@
         ]
     },
 
-    "Contemporary_and_Tumbling_for_Minis": {
+    "contemporary_and_tumbling_for_minis": {
 
         "banner": {
             "bannerURL": "images/banners/contemporary-minis.jpg",
@@ -42,7 +42,7 @@
         ]
     },
 
-    "Street_Dance_for_Minis": {
+    "street_dance_for_minis": {
 
         "banner": {
             "bannerURL": "images/banners/street-dance-minis.jpg",
@@ -63,7 +63,7 @@
         ]
     },
 
-    "Ballet_and_Tap_Dance_for_Kids": {
+    "ballet_and_tap_dance_for_kids": {
 
         "banner": {
             "bannerURL": "images/banners/ballet-kids.jpg",
@@ -84,7 +84,7 @@
         ]
     },
 
-    "Contemporary_and_Tumbling_for_Kids": {
+    "contemporary_and_tumbling_for_kids": {
 
         "banner": {
             "bannerURL": "images/banners/contemporary-kids.jpg",
@@ -105,7 +105,7 @@
         ]
     },
 
-    "Steet_Dance_for_Kids": {
+    "Steet_Dance_for_kids": {
 
         "banner": {
             "bannerURL": "images/banners/street-dance-kids.jpg",
@@ -126,7 +126,7 @@
         ]
     },
 
-    "Ballet_for_Juniors": {
+    "ballet_for_juniors": {
 
         "banner": {
             "bannerURL": "images/banners/ballet-juniors.jpg",
@@ -147,7 +147,7 @@
         ]
     },
 
-    "Contemporary_for_Juniors": {
+    "contemporary_for_juniors": {
 
         "banner": {
             "bannerURL": "images/banners/contemporary-juniors.jpg",
@@ -168,7 +168,7 @@
         ]
     },
 
-    "Street_Dance_for_Juniors": {
+    "street_dance_for_juniors": {
 
         "banner": {
             "bannerURL": "images/banners/street-dance-juniors.jpg",
@@ -188,8 +188,28 @@
             {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
         ]
     },
+    
+    "dance-mix-for-adults": {
 
-    "Ballet_for_Adults_Beginners": {
+        "banner": {
+            "bannerURL": "images/banners/contemporary-adults.jpg",
+            "title": "Dance Mix for Adults - Beginners",
+            "age": "18+ years old"
+        },
+        "info": [
+
+            {"Description": "This class is created for adults who have done only little or no dance in the past. We try to create very friendly and stress-free environment while teaching the basics of the beautiful art called dance. The dancer will experience many different styles, such as ballet, contemporary and street dance. This is time for adult dancers to clear their head space and enjoy the joy of dance."},
+
+            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+
+            {"Price": "£32 per month (4 weeks / £8 per class)"},
+
+            {"Dress Code": "T-shirt/leotard and stretchy shorts/joggers/leggings, water bottle"},
+
+            {"Timetable": "Wednesdays 6 - 7pm<br><br>Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+        ]
+    },
+    "ballet_for_adults": {
 
         "banner": {
             "bannerURL": "images/banners/ballet-juniors.jpg",
@@ -210,7 +230,7 @@
         ]
     },
 
-    "Contemporary_for_Adults_Beginners": {
+    "contemporary_for_adults": {
 
         "banner": {
             "bannerURL": "images/banners/contemporary-adults.jpg",
