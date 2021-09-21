@@ -219,7 +219,7 @@ export let GALLERY_BUILDER = {
                 
             // Prevents up and down scrolling
             document.querySelector('.small-images-container').style.display = 'none'; 
-            document.querySelector('footer').style.display = 'none'
+            document.querySelector('body').style.display = 'none'
             document.querySelector('header').style.display = 'none'
 
             // Scroll right photo into view 
@@ -308,7 +308,7 @@ export let GALLERY_BUILDER = {
 
             document.querySelector('.fullscreen-container').classList.remove('active');
             document.querySelector('.small-images-container').style.display = 'grid';
-            document.querySelector('footer').style.display = 'flex'
+            document.querySelector('body').style.display = ''
             document.querySelector('header').style.display = 'flex'
 
             // Close fullscreen on mobile only
