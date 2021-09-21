@@ -45,7 +45,6 @@ Import GALLERY_BUILDER and call GALLERY_BUILDER.init() and pass parameters:
 
 */
 
-
 export let GALLERY_BUILDER = {
 
     // urls of videos, small photos, large photos, folder storing the photos
