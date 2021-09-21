@@ -26,6 +26,9 @@ Import GALLERY_BUILDER and call GALLERY_BUILDER.init() and pass parameters:
         - when small photo is clicked a fullscreen gallery  is opened and the div with same data-index as data-index of small photo div is scrolled into view
         - when a certain fullscreen div is into view its background photo is fetched and rendered
         - keyboard arrows and scrolling/swipping change the div into view and therefor its background photo is also fetched and set
+        - opening fullscreen mode removes all other elements from the page (to make sure we do not have scrollbar visible, or elements under the gallery) 
+        - opening fullscreen mode remembers the scrolled position and closeing the window return us to the same position
+        
 
         - when 'X' is clicked or escape key is pressed, the gallery is closed
         - the counter on the top indicates which number of photo we are on (data-index + 1)
@@ -69,7 +72,7 @@ export let GALLERY_BUILDER = {
     },
 
     // Build HTML elements to hold and show videos and images
-    buildSmallImageGallery: function(selectorGalleryContainer, hideMedia) {
+    buildSmallImageGallery: function(gallerySelector, hideMedia) {
 
         // Build photo gallery
         let imageBuilder = function() {
@@ -123,11 +126,11 @@ export let GALLERY_BUILDER = {
         videoBuilder();
 
         // Add df to DOM 
-        document.querySelector(selectorGalleryContainer).appendChild(df);
+        document.querySelector(gallerySelector).appendChild(df);
     },
 
     // Build HTML elemetns for fullscren view of photos 
-    buildFullScreenView: function(selectorGalleryContainer) {
+    buildFullScreenView: function(gallerySelector) {
 
         let df = new DocumentFragment();
 
@@ -180,7 +183,7 @@ export let GALLERY_BUILDER = {
         df.appendChild(fullscreenContainer);
 
         // Append gallery HTML to DOM
-        document.querySelector(selectorGalleryContainer).appendChild(df);
+        document.querySelector(gallerySelector).appendChild(df);
         
 
         // Add listenners to arrows (to press the keyboard's left and right arrows)
@@ -193,13 +196,17 @@ export let GALLERY_BUILDER = {
     },
     
     // Add functionalities to fullscreen gallery
-    addFullScreenFunctionalities: function() {
+    addFullScreenFunctionalities: function(gallerySelector) {
+        // Scroll height used to scroll page to right place after closing fullscreen gallery
+        let scrolledPosition;
 
         // Open fullscreen mode and scroll into view the chosen photo
         let openFullScreen = function(ev) {
 
+            scrolledPosition = document.documentElement.scrollTop;
+            
             document.querySelector('.fullscreen-container').classList.add('active');
-
+            
             let index = ev.target.dataset.index;
             let photo = document.querySelector(`.fullscreen-image[data-index="${index}"]`)
 
@@ -217,7 +224,20 @@ export let GALLERY_BUILDER = {
                 }
             }
                 
-            // Prevents up and down scrolling
+            // Prevents up and down scrolling on pages
+            // Body > children
+            document.querySelectorAll('main > *').forEach( elem => {
+                if (elem !== document.querySelector(gallerySelector) && !elem.contains(document.querySelector(gallerySelector))) {
+                    elem.style.display = 'none'
+                }
+            })
+            // Body > wrapper children in case there is a wrapper
+            document.querySelectorAll('main > * > *').forEach( elem => {
+                if (elem !== document.querySelector(gallerySelector) && !elem.contains(document.querySelector(gallerySelector)) && elem.parentElement !==document.querySelector(gallerySelector) ) {
+                    elem.style.display = 'none'
+                }
+                console.log(elem.parentElement)
+            })
             document.querySelector('.small-images-container').style.display = 'none'; 
             document.querySelector('footer').style.display = 'none'
             document.querySelector('header').style.display = 'none'
@@ -306,10 +326,24 @@ export let GALLERY_BUILDER = {
 
         let closeFullScreen = function() {
             
+            // Prevents up and down scrolling on pages
+            // main > children
+            document.querySelectorAll('main > *').forEach( elem => {
+                if (elem !== document.querySelector(gallerySelector) && !elem.contains(document.querySelector(gallerySelector))) {
+                    elem.style.removeProperty('display');
+                }
+            })
+            // main > wraper > children
+            document.querySelectorAll('main > * > *').forEach( elem => {
+                if (elem !== document.querySelector(gallerySelector) && !elem.contains(document.querySelector(gallerySelector))) {
+                    elem.style.removeProperty('display');
+                }
+            })
             document.querySelector('.fullscreen-container').classList.remove('active');
-            document.querySelector('.small-images-container').style.display = 'grid';
-            document.querySelector('footer').style.display = 'flex'
-            document.querySelector('header').style.display = 'flex'
+            document.querySelector('.small-images-container').style.removeProperty('display');
+            document.querySelector('footer').style.removeProperty('display');
+            document.querySelector('header').style.removeProperty('display');
+            window.scrollTo(0, scrolledPosition);
 
             // Close fullscreen on mobile only
             if(navigator.userAgent.toLowerCase().match(/mobile/i)) { 
@@ -321,6 +355,8 @@ export let GALLERY_BUILDER = {
                     document.msExitFullscreen();
                 }
             }
+
+            
 
         }
 
@@ -370,7 +406,7 @@ export let GALLERY_BUILDER = {
 
     // Initialize Gallery
 
-    init: function(jsonFile, selectorGalleryContainer, imagesFolder, hideMedia=[], callbacks=[]) {
+    init: function(jsonFile, gallerySelector, imagesFolder, hideMedia=[], callbacks=[]) {
 
         //Get the data
         this.getData(jsonFile);
@@ -380,9 +416,9 @@ export let GALLERY_BUILDER = {
         
         // Build the gallery + fullscreen view
         document.addEventListener('galleryDataReady', ()=> {
-            this.buildSmallImageGallery(selectorGalleryContainer, hideMedia);
-            this.buildFullScreenView(selectorGalleryContainer);
-            this.addFullScreenFunctionalities();
+            this.buildSmallImageGallery(gallerySelector, hideMedia);
+            this.buildFullScreenView(gallerySelector);
+            this.addFullScreenFunctionalities(gallerySelector);
             callbacks.forEach( fun => fun());
         })
         
