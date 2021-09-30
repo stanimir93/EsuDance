@@ -108,7 +108,7 @@
     
     .timetable-container {
         display: grid;
-        grid-template-columns: 40% 1fr 1fr;
+        grid-template-columns: 40% 30% 30%;
         max-width: 1080px;
         margin: auto;
         padding: 2.5rem;
@@ -117,6 +117,7 @@
     .class-container {
         display: grid;
         grid-column: 1 / -1;
+        grid-template-columns: 40% 30% 30%;
         grid-template-areas: 
         "title schedule view-more"
         "age schedule dates"
