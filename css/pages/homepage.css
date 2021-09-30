@@ -29,7 +29,7 @@ main > div {
     padding-left: 0px;
     padding-right: 0px;
     height: calc(100vh - 73px);
-    background-image: linear-gradient(hsla(0, 0%, 27%, 0.4), hsla(0, 0%, 27%, 0.4)), url("../../images/banners/ballerina-toes-mobile.jpg");
+    background-image: linear-gradient(hsla(0, 0%, 27%, 0.4), hsla(0, 0%, 27%, 0.4)), url("../../images/banners/contemp-adults.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -68,8 +68,8 @@ main > div {
     justify-content: center;
 }
 .homepage-hero-container a:hover {
-    color: var(--color-7);
-    background-color: var(--color-2);
+    color: var(--color-2);
+    background-color: var(--color-7);
     text-decoration: underline;    
 }
 .homepage-hero-container a:active {
