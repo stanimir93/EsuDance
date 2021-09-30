@@ -38,6 +38,7 @@ Import GALLERY_BUILDER and call GALLERY_BUILDER.init() and pass parameters:
         - runs buildSmallImageGallery(), buildFullScrenView(), addFullScreenFunctionalities()
         - hides photos or videos if required not to be visible on page load
         - runs callbacks once gallery has been built to add extra functionalities (e.g. filter)
+        - adds listener to size of window to call a callback that refreshes the gallery (browsers do not rerender properly it on resizing the window)
 
     * CSS 
         - specific css for each page to tell how the small photo and video gallery to be displayed
@@ -52,6 +53,7 @@ export let GALLERY_BUILDER = {
     smallPhotos: [],
     largePhotos: [],
     imagesFolder: '',
+    gallerySelector: '',
     
     // Fetch the gallery data (photo names and video urls) and save it in the variables above
     getData: function(jsonFile) {
@@ -403,6 +405,18 @@ export let GALLERY_BUILDER = {
         hideShowArrowsAndCounter();
     },
 
+    // Rerender gallery on window resize- because the photos do not rerender when resized and look awkward
+    rerender: function () {
+        
+        setTimeout(() => {
+            document.querySelector(GALLERY_BUILDER.gallerySelector + ' > div').style.visibility = 'hidden';
+        }, 0);
+        setTimeout(() => {
+            document.querySelector(GALLERY_BUILDER.gallerySelector + ' > div').style.removeProperty('visibility');
+        }, 17); // it needs over 16 miliseconds (60Hz refresh monitor should refresh at 16) (so changes are reflected with actuall rerenderring)
+    },
+    
+
     // Initialize Gallery
 
     init: function(jsonFile, gallerySelector, imagesFolder, hideMedia=[], callbacks=[]) {
@@ -412,6 +426,7 @@ export let GALLERY_BUILDER = {
 
         //Where images are stored
         this.imagesFolder = imagesFolder
+        this.gallerySelector = gallerySelector
         
         // Build the gallery + fullscreen view
         document.addEventListener('galleryDataReady', ()=> {
@@ -420,6 +435,9 @@ export let GALLERY_BUILDER = {
             this.addFullScreenFunctionalities(gallerySelector);
             callbacks.forEach( fun => fun());
         })
+
+        // Rerender page when resizing 
+        window.addEventListener('resize', this.rerender);
         
     }
 }
