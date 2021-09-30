@@ -8,7 +8,7 @@
 .page-heading p {
     margin: 1.25rem auto;
     max-width: 750px;
-    width: 90%;
+    padding: 0 2.5rem;
 }
 
 .class-container {
