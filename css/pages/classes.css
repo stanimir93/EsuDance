@@ -6,6 +6,7 @@ main {
     width: 100vw;
 }
 
+
 .all-classes-container{
     display: none;
 }
@@ -34,6 +35,14 @@ section {
 
 section {
     background-color: var(--color-1);
+}
+
+.filter-container h2 {
+    margin-bottom: 2.5rem;
+}
+
+.filter-container p:nth-child(3) {
+    margin: 1.5rem 0 2.5rem;
 }
 
 /* Hide non active classes */

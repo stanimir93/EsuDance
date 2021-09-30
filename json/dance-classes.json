@@ -17,7 +17,7 @@
 
             {"Dress Code": "Ballet leotard, tights, skirt, ballet shoes, tap shoes, ballet bun hairstyle(girls), water bottle"},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "<a href=\"timetable\">See Timetable<a>"}
         ]
     },
 
@@ -59,7 +59,7 @@
 
             {"Dress Code": "T-shirt and shorts/joggers, trainers, tied up hairstyle, water bottle"},
 
-            {"Timetable": "<a href=\"timetable.html\">See Timetable<a>"}
+            {"Timetable": "<a href=\"timetable\">See Timetable<a>"}
         ]
     },
 
@@ -206,49 +206,9 @@
 
             {"Dress Code": "T-shirt/leotard and stretchy shorts/joggers/leggings, water bottle"},
 
-            {"Timetable": "Wednesdays 6 - 7pm<br><br>Starting on 6 Oct 2021<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
-        ]
-    },
-    "ballet_for_adults": {
-
-        "banner": {
-            "bannerURL": "images/banners/ballet-juniors.jpg",
-            "title": "Ballet for Adults - Beginners",
-            "age": "18+ years old"
-        },
-        "info": [
-
-            {"Description": "This class is created for adults who have done only little or no ballet in the past. We try to create very friendly and stress-free environment while teaching the basics of the beautiful art called ballet. The dancer will experience barre exercises, centre exercises, travelling and jump exercises. This is time for adult dancers to clear their head space and enjoy the joy of dance."},
-
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
-
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
-
-            {"Dress Code": "Ballet leotard/T-shirt, tights/leggings, skirt (optional), ballet shoes, ballet bun hairstyle(girls), water bottle"},
-
-            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
-        ]
-    },
-
-    "contemporary_for_adults": {
-
-        "banner": {
-            "bannerURL": "images/banners/contemporary-adults.jpg",
-            "title": "Contemporary for Adults - Beginners",
-            "age": "18+ years old"
-        },
-        "info": [
-
-            {"Description": "This class is created for adults who have done only little or no contemporary in the past. We try to create very friendly and stress-free environment while teaching the basics of the beautiful art called contemporary. The dancer will experience floor exercises, centre exercises, travelling and jump exercises. This is time for adult dancers to clear their head space and enjoy the joy of dance."},
-
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
-
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
-
-            {"Dress Code": "T-shirt/leotard and stretchy shorts/joggers/leggings, water bottle"},
-
-            {"Timetable": "Wednesdays 6 - 7pm<br><br>Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+            {"Timetable": "<a href=\"timetable\">See Timetable<a>"}
         ]
     }
+   
 
 }

@@ -1,47 +1,183 @@
-main {
-    margin-top: 97px;
-   }
+.page-heading {
+    padding-top: 6rem;
+    text-align: center;
+}
+.page-heading h2 {
+    margin-bottom: 2.5rem;
+}
+.page-heading p {
+    margin: 1.25rem;
+}
 
-main h1, main p {
+.class-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    border-radius: 4px;
+    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 5px 7px -2px rgba(0,0,0,.18),0 5px 5px 0 rgba(0,0,0,.1);
+
+}
+
+.title {
+    background-color: var(--color-1);
+    width: 100%;
+}
+
+.title a {
+    text-decoration: none;
+}
+
+
+.title a:hover {
+    text-decoration: underline;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.title:active {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.view-more a:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+.all-dates {
+    display: none;
+}
+.all-dates.visible {
+    display: block;
+    transition-property: opacity;
+    animation-name: fade-out-in;
+    animation-duration: 0.4s;
+    /* animation-timing-function: ease-out; */
+}
+
+@keyframes fade-out-in {
+    0% { opacity: 0 ; }
+    100% { opacity: 1; }
+}
+
+.all-dates.visible p {
+    padding: 2rem 1rem 0;
+    font-style: italic;
     text-align: center;
 }
 
-main > div:first-child{
-    background-color: var(--color-1);
+@media screen and (max-width: 750px) {
+    .class-container {
+        overflow: hidden;
+        margin: 2.5rem;
+        border: 1px solid var(--color-1);
+    }
+
+    .title {
+        padding: 1em 1rem 0.5rem;
+    }
+    
+    .age {
+        padding-bottom: 1rem;
+        font-style: italic;
+        background-color: var(--color-1);
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .schedule {
+        margin-top: 1.5rem;
+    }
+
+    .view-more {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1.5px solid var(--color-1);
+        width: 33%;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .all-dates.visible {
+        margin-bottom: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-h3 {
-    text-align: start;
+@media screen and (min-width: 750px) {
+    
+    .timetable-container {
+        display: grid;
+        grid-template-columns: 40% 1fr 1fr;
+        max-width: 1080px;
+        margin: auto;
+        padding: 2.5rem;
+    }
+
+    .class-container {
+        display: grid;
+        grid-column: 1 / -1;
+        grid-template-areas: 
+        "title schedule view-more"
+        "age schedule dates"
+        "age schedule dates"
+        ;
+        grid-template-columns: subgrid;
+        margin: 1.5rem 2.5rem;
+        border: 1px solid var(--color-1);
+        overflow: hidden;
+    }
+    
+    
+    .title {
+        grid-area: title;
+        padding: 1.5rem 1rem 1.5rem;
+    }
+    
+    .age {
+        grid-area: age;
+        background-color: var(--color-1);
+        height: 100%;
+        text-align: center;
+        padding: 0 2.5rem 1.5rem;
+    }
+    
+    .schedule {
+        grid-area: schedule;
+        text-align: center;
+        white-space: normal;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        padding: 2.5rem 2.5rem 1.5rem;
+        border-right: 1px solid var(--color-1);
+    }
+    
+    .view-more {
+        grid-area: view-more;
+        text-align: center;
+        white-space: normal;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        padding-top: 2.5rem;
+    }
+    
+    .all-dates.visible {
+        grid-area: dates;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }   
+    .all-dates ul {
+        padding-bottom: 1.5rem;
+    }
+    
+    .all-dates li {
+        list-style-type: square;
+    }
+    
 }
 
-/* TIMETABLE */
-.timetable-container {
-    margin: auto;
-    max-width: 1080px;
-    padding: 2.5rem;
-}
 
-
-.table-row {
-    display: grid;
-    grid-template-columns: 240px 1fr 1.2fr 1fr 280px;
-    border: 2px solid var(--color-1);
-    border-radius: 4px;
-    margin: 2rem 0;
-}
-
-.table-row > div {
-    padding: 1rem;
-    border-right: 2px solid var(--color-1);
-
-}
-
-.table-row > div:last-child {
-    border-right: none;
-}
-
-.time,
-.date,
-.age {
-    font-style: italic;
-}

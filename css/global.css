@@ -42,6 +42,7 @@ a {
 a:hover {
     text-decoration: underline;
     background-color: var(--color-1);
+    border-radius: 1px;
 }
 
 a:active{
@@ -70,7 +71,7 @@ h4 {
     line-height: 1.2;
 }
 h5 {
-    font-size: calc(22px + 0.8vw);
+    font-size: calc(23px + 0.5vw);
     line-height: 1.2;
 }
 
