@@ -125,6 +125,7 @@ const LOAD_TO_PAGE = {
                 button = button.replace('/','')
                 if (button === url) {
                     a.parentElement.classList.add('current')
+                    a.setAttribute('aria-current', 'page')
                 }
             })
         },        
