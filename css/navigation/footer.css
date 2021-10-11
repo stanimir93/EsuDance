@@ -97,9 +97,8 @@ footer .middle-container a:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 102.5vw;
+    width: 100vw;
     height: 60px;
-    margin-left: -2.5rem;
     background-color: var(--color-1);
     border-bottom: 8px solid var(--color-2)
 }
@@ -131,4 +130,8 @@ footer .middle-container a:active {
         width: 50%;
     }
 
+    .social-links-container {
+        width: 102.5vw;
+        margin-left: -2.5rem;
+    }
 }
