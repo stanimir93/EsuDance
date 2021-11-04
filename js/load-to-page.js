@@ -56,7 +56,7 @@ const LOAD_TO_PAGE = {
         })
     },
     
-    // Load contact info on the page + add 
+    // Load contact info on the page + add decorations to header
     afterNavigation: {
 
         start: function(){
@@ -69,7 +69,6 @@ const LOAD_TO_PAGE = {
                 LOAD_TO_PAGE.afterNavigation.loadMessenger();
                 LOAD_TO_PAGE.afterNavigation.decorateLinkOnCurrentPage();
                 LOAD_TO_PAGE.afterNavigation.maintainHorizontalNavSize();
-                this.disconnect();
             } 
             // if contact datails are not fetched and parsed, create a listenner to load them into DOM, once they are ready
             else { 
@@ -79,7 +78,6 @@ const LOAD_TO_PAGE = {
                     LOAD_TO_PAGE.afterNavigation.loadMessenger();
                     LOAD_TO_PAGE.afterNavigation.decorateLinkOnCurrentPage();
                     LOAD_TO_PAGE.afterNavigation.maintainHorizontalNavSize();
-                    this.disconnect();
                 })
             }
         },
