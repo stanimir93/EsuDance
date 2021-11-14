@@ -237,7 +237,6 @@ export let GALLERY_BUILDER = {
                 if (elem !== document.querySelector(gallerySelector) && !elem.contains(document.querySelector(gallerySelector)) && elem.parentElement !==document.querySelector(gallerySelector) ) {
                     elem.style.display = 'none'
                 }
-                console.log(elem.parentElement)
             })
             document.querySelector('.small-images-container').style.display = 'none'; 
             document.querySelector('footer').style.display = 'none'
