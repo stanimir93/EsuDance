@@ -113,6 +113,16 @@
 
 @media screen and (min-width: 750px) {
 
+    /* Fileter */
+    .gallery-filter-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    .gallery-filter-container {
+        min-width: 1063px;
+        border-radius: 18px;
+    }
+
     /* Layout */
     .small-images-container {
         display: grid;
