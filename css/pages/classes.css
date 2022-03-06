@@ -1,4 +1,3 @@
-
 /* AGE GROUP SECTION */
 
 main {
@@ -6,8 +5,7 @@ main {
     width: 100vw;
 }
 
-
-.all-classes-container{
+.all-classes-container {
     display: none;
 }
 .all-classes-container.active,
@@ -20,8 +18,12 @@ main {
 }
 
 @keyframes fade-out-in {
-    0% { opacity: 0 ; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 section {
@@ -30,7 +32,6 @@ section {
     align-items: center;
     padding: 2.5rem;
     padding-bottom: 5rem;
-
 }
 
 section {
@@ -65,7 +66,7 @@ section.visible {
     padding: 2.5rem;
     display: none;
 }
-.filter-container.active{
+.filter-container.active {
     display: flex;
 }
 .filter-container p {
@@ -89,11 +90,11 @@ section.visible {
 .tabs button p {
     display: inline;
 }
-.tabs button p:nth-child(2){
+.tabs button p:nth-child(2) {
     font-style: italic;
 }
 .tabs button:hover {
-    background-color: var(--color-3);   
+    background-color: var(--color-3);
 }
 .tabs .visible,
 .tabs button:active,
@@ -105,10 +106,10 @@ section.visible {
 .all-cards-wrapper {
     display: grid;
     gap: 2rem;
-    grid-template-areas: 
-    'card1'
-    'card2'
-    'card3';
+    grid-template-areas:
+        'card1'
+        'card2'
+        'card3';
     grid-auto-rows: 1fr;
     max-width: 1080px;
 }
@@ -126,7 +127,7 @@ section.visible {
 
 /* Opening soon ribbon */
 .opening-soon .dance-class-info-container::before {
-    content: "Opening Soon";
+    content: 'Opening Soon';
     position: absolute;
     left: -76px;
     top: 32px;
@@ -151,7 +152,8 @@ section.visible {
     border-top: 1px solid rgba(180, 180, 180, 0.2);
     border-radius: 4px;
     background-color: var(--color-3);
-    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19), 0 6px 8px -2px rgba(0, 0, 0, 0.18),
+        0 6px 6px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* Title */
@@ -180,26 +182,44 @@ section.visible {
     max-height: 160px;
     overflow: hidden;
 }
-.ballet-minis .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-minis.jpg"); }
-.contemporary-minis .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-minis.jpg"); }
-.street-minis .dance-class-image-wrapper { background-image: url("../../images/classes/street-dance-minis.jpg"); }
-.ballet-kids .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-kids.jpg"); }
-.contemporary-kids .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-kids.jpg"); }
-.street-kids .dance-class-image-wrapper { background-image: url("../../images/classes/street-dance-kids.jpg"); }
-.ballet-juniors .dance-class-image-wrapper { background-image: url("../../images/classes/ballet-juniors.jpg"); }
-.contemporary-juniors .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-juniors.jpg"); }
-.street-juniors .dance-class-image-wrapper { background-image: url("../../images/classes/street-dance-juniours.jpg"); }
-.dance-mix-adults .dance-class-image-wrapper { background-image: url("../../images/classes/contemporary-adults.jpg"); }
+.ballet-minis .dance-class-image-wrapper {
+    background-image: url('../../images/classes/ballet-minis.jpg');
+}
+.contemporary-minis .dance-class-image-wrapper {
+    background-image: url('../../images/classes/contemporary-minis.jpg');
+}
+.street-minis .dance-class-image-wrapper {
+    background-image: url('../../images/classes/street-dance-minis.jpg');
+}
+.ballet-kids .dance-class-image-wrapper {
+    background-image: url('../../images/classes/ballet-kids.jpg');
+}
+.contemporary-kids .dance-class-image-wrapper {
+    background-image: url('../../images/classes/contemporary-kids.jpg');
+}
+.street-kids .dance-class-image-wrapper {
+    background-image: url('../../images/classes/street-dance-kids.jpg');
+}
+.ballet-juniors .dance-class-image-wrapper {
+    background-image: url('../../images/classes/ballet-juniors.jpg');
+}
+.contemporary-juniors .dance-class-image-wrapper {
+    background-image: url('../../images/classes/contemporary-juniors.jpg');
+}
+.street-juniors .dance-class-image-wrapper {
+    background-image: url('../../images/classes/street-dance-juniours.jpg');
+}
+.dance-mix-adults .dance-class-image-wrapper {
+    background-image: url('../../images/classes/contemporary-adults.jpg');
+}
 
 /* WIDE-SCREEN VIEW */
 @media screen and (min-width: 750px) {
-    
     section {
         padding: 2.5rem 5rem 9rem;
     }
-    .all-cards-wrapper{
-        grid-template-areas:
-        'card1 card2 card3';
+    .all-cards-wrapper {
+        grid-template-areas: 'card1 card2 card3';
         grid-auto-columns: 1fr;
         gap: 2.5rem;
     }
@@ -246,8 +266,9 @@ section.visible {
     .card h3 {
         margin-bottom: 2.5rem;
         margin-top: -1%;
-        text-align: center;font-size: 30px;
-    }    
+        text-align: center;
+        font-size: 30px;
+    }
     .card p {
         text-align: center;
     }
