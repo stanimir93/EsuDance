@@ -1,214 +1,253 @@
 {
-
     "ballet_and_tap_dance_for_minis": {
-
         "banner": {
-            "bannerURL": "images/banners/ballet-minis.jpg",
+            "bannerURL": "images/banners/ballet-minis.webp",
             "title": "Ballet and Tap Dance for Minis",
             "age": "4 - 7 years old"
         },
         "info": [
+            {
+                "Description": "This class focuses on Ballet and Tap dance techniques and performance. We use fun ways for developing children’s creativity, musicality, and spatial awareness while spending time with friends. In the class, there are being used props that help children with visual, auditory, and kinaesthetic learning."
+            },
 
-            {"Description": "This class focuses on Ballet and Tap dance techniques and performance. We use fun ways for developing children’s creativity, musicality, and spatial awareness while spending time with friends. In the class, there are being used props that help children with visual, auditory, and kinaesthetic learning."},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            {
+                "Dress Code": "Ballet leotard, tights, skirt, ballet shoes, tap shoes, ballet bun hairstyle(girls), water bottle"
+            },
 
-            {"Dress Code": "Ballet leotard, tights, skirt, ballet shoes, tap shoes, ballet bun hairstyle(girls), water bottle"},
-
-            {"Timetable": "<a href=\"timetable\">See Timetable<a>"}
+            { "Timetable": "<a href=\"timetable\">See Timetable<a>" }
         ]
     },
 
     "contemporary_and_tumbling_for_minis": {
-
         "banner": {
-            "bannerURL": "images/banners/contemporary-minis.jpg",
+            "bannerURL": "images/banners/contemporary-minis.webp",
             "title": "Contemporary and Tumbling for Minis",
             "age": "4 - 7 years old"
         },
         "info": [
+            {
+                "Description": "Within this class your mini dancer will learn basics of contemporary technique as well as the first steps of tumbling for dancers. This session is an hour long and half of the class is dedicated to contemporary dance while the other one to tumbling. Safety is number one! Therefore, there are being used matts and it is considered as a hands-on class."
+            },
 
-            {"Description": "Within this class your mini dancer will learn basics of contemporary technique as well as the first steps of tumbling for dancers. This session is an hour long and half of the class is dedicated to contemporary dance while the other one to tumbling. Safety is number one! Therefore, there are being used matts and it is considered as a hands-on class."},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            {
+                "Dress Code": "Ballet leotard or tight T-shirt and stretchy shorts/joggers/leggings, tied up hairstyle, water bottle"
+            },
 
-            {"Dress Code": "Ballet leotard or tight T-shirt and stretchy shorts/joggers/leggings, tied up hairstyle, water bottle"},
-
-            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+            {
+                "Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"
+            }
         ]
     },
 
     "street_dance_for_minis": {
-
         "banner": {
-            "bannerURL": "images/banners/street-dance-minis.jpg",
+            "bannerURL": "images/banners/street-dance-minis.webp",
             "title": "Street Dance for Minis",
             "age": "4 - 7 years old"
         },
         "info": [
+            {
+                "Description": "This class focuses on basic steps of street dance. There is used popular children´s friendly music to enhance the street dance feel as well as to encourage the dancers to listen to the music and dance accordingly. Musicality, spatial awareness and dancing in the group are the key factors of this class. Special dance props can be used within the class."
+            },
 
-            {"Description": "This class focuses on basic steps of street dance. There is used popular children´s friendly music to enhance the street dance feel as well as to encourage the dancers to listen to the music and dance accordingly. Musicality, spatial awareness and dancing in the group are the key factors of this class. Special dance props can be used within the class."},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            { "Dress Code": "T-shirt and shorts/joggers, trainers, tied up hairstyle, water bottle" },
 
-            {"Dress Code": "T-shirt and shorts/joggers, trainers, tied up hairstyle, water bottle"},
-
-            {"Timetable": "<a href=\"timetable\">See Timetable<a>"}
+            { "Timetable": "<a href=\"timetable\">See Timetable<a>" }
         ]
     },
 
     "ballet_and_tap_dance_for_kids": {
-
         "banner": {
-            "bannerURL": "images/banners/ballet-kids.jpg",
+            "bannerURL": "images/banners/ballet-kids.webp",
             "title": "Ballet and Tap Dance for Kids",
             "age": "8 - 12 years old"
         },
         "info": [
+            {
+                "Description": "This class is a follow-up of the Ballet and Tap for Minis. The dancers are now a little bit older and are able to use the rythm learned from tap. Simultaneously, they are able to focus the whole an hour long session on only one dance style. This would be ballet."
+            },
 
-            {"Description": "This class is a follow-up of the Ballet and Tap for Minis. The dancers are now a little bit older and are able to use the rythm learned from tap. Simultaneously, they are able to focus the whole an hour long session on only one dance style. This would be ballet."},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            {
+                "Dress Code": "Ballet leotard, tights, skirt, ballet shoes, tap shoes, ballet bun hairstyle(girls), water bottle"
+            },
 
-            {"Dress Code": "Ballet leotard, tights, skirt, ballet shoes, tap shoes, ballet bun hairstyle(girls), water bottle"},
-
-            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+            {
+                "Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"
+            }
         ]
     },
 
     "contemporary_and_tumbling_for_kids": {
-
         "banner": {
-            "bannerURL": "images/banners/contemporary-kids.jpg",
+            "bannerURL": "images/banners/contemporary-kids.webp",
             "title": "Contemporary and Tumbling for Kids",
             "age": "8 - 12 years old"
         },
         "info": [
+            {
+                "Description": "This class is cut into halves. Half an hour we practise contemporary dance and half an hour tumbling. Within this class the dancer will learn the techniques and performance of contemporary. The key focus of this class is to enhance the creativity, musicality and improvisation skills within contemporary and to practise basic tricks such as cartwheel, handstand, walkovers, etc."
+            },
 
-            {"Description": "This class is cut into halves. Half an hour we practise contemporary dance and half an hour tumbling. Within this class the dancer will learn the techniques and performance of contemporary. The key focus of this class is to enhance the creativity, musicality and improvisation skills within contemporary and to practise basic tricks such as cartwheel, handstand, walkovers, etc."},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            {
+                "Dress Code": "Ballet leotard or tight T-shirt and stretchy shorts/joggers/leggings, tied up hairstyle, water bottle"
+            },
 
-            {"Dress Code": "Ballet leotard or tight T-shirt and stretchy shorts/joggers/leggings, tied up hairstyle, water bottle"},
-
-            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+            {
+                "Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"
+            }
         ]
     },
 
     "street_dance_for_kids": {
-
         "banner": {
-            "bannerURL": "images/banners/street-dance-kids.jpg",
+            "bannerURL": "images/banners/street-dance-kids.webp",
             "title": "Steet Dance for Kids",
             "age": "8 - 12 years old"
         },
         "info": [
+            {
+                "Description": "This class focuses on different street dance steps from basics to intermediate level. Dance choreographies are being taught almost every class. We focus on the performance and quality of steps, while fitting them into music. The dancer learns to dance together with other dancers, enhance musicality level and while freestyling also creativity."
+            },
 
-            {"Description": "This class focuses on different street dance steps from basics to intermediate level. Dance choreographies are being taught almost every class. We focus on the performance and quality of steps, while fitting them into music. The dancer learns to dance together with other dancers, enhance musicality level and while freestyling also creativity."},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            { "Dress Code": "T-shirt and shorts/joggers, trainers, tied up hairstyle, water bottle" },
 
-            {"Dress Code": "T-shirt and shorts/joggers, trainers, tied up hairstyle, water bottle"},
-
-            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+            {
+                "Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"
+            }
         ]
     },
 
     "ballet_for_juniors": {
-
         "banner": {
-            "bannerURL": "images/banners/ballet-juniors.jpg",
+            "bannerURL": "images/banners/ballet-juniors.webp",
             "title": "Ballet for Juniors",
             "age": "13 - 18 years old"
         },
         "info": [
+            {
+                "Description": "This class focuses purely on the ballet technique and performance. Dancers are taught to be confident with their ballet technique, performance and vocabulary. Within the class the dancer will experience basic, intermediate and advanced barre exercises, cantre exercises, jump and travelling exercises. There might be created a dance piece if the time and experience allow us. We encourage the dancers to express themselves through the art of dance. Therefore we do not forget to show dancers the storytelling ballet is capable of."
+            },
 
-            {"Description": "This class focuses purely on the ballet technique and performance. Dancers are taught to be confident with their ballet technique, performance and vocabulary. Within the class the dancer will experience basic, intermediate and advanced barre exercises, cantre exercises, jump and travelling exercises. There might be created a dance piece if the time and experience allow us. We encourage the dancers to express themselves through the art of dance. Therefore we do not forget to show dancers the storytelling ballet is capable of."},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            { "Dress Code": "Ballet leotard, tights, skirt, ballet shoes, ballet bun hairstyle(girls), water bottle" },
 
-            {"Dress Code": "Ballet leotard, tights, skirt, ballet shoes, ballet bun hairstyle(girls), water bottle"},
-
-            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+            {
+                "Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"
+            }
         ]
     },
 
     "contemporary_for_juniors": {
-
         "banner": {
-            "bannerURL": "images/banners/contemporary-juniors.jpg",
+            "bannerURL": "images/banners/contemporary-juniors.webp",
             "title": "Contemporary for Juniors",
             "age": "13 - 18 years old"
         },
         "info": [
+            {
+                "Description": "Within this class we do focus on the emotions and expression within performance of the dancers. We use dance to tell stories and have fun. Dancer is going to be honing the techniques of contemporary dance as well as the improvisation and creativity skills. Moreover, dancers will learn how to dance in a group while being aware of each other and some contemporary partner work might also appear!"
+            },
 
-            {"Description": "Within this class we do focus on the emotions and expression within performance of the dancers. We use dance to tell stories and have fun. Dancer is going to be honing the techniques of contemporary dance as well as the improvisation and creativity skills. Moreover, dancers will learn how to dance in a group while being aware of each other and some contemporary partner work might also appear!"},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            { "Dress Code": "T-shirt/leotard and stretchy shorts/joggers/leggings, water bottle" },
 
-            {"Dress Code": "T-shirt/leotard and stretchy shorts/joggers/leggings, water bottle"},
-
-            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+            {
+                "Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"
+            }
         ]
     },
 
     "street_dance_for_juniors": {
-
         "banner": {
-            "bannerURL": "images/banners/street-dance-juniors.jpg",
+            "bannerURL": "images/banners/street-dance-juniors.webp",
             "title": "Street Dance for Juniors",
             "age": "13 - 18 years old"
         },
         "info": [
+            {
+                "Description": "This class focuses on street dance from the beginning to end. We try different dance styles of street dance such as hip hop, popping, commercial dance etc. We tend to practice one choreography after another while perfecting technique and performance. Being able to dance in a group and listen to the music as well as to fellow dancers are other skills being improved within this class."
+            },
 
-            {"Description": "This class focuses on street dance from the beginning to end. We try different dance styles of street dance such as hip hop, popping, commercial dance etc. We tend to practice one choreography after another while perfecting technique and performance. Being able to dance in a group and listen to the music as well as to fellow dancers are other skills being improved within this class."},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            { "Dress Code": "T-shirt and shorts/joggers, trainers, water bottle" },
 
-            {"Dress Code": "T-shirt and shorts/joggers, trainers, water bottle"},
-
-            {"Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"}
+            {
+                "Timetable": "Opening soon!<br><br>If you are interested in this class, please do contact us. Once we have enough participants, we will commence the class.<br><br><em>The exact days and times to be confirmed.</em>"
+            }
         ]
     },
-    
-    "dance-mix-for-adults": {
 
+    "dance-mix-for-adults": {
         "banner": {
-            "bannerURL": "images/banners/contemp-adults.jpg",
+            "bannerURL": "images/banners/contemp-adults.webp",
             "title": "Dance Mix for Adults - Beginners",
             "age": "18+ years old"
         },
         "info": [
+            {
+                "Description": "This class is created for adults who have done only little or no dance in the past. We try to create very friendly and stress-free environment while teaching the basics of the beautiful art called dance. The dancer will experience many different styles, such as ballet, contemporary and street dance. This is time for adult dancers to clear their head space and enjoy the joy of dance."
+            },
 
-            {"Description": "This class is created for adults who have done only little or no dance in the past. We try to create very friendly and stress-free environment while teaching the basics of the beautiful art called dance. The dancer will experience many different styles, such as ballet, contemporary and street dance. This is time for adult dancers to clear their head space and enjoy the joy of dance."},
+            {
+                "How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."
+            },
 
-            {"How to Book": "To book a class, contact us via <a class=\"email\"></a> or <a class=\"messenger\">Facebook Messenger</a>."},
+            { "Price": "£32 per month (4 weeks / £8 per class)" },
 
-            {"Price": "£32 per month (4 weeks / £8 per class)"},
+            { "Dress Code": "T-shirt/leotard and stretchy shorts/joggers/leggings, water bottle" },
 
-            {"Dress Code": "T-shirt/leotard and stretchy shorts/joggers/leggings, water bottle"},
-
-            {"Timetable": "<a href=\"timetable\">See Timetable<a>"}
+            { "Timetable": "<a href=\"timetable\">See Timetable<a>" }
         ]
     }
-   
-
 }

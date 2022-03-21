@@ -6,7 +6,6 @@ main > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 /* max view on large screen */
@@ -29,11 +28,12 @@ main > div {
     padding-left: 0px;
     padding-right: 0px;
     height: calc(100vh - 73px);
-    background-image: linear-gradient(hsla(0, 0%, 27%, 0.4), hsla(0, 0%, 27%, 0.4)), url("../../images/banners/contemp-adults.jpg");
+    background-image: linear-gradient(hsla(0, 0%, 27%, 0.4), hsla(0, 0%, 27%, 0.4)),
+        url('../../images/banners/contemp-adults.webp');
     background-position: center;
     background-size: cover;
     text-align: center;
-    color: var(--color-3);   
+    color: var(--color-3);
 }
 
 /* inner container */
@@ -70,7 +70,7 @@ main > div {
 .homepage-hero-container a:hover {
     color: var(--color-2);
     background-color: var(--color-7);
-    text-decoration: underline;    
+    text-decoration: underline;
 }
 .homepage-hero-container a:active {
     opacity: 0.4;
@@ -94,24 +94,23 @@ main > div {
     padding: 10px;
     color: var(--color-3);
 }
-.homepage-video-container a:hover{
+.homepage-video-container a:hover {
     text-decoration-color: #fff;
     text-decoration: underline;
     color: var(--color-2);
     background-color: var(--color-1);
-    
 }
-.homepage-video-container a:active{
+.homepage-video-container a:active {
     text-decoration-color: #fff;
     text-decoration: underline;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     color: var(--color-2);
 }
 
 /* Wrapper  that hides extra margin used to give ratio to the video */
 .video-wrapper-hides-overflow {
     width: 100%;
-    max-height: 562.5px; 
+    max-height: 562.5px;
     overflow: hidden;
     margin-top: 1rem;
     margin-bottom: 2.5rem;
@@ -126,16 +125,16 @@ main > div {
     height: 0px;
     position: relative;
 }
-.homepage-video-container iframe {  
+.homepage-video-container iframe {
     width: 100%;
     height: 100%;
     max-height: 562.5px;
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19), 0 6px 8px -2px rgba(0, 0, 0, 0.18),
+        0 6px 6px 0 rgba(0, 0, 0, 0.1);
 }
-
 
 /* GALLERY */
 
@@ -156,7 +155,7 @@ main > div {
 /* PHOTOS */
 
 /* Photo wrapper */
-[data-type="photos"] {
+[data-type='photos'] {
     width: 40vw;
     height: 40vw;
     overflow: hidden;
@@ -166,7 +165,7 @@ main > div {
 }
 
 /* Photo container */
-[data-type="photos"] > div {
+[data-type='photos'] > div {
     width: 100%;
     height: 100%;
     background-position: center;
@@ -176,7 +175,7 @@ main > div {
 }
 
 /* Photo hover */
-[data-type="photos"] > div:hover {
+[data-type='photos'] > div:hover {
     width: 110%;
     height: 110%;
 }
@@ -188,7 +187,7 @@ main > div {
     margin-bottom: -1rem;
 }
 .homepage-gallery-container .view-more a {
-    padding: 10px
+    padding: 10px;
 }
 .homepage-gallery-container .view-more a:hover {
     background-color: var(--color-2);
@@ -201,11 +200,10 @@ main > div {
 
 /* LOCATION */
 .homepage-location-container {
-    background: linear-gradient(to bottom, var(--color-1) 60%, var(--color-2) 60% );
+    background: linear-gradient(to bottom, var(--color-1) 60%, var(--color-2) 60%);
     padding-bottom: 0px;
-    
 }
-.homepage-location-container >div {
+.homepage-location-container > div {
     width: 100%;
     max-width: 1080px;
 }
@@ -225,20 +223,19 @@ main > div {
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
+    box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19), 0 6px 8px -2px rgba(0, 0, 0, 0.18),
+        0 6px 6px 0 rgba(0, 0, 0, 0.1);
 }
-
 
 /* DESKTOP VIEW */
 
 @media screen and (min-width: 750px) {
-
     /* HERO CONTAINER */
     /* text */
     .homepage-hero-container p {
         font-size: 18px;
     }
-    
+
     /* VIDEO */
     homepage-video-container {
         padding-top: 3.5rem;
@@ -259,12 +256,11 @@ main > div {
         grid-column-start: 2;
     }
 
- 
     /* LOCATION */
 
     /* location container */
     .homepage-location-container {
-        background: linear-gradient(to left, var(--color-1) 60%, var(--color-2) 60% );
+        background: linear-gradient(to left, var(--color-1) 60%, var(--color-2) 60%);
     }
 
     .homepage-location-container h2 {
@@ -272,14 +268,14 @@ main > div {
     }
 
     /* div inside location container */
-    .homepage-location-container > div{
+    .homepage-location-container > div {
         display: flex;
         flex-direction: row-reverse;
         padding-bottom: 2.5rem;
         width: 100%;
     }
     /* div containing address and contact info */
-    .homepage-location-container > div:first-child{
+    .homepage-location-container > div:first-child {
         margin-top: revert;
     }
 
@@ -299,10 +295,11 @@ main > div {
         position: absolute;
         top: 0;
         left: 0;
-        box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19),0 6px 8px -2px rgba(0,0,0,.18),0 6px 6px 0 rgba(0,0,0,.1);
+        box-shadow: 0 7px 5px -5px rgba(119, 82, 82, 0.19), 0 6px 8px -2px rgba(0, 0, 0, 0.18),
+            0 6px 6px 0 rgba(0, 0, 0, 0.1);
     }
 
-     /* GALLERY */
+    /* GALLERY */
 
     /* Layout */
     .small-images-container {
@@ -312,14 +309,14 @@ main > div {
         /* max-width: calc(290px); */
         padding: 1.5rem 0;
     }
-   
+
     /* Filter */
     .tabs h3 {
         font-size: 30px;
     }
 
     /* Photo wrapper */
-    [data-type="photos"] {
+    [data-type='photos'] {
         height: 24vw;
         max-height: 260px;
         width: 24vw;
@@ -333,12 +330,10 @@ main > div {
         justify-self: center;
     }
     /* Video wrapper */
-    [data-type="videos"] {
+    [data-type='videos'] {
         position: relative;
         grid-column: span 4;
-
     }
-
 }
 
 /* HIDE AND SHOW ITEMS */
